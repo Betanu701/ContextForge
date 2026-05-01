@@ -1,229 +1,161 @@
-# ContextForge — Forge unlimited context for any LLM
+# ContextForge
 
-**Give any LLM unlimited memory. One line of code.**
+ContextForge is a Python SDK for giving LLM applications persistent, searchable context without running a separate vector database or embeddings service. It stores knowledge and session memory in SQLite, builds a lightweight in-memory index, and loads the most relevant context into each model request.
 
-ContextForge is middleware that sits between your application and any LLM. It adds hierarchical knowledge storage, proactive context loading, and persistent session memory — so your LLM always has the right context, without you managing it.
-
-```python
-from contextforge import ContextForge
-
-layer = ContextForge(provider="openai", api_key="sk-...")
-await layer.ingest("./company_docs/")
-response = await layer.chat("What was the Q3 revenue?")
-# → Automatically found the financial report, loaded it into context, and answered.
-```
-
-**No vector database. No embeddings server. No infrastructure.** Just `pip install` and go.
-
----
-
-## Infinite Context
-
-ContextForge provides practically unlimited context through intelligent recycling:
-
-- **VRAM**: ~680K active tokens at any moment
-- **Disk**: Unlimited tokens stored as tree nodes
-- **Speed**: <50ms to swap context branches
-- **Cost**: The 1000th query uses the same VRAM as the 1st
-
-How it works:
-1. Permanent knowledge (personality, contracts) stored as residual states (48% smaller)
-2. Dynamic knowledge loaded from tree branches per-query
-3. History compacted automatically (lossless summarization)
-4. After each response, unused context recycled for next query
-5. Full knowledge always available on disk via tree navigation
-
-No context limit. No token limit. Just ask.
+The same API works with OpenAI, Azure OpenAI, Anthropic, and local OpenAI-compatible servers such as llama-server, vLLM, Ollama, and LM Studio.
 
 ```python
 from contextforge import ContextForge
 
-layer = ContextForge(provider="local", base_url="http://localhost:8080/v1")
+forge = ContextForge(provider="local", base_url="http://localhost:8080/v1")
 
-# Permanent context — cached once, reused forever
-await layer.set_permanent_context("You are a senior architect at Acme Corp...")
-
-# Ingest your entire codebase — it all lives on disk
-await layer.ingest("./monorepo/", category="code")  # 500K+ files? No problem.
-
-# Each query loads ONLY what it needs, then recycles
-response = await layer.chat("How does the auth module work?")
-# → Loaded: code/src/auth/ (~3K tokens). Recycled after response.
-
-response = await layer.chat("Now explain the billing pipeline")
-# → Loaded: code/src/billing/ (~5K tokens). Auth context already freed.
-
-# Generate a 100-file project — constant VRAM throughout
-results = await layer.infinite.generate_project(
-    spec="Build a REST API with auth, billing, and notifications",
-    files=["src/auth.py", "src/billing.py", ...],  # even 1000 files
-    provider=layer._provider,
-)
+await forge.ingest("./company_docs/", category="docs")
+response = await forge.chat("What did we decide about the Q3 launch plan?")
+print(response)
 ```
 
----
+## What ContextForge Provides
 
-## Why ContextForge?
+- **Hierarchical knowledge storage** backed by SQLite.
+- **Proactive context loading** that finds relevant knowledge before each request.
+- **Persistent session memory** that can resume across application restarts.
+- **Streaming responses** through the same context-loading path as normal chat.
+- **Multi-pass analysis** across matching knowledge domains.
+- **Provider flexibility** for hosted and local LLMs.
 
-Every LLM application hits the same wall: **context limits**. Your LLM can only see what fits in its window. Today's solutions — RAG pipelines, vector databases, chunking strategies — are complex, fragile, and require infrastructure.
-
-ContextForge solves this differently:
-
-| | Vanilla LLM | RAG Pipeline | **ContextForge** |
-|---|---|---|---|
-| **Setup** | None | Vector DB + embeddings + chunking | `pip install contextforge` |
-| **Knowledge storage** | None | Flat chunks in vector space | **Hierarchical tree** (SQLite) |
-| **Context limit** | Fixed window | Fixed window | **Infinite** (recycled) |
-| **Retrieval** | Manual | Semantic similarity | **Proactive + BM25 scoring** |
-| **Session memory** | None | Custom implementation | **Built-in with compaction** |
-| **Multi-turn context** | Manual | Manual | **Automatic** |
-| **Infrastructure** | None | Vector DB, embeddings API | **None** (SQLite on disk) |
-| **First query latency** | ~0ms overhead | ~200-500ms (embedding + search) | **~5ms** (in-memory index) |
-| **1000-file generation** | Impossible (context overflow) | N/A | **Constant VRAM** |
-
-## Features
-
-### 🌳 Hierarchical Knowledge Tree
-Knowledge isn't flat — it has structure. Financial reports belong under Finance. API docs belong under Engineering. ContextForge stores knowledge as a tree, so related information stays together and loads together.
-
-```python
-await layer.ingest("./docs/", category="engineering")
-await layer.ingest_text("Q3 revenue was $10M", title="Q3 Report", category="finance")
-await layer.ingest_code("./src/", project="myapp")
-```
-
-### ⚡ Proactive Context Loading
-You don't tell the layer what to load — it figures it out. Every query is analyzed for keywords, matched against the inverted index, and the most relevant knowledge branches are assembled into context. Follow-up questions benefit from branch caching.
-
-```python
-response = await layer.chat("What was Q3 revenue?")
-# → Loaded: finance/q3_report
-
-response = await layer.chat("Compare with Q2")
-# → Q3 still cached + loaded finance/q2_report
-```
-
-### 💾 Session Memory with Compaction
-Conversations persist across restarts. When sessions grow long, older turns are automatically compacted into summaries — preserving context without burning tokens.
-
-```python
-layer.new_session(session_id="planning-q4")
-await layer.chat("Let's review the roadmap...")
-layer.save_session()
-
-# Days later...
-layer.resume_session("planning-q4")
-await layer.chat("Where were we?")  # Remembers everything
-```
-
-### 🔌 Works with Any LLM
-
-```python
-# OpenAI / Azure
-layer = ContextForge(provider="openai", api_key="sk-...")
-
-# Anthropic Claude
-layer = ContextForge(provider="anthropic", api_key="sk-ant-...")
-
-# Local models (llama-server, vLLM, Ollama, LM Studio)
-layer = ContextForge(provider="local", base_url="http://localhost:8080/v1")
-```
-
-For Azure OpenAI and Azure AI Foundry configuration, see [docs/azure.md](docs/azure.md).
-
-### 📡 Streaming Support
-
-```python
-async for chunk in layer.stream("Draft the board summary"):
-    print(chunk, end="")
-```
-
-### 🔬 Multi-Pass Analysis
-
-For cross-domain questions, ContextForge queries each knowledge domain separately, then synthesizes a unified answer:
-
-```python
-response = await layer.analyze("How do engineering investments correlate with revenue?")
-# → Queries finance domain, engineering domain, synthesizes
-```
+ContextForge is currently alpha software. The public SDK is intentionally lightweight: local memory is SQLite, provider support is pluggable, and generated benchmark outputs are kept separate from source code.
 
 ## Installation
 
 ```bash
-pip install contextforge                  # Core (local models via httpx)
-pip install contextforge[openai]          # + OpenAI support
-pip install contextforge[anthropic]       # + Anthropic support
-pip install contextforge[all]             # Everything
+pip install contextforge
+pip install contextforge[openai]
+pip install contextforge[anthropic]
+pip install contextforge[all]
+```
+
+For local development from this repository:
+
+```bash
+pip install -e ".[all,dev]"
+pytest tests/ -v
 ```
 
 ## Quick Start
 
 ```python
 import asyncio
+import os
+
 from contextforge import ContextForge
 
-async def main():
-    layer = ContextForge(
+
+async def main() -> None:
+    forge = ContextForge(
         provider="openai",
-        api_key="sk-your-key",
+        api_key=os.environ["OPENAI_API_KEY"],
         db_path="./memory.db",
     )
 
-    # Add knowledge
-    await layer.ingest_text(
-        "Our API uses JWT authentication. Tokens expire after 1 hour. "
+    await forge.ingest_text(
+        "Our API uses JWT authentication. Access tokens expire after 1 hour. "
         "Refresh tokens are valid for 30 days.",
         title="API Auth",
         category="engineering",
     )
 
-    # Chat — context loaded automatically
-    response = await layer.chat("How long are API tokens valid?")
+    response = await forge.chat("How long are API tokens valid?")
     print(response)
 
-    layer.close()
+    forge.close()
+
 
 asyncio.run(main())
 ```
 
+## Local LLM Setup
+
+ContextForge's `local` provider talks to any OpenAI-compatible `/v1/chat/completions` endpoint using `httpx`; no vendor SDK is required.
+
+```python
+from contextforge import ContextForge
+
+forge = ContextForge(
+    provider="local",
+    base_url="http://localhost:8080/v1",
+    model="default",
+)
+```
+
+Common local endpoints:
+
+| Runtime | Base URL |
+|---------|----------|
+| llama-server | `http://localhost:8080/v1` |
+| vLLM | `http://localhost:8000/v1` |
+| Ollama | `http://localhost:11434/v1` |
+| LM Studio | `http://localhost:1234/v1` |
+| text-generation-webui | `http://localhost:5000/v1` |
+
+See [docs/local.md](docs/local.md) and [examples/local_llm.py](examples/local_llm.py) for a runnable local setup.
+
+## Azure Setup
+
+Azure OpenAI and Azure AI Foundry model endpoints work through the OpenAI-compatible provider. Configure the endpoint, key, and deployment name with environment variables, then pass the Azure `/openai/v1/` base URL to ContextForge.
+
+```python
+import os
+
+from contextforge import ContextForge
+
+endpoint = os.environ["AZURE_OPENAI_ENDPOINT"].rstrip("/")
+
+forge = ContextForge(
+    provider="openai",
+    api_key=os.environ["AZURE_OPENAI_API_KEY"],
+    model=os.environ["AZURE_OPENAI_DEPLOYMENT"],
+    base_url=f"{endpoint}/openai/v1/",
+)
+```
+
+See [docs/azure.md](docs/azure.md) and [examples/azure_openai.py](examples/azure_openai.py) for details.
+
+## Streaming
+
+```python
+async for chunk in forge.stream("Draft the board summary"):
+    print(chunk, end="")
+```
+
+## Multi-Pass Analysis
+
+For cross-domain questions, ContextForge can query matching knowledge domains separately and synthesize the results.
+
+```python
+response = await forge.analyze(
+    "How do engineering investments correlate with revenue?"
+)
+```
+
 ## Architecture
 
-ContextForge is built on five components:
-
-```
-┌──────────────────────────────────────────────────┐
-│                  ContextForge                     │
-│  ┌─────────────────────────────────────────────┐ │
-│  │           Infinite Context                   │ │
-│  │   (recycling orchestrator — 680K active)     │ │
-│  └───────┬──────────┬──────────────┬───────────┘ │
-│  ┌───────┴───┐ ┌────┴─────┐ ┌─────┴──────────┐  │
-│  │ Knowledge │ │  Memory  │ │   Proactive    │  │
-│  │   Tree    │ │  Index   │ │    Loader      │  │
-│  │ (SQLite)  │ │(in-memory)│ │               │  │
-│  └─────┬─────┘ └────┬─────┘ └──────┬────────┘  │
-│  ┌─────┴─────────────┴──────────────┴─────────┐  │
-│  │            Session Store                    │  │
-│  │      (persistence + compaction)             │  │
-│  └────────────────────┬───────────────────────┘  │
-│  ┌────────────────────┴───────────────────────┐  │
-│  │           LLM Provider                      │  │
-│  │    OpenAI │ Anthropic │ Local/vLLM          │  │
-│  └────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────┘
+```text
+ContextForge
+|-- KnowledgeTree       SQLite hierarchical document store
+|-- MemoryIndex         in-memory BM25-style keyword index
+|-- ProactiveLoader     query-aware context selection
+|-- SessionStore        persisted conversation state
+|-- InfiniteContext     context recycling and permanent context helpers
+`-- LLM Providers       OpenAI, Anthropic, Azure OpenAI, local endpoints
 ```
 
-1. **KnowledgeTree** — Hierarchical storage in SQLite. Nodes have paths (like `finance/q3_report`), categories, and parent-child relationships. Content is automatically chunked for granular retrieval.
+The default workflow is:
 
-2. **MemoryIndex** — In-memory inverted index rebuilt from the tree on startup. BM25 scoring with O(1) term lookup. No external dependencies.
-
-3. **ProactiveLoader** — Extracts keywords from user queries + conversation history, searches the index, loads the best-matching branches, and assembles them into a context block that fits the token budget. Caches loaded branches for follow-up questions.
-
-4. **SessionStore** — Conversations persist in SQLite. When sessions grow long, older turns are compacted into summaries. Sessions can be resumed across application restarts.
-
-5. **InfiniteContext** — The recycling orchestrator. Manages the lifecycle of context through load → use → recycle cycles. Permanent context (personality, contracts) is cached once and reused via KV-cache prefix caching. Dynamic knowledge is loaded per-query from the tree, then freed. History is compacted automatically. Enables unlimited file generation — file 1 and file 1000 use the same VRAM.
-
-6. **LLM Providers** — Pluggable interface for any LLM backend. OpenAI, Anthropic, and any OpenAI-compatible local server (llama-server, vLLM, Ollama, LM Studio).
+1. Ingest documents, text, or source code into the knowledge tree.
+2. Rebuild the in-memory index from the stored knowledge.
+3. Load relevant context for each user message.
+4. Send the assembled system prompt, session history, and user message to the configured LLM.
+5. Store the turn in the session database for later recall.
 
 ## API Reference
 
@@ -231,80 +163,67 @@ ContextForge is built on five components:
 
 | Method | Description |
 |--------|-------------|
-| `await chat(message)` | Send a message, get a response. Knowledge loaded automatically. |
-| `await stream(message)` | Same as chat, but yields tokens incrementally. |
-| `await analyze(query)` | Multi-pass analysis across knowledge domains. |
-| `await set_permanent_context(text)` | Set permanent context (personality, contracts). Cached after first use. |
-| `await ingest(directory)` | Ingest a directory of files. |
+| `await chat(message)` | Send a message and receive a complete response. |
+| `await stream(message)` | Stream response tokens incrementally. |
+| `await analyze(query)` | Run multi-pass analysis across matching knowledge domains. |
+| `await set_permanent_context(text)` | Store permanent context for the infinite-context engine. |
+| `await ingest(path)` | Ingest a directory of files. |
 | `await ingest_text(text, ...)` | Ingest a single text document. |
 | `await ingest_code(directory)` | Ingest source code files. |
 | `new_session(id)` | Start a new conversation session. |
 | `resume_session(id)` | Resume a previous session. |
-| `save_session()` | Persist the current session. |
-| `list_sessions()` | List all stored sessions. |
-| `infinite` | Property — `InfiniteContext` engine for advanced recycling. |
-| `stats` | Property — current knowledge/index/session/infinite-context statistics. |
-| `close()` | Clean up database connections. |
-
-### `InfiniteContext`
-
-| Method | Description |
-|--------|-------------|
-| `await query(message, provider)` | Smart query with context recycling — load, generate, recycle. |
-| `await set_permanent_context(text)` | Set permanent context cached as residual states. |
-| `await generate_file(spec, contract, sigs, provider)` | Generate a single file with recycled context. |
-| `await generate_project(spec, files, provider)` | Generate an entire project — constant VRAM. |
-| `get_stats()` | Return `InfiniteContextStats` snapshot. |
+| `save_session()` | Return the current session ID after persistence. |
+| `list_sessions()` | List stored sessions. |
+| `close()` | Close database connections. |
 
 ### Constructor Parameters
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `provider` | `"openai"` | LLM backend: `"openai"`, `"anthropic"`, `"local"` |
-| `api_key` | `""` | API key for cloud providers |
-| `model` | Provider default | Model name override |
-| `base_url` | `None` | Endpoint URL (required for `"local"`) |
-| `knowledge_dir` | `None` | Auto-ingest directory on init |
-| `db_path` | `"./contextforge.db"` | SQLite database path |
-| `max_context_tokens` | `4096` | Token budget for knowledge context |
-| `system_prompt` | Default | Base system prompt |
+| `provider` | `"openai"` | LLM backend: `"openai"`, `"anthropic"`, or `"local"`. |
+| `api_key` | `""` | API key for cloud providers; optional for local endpoints. |
+| `model` | Provider default | Model or deployment name. |
+| `base_url` | `None` | Endpoint URL override; required for many local and Azure-compatible deployments. |
+| `knowledge_dir` | `None` | Directory to ingest during initialization. |
+| `db_path` | `"./contextforge.db"` | SQLite database path. |
+| `max_context_tokens` | `4096` | Token budget for loaded knowledge context. |
+| `system_prompt` | Helpful assistant prompt | Base system prompt for every request. |
+
+## Benchmarks
+
+The 15-turn benchmark compares ContextForge with a configured Azure AI Foundry Agent on the same fixed CMS Medicare Part D conversation. It tests retrieval, drill-downs, topic switches, recall, synthesis, latency, token use, and LLM-as-judge quality scores.
+
+Benchmark code lives in [benchmarks/15turn/](benchmarks/15turn/) as reference artifact code: it is the code used to run the published tests, not a general-purpose benchmark that every reader can execute out of the box. Running it requires access to the same Azure AI Foundry project, Fabric workspace, Power BI dataset, model deployment, and CMS Medicare Part D warehouse shape used for the original run.
+
+Curated published results live under [results/15turn/runs/](results/15turn/runs/); generated local logs and timestamped reports should not be committed unless they are promoted into a named run folder.
+
+Current published run:
+
+- [results/15turn/runs/2026-04-07-2cycles/](results/15turn/runs/2026-04-07-2cycles/) - two evaluation cycles against Azure AI Foundry Agent and ContextForge.
 
 ## Examples
 
-See the [`examples/`](examples/) directory:
-
-- **[quickstart.py](examples/quickstart.py)** — Simplest possible usage (10 lines)
-- **[azure_openai.py](examples/azure_openai.py)** — Azure OpenAI via the OpenAI-compatible provider
-- **[enterprise_qa.py](examples/enterprise_qa.py)** — Enterprise knowledge base Q&A
-- **[coding_assistant.py](examples/coding_assistant.py)** — Code project with memory
-- **[multi_session.py](examples/multi_session.py)** — Resume conversations across restarts
-
-## Development
-
-```bash
-# Install in development mode
-pip install -e ".[dev]"
-
-# Run tests
-pytest tests/ -v
-
-# Run a specific test
-pytest tests/test_tree.py -v
-```
+- [examples/quickstart.py](examples/quickstart.py) - minimal hosted-provider usage.
+- [examples/local_llm.py](examples/local_llm.py) - local OpenAI-compatible endpoint usage.
+- [examples/azure_openai.py](examples/azure_openai.py) - Azure OpenAI usage.
+- [examples/enterprise_qa.py](examples/enterprise_qa.py) - enterprise knowledge base Q&A.
+- [examples/coding_assistant.py](examples/coding_assistant.py) - code project with memory.
+- [examples/multi_session.py](examples/multi_session.py) - resumed conversations across restarts.
 
 ## Works With
 
 | Provider | Package | Status |
 |----------|---------|--------|
-| **OpenAI** (GPT-4o, GPT-4o-mini) | `openai` | ✅ |
-| **Azure OpenAI** | `openai` | ✅ |
-| **Anthropic** (Claude 4, Sonnet, Haiku) | `anthropic` | ✅ |
-| **llama-server** (llama.cpp) | Built-in (`httpx`) | ✅ |
-| **vLLM** | Built-in (`httpx`) | ✅ |
-| **Ollama** | Built-in (`httpx`) | ✅ |
-| **LM Studio** | Built-in (`httpx`) | ✅ |
-| **text-generation-webui** | Built-in (`httpx`) | ✅ |
+| OpenAI | `openai` | Supported |
+| Azure OpenAI | `openai` | Supported |
+| Azure AI Foundry OpenAI-compatible endpoints | `openai` | Supported |
+| Anthropic | `anthropic` | Supported |
+| llama-server | Built in via `httpx` | Supported |
+| vLLM | Built in via `httpx` | Supported |
+| Ollama | Built in via `httpx` | Supported |
+| LM Studio | Built in via `httpx` | Supported |
+| text-generation-webui | Built in via `httpx` | Supported |
 
 ## License
 
-Apache-2.0 — see [LICENSE](LICENSE). Attribution notices are provided in [NOTICE](NOTICE).
+Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).

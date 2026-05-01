@@ -226,6 +226,13 @@ __marimo__/
 !.env.example
 api-key.txt
 connection-details.txt
-results/
+results/*
+!results/15turn/
+!results/15turn/**
+results/15turn/raw_logs/*.log
+results/15turn/runs/**/*.log
+results/15turn/processed/benchmark_15turn_[0-9]*.json
+results/15turn/processed/benchmark_15turn_[0-9]*.md
 benchmark-results/
 *.log
+!results/15turn/runs/excluded-2026-04-07-fabric-failure/raw_output_20260407_020505.log

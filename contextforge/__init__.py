@@ -2,9 +2,10 @@
 
 Usage::
 
+    import os
     from contextforge import ContextForge
 
-    layer = ContextForge(provider="openai", api_key="sk-...")
+    layer = ContextForge(provider="openai", api_key=os.environ["OPENAI_API_KEY"])
     await layer.ingest("./docs/")
     response = await layer.chat("What was the Q3 revenue?")
 """

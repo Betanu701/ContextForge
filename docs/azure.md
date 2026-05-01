@@ -2,6 +2,8 @@
 
 ContextForge works with Azure OpenAI and Azure AI Foundry through the existing OpenAI-compatible provider. The open-source SDK keeps deployment simple: use SQLite for local ContextForge memory, configure your Azure model endpoint with environment variables, and keep cloud credentials outside source control.
 
+For fully local inference with llama-server, vLLM, Ollama, LM Studio, or another OpenAI-compatible server, see [local.md](local.md).
+
 ## Install
 
 ```bash
@@ -42,6 +44,8 @@ forge = ContextForge(
 ```
 
 The `model` value should be your Azure OpenAI deployment name, not necessarily the underlying model family name.
+
+If your organization uses Microsoft Entra ID instead of API keys, create a custom provider with the OpenAI SDK's Azure client and pass it to `ContextForge` with the `llm_provider` constructor argument. The built-in OpenAI-compatible provider intentionally keeps the public quickstart API-key based and minimal.
 
 ## Azure AI Foundry
 

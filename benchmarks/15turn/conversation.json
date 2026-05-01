@@ -1,0 +1,77 @@
+[
+  {
+    "id": "T01",
+    "question": "Show the top 10 quinolone drugs prescribed by internists in Florida in 2022",
+    "hint": "Should list drugs containing 'floxacin' with claim counts for FL internists in 2022"
+  },
+  {
+    "id": "T02",
+    "question": "Now break that down by city \u2014 show the top 5 Florida cities for those same quinolone prescriptions",
+    "hint": "Should show FL city names with quinolone claim totals for 2022 internists"
+  },
+  {
+    "id": "T03",
+    "question": "Switch to ACE inhibitors instead \u2014 show the top 10 ACE inhibitor drugs by total claims in Texas for 2021",
+    "hint": "Should list drugs containing 'pril' with claim counts for TX in 2021"
+  },
+  {
+    "id": "T04",
+    "question": "Who are the top 20 providers prescribing those ACE inhibitors in Houston, Texas?",
+    "hint": "Should list provider names prescribing pril drugs in Houston TX"
+  },
+  {
+    "id": "T05",
+    "question": "What was the total drug cost for those Houston ACE inhibitor prescriptions? Format as currency",
+    "hint": "Should show a total cost for pril drugs in Houston TX formatted as currency"
+  },
+  {
+    "id": "T06",
+    "question": "Compare that to 2020 \u2014 show the same Houston ACE inhibitor costs for both years side by side",
+    "hint": "Should show Houston pril drug costs for both 2020 and 2021"
+  },
+  {
+    "id": "T07",
+    "question": "Now let's look at statins. Show the top 10 states by total statin claims in 2022",
+    "hint": "Should show state abbreviations with statin claim totals for 2022"
+  },
+  {
+    "id": "T08",
+    "question": "Drill into California from that list \u2014 show the top 10 statin drugs by total cost in CA for 2022",
+    "hint": "Should list statin drugs in CA for 2022 ranked by cost"
+  },
+  {
+    "id": "T09",
+    "question": "Filter that to only Family Practice providers in California prescribing statins in 2022",
+    "hint": "Should list statin drugs by Family Practice providers in CA 2022"
+  },
+  {
+    "id": "T10",
+    "question": "Go back to the quinolone analysis from the beginning \u2014 show the same Florida query but for 2023 instead of 2022",
+    "hint": "Should list floxacin drugs for FL internists in 2023 (back-reference to T01)"
+  },
+  {
+    "id": "T11",
+    "question": "Show the top 5 providers with a matching provider surname prescribing ARBs in Atlanta, Georgia in 2019 with total cost formatted as currency",
+    "hint": "Should list providers matching the configured surname filter prescribing sartan drugs in Atlanta GA 2019"
+  },
+  {
+    "id": "T12",
+    "question": "Summarize all the drug classes we've analyzed today and which states/cities had the highest costs for each",
+    "hint": "Should mention quinolones/FL, ACE inhibitors/Houston TX, statins/CA, ARBs/Atlanta GA"
+  },
+  {
+    "id": "T13",
+    "question": "Show the top 10 beta blocker drugs prescribed by cardiologists in New York in 2022",
+    "hint": "Should list drugs containing 'olol' with claim counts for NY cardiologists in 2022"
+  },
+  {
+    "id": "T14",
+    "question": "Compare the total statin cost in California vs Texas for 2022 \u2014 which state spent more?",
+    "hint": "Should show statin costs for CA and TX in 2022 with a comparison"
+  },
+  {
+    "id": "T15",
+    "question": "Now give me a final summary: across all the drug classes and states we've discussed, which single drug had the highest total cost and where was it prescribed most?",
+    "hint": "Should synthesize across quinolones/FL, ACE inhibitors/TX, statins/CA+TX, ARBs/GA, beta blockers/NY \u2014 identify the single highest-cost drug and its top state"
+  }
+]

@@ -1,6 +1,8 @@
 """Multi-Session — resume conversations across restarts."""
 
 import asyncio
+import os
+
 from contextforge import ContextForge
 
 
@@ -8,7 +10,7 @@ async def session_1():
     """First session — start a conversation."""
     layer = ContextForge(
         provider="openai",
-        api_key="sk-your-key-here",
+        api_key=os.environ["OPENAI_API_KEY"],
         db_path="./multi_session.db",
     )
 
@@ -41,7 +43,7 @@ async def session_2(session_id: str):
     """Second session — resume the conversation."""
     layer = ContextForge(
         provider="openai",
-        api_key="sk-your-key-here",
+        api_key=os.environ["OPENAI_API_KEY"],
         db_path="./multi_session.db",
     )
 

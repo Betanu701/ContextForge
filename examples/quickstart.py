@@ -1,6 +1,8 @@
 """Quickstart — simplest possible ContextForge usage."""
 
 import asyncio
+import os
+
 from contextforge import ContextForge
 
 
@@ -8,7 +10,7 @@ async def main():
     # Initialize with OpenAI (or any provider)
     layer = ContextForge(
         provider="openai",
-        api_key="sk-your-key-here",
+        api_key=os.environ["OPENAI_API_KEY"],
         db_path="./quickstart.db",
     )
 

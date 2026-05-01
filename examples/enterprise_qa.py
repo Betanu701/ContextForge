@@ -1,13 +1,15 @@
 """Enterprise Q&A — knowledge base with hierarchical ingestion."""
 
 import asyncio
+import os
+
 from contextforge import ContextForge
 
 
 async def main():
     layer = ContextForge(
         provider="openai",
-        api_key="sk-your-key-here",
+        api_key=os.environ["OPENAI_API_KEY"],
         db_path="./enterprise_qa.db",
         max_context_tokens=6144,
         system_prompt=(
