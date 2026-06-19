@@ -18,6 +18,7 @@ from .infinite_context import InfiniteContext, InfiniteContextStats
 from .layer import ContextForge
 from .providers import LLMProvider, get_provider
 from .tree import WorkingSet
+from .wiki import WikiCompilationResult, WikiIssue, WikiMemory
 
 __all__ = [
     "ContextForge",
@@ -25,6 +26,9 @@ __all__ = [
     "InfiniteContextStats",
     "LLMProvider",
     "WorkingSet",
+    "WikiCompilationResult",
+    "WikiIssue",
+    "WikiMemory",
     "__version__",
     "get_provider",
 ]

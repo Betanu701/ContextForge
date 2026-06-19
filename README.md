@@ -14,10 +14,25 @@ response = await forge.chat("What did we decide about the Q3 launch plan?")
 print(response)
 ```
 
+For compounding long-term memory, compile sources into the wiki layer and query with wiki-first retrieval:
+
+```python
+await forge.ingest_wiki_text(
+    "Jamie approved the Q3 launch, but the Europe rollout was canceled.",
+    title="Day 42",
+    category="memory",
+)
+
+response = await forge.chat("What happened with the Europe rollout?", use_wiki=True)
+```
+
+The wiki memory design is inspired by source-backed LLM wiki patterns popularized in public LLM-memory discussions, including Andrej Karpathy's notes on LLM wikis. The ContextForge implementation is original: it compiles local sources into attributed entity, concept, timeline, decision, and negative-fact pages, and keeps raw sources as the authority for retrieval.
+
 ## What ContextForge Provides
 
 - **Hierarchical knowledge storage** backed by SQLite.
 - **Proactive context loading** that finds relevant knowledge before each request.
+- **Compiled wiki memory** that turns raw sources into source-backed entity, concept, timeline, decision, and negative-fact pages.
 - **Persistent session memory** that can resume across application restarts.
 - **Streaming responses** through the same context-loading path as normal chat.
 - **Multi-pass analysis** across matching knowledge domains.
@@ -169,6 +184,9 @@ The default workflow is:
 | `await set_permanent_context(text)` | Store permanent context for the infinite-context engine. |
 | `await ingest(path)` | Ingest a directory of files. |
 | `await ingest_text(text, ...)` | Ingest a single text document. |
+| `await ingest_wiki_text(text, ...)` | Ingest text and compile it into source-backed wiki memory. |
+| `compile_wiki(prefix)` | Compile existing stored knowledge into wiki memory. |
+| `lint_wiki()` | Check compiled wiki pages for drift, missing sources, broken links, and orphan pages. |
 | `await ingest_code(directory)` | Ingest source code files. |
 | `new_session(id)` | Start a new conversation session. |
 | `resume_session(id)` | Resume a previous session. |
