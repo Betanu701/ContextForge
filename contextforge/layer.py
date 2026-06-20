@@ -16,6 +16,7 @@ from .providers import LLMProvider, get_provider
 from .session import Session, SessionStore
 from .tree import KnowledgeTree
 from .utils import estimate_tokens
+from .wiki import WikiCompilationResult, WikiIssue, WikiMemory
 
 
 class ContextForge:
@@ -67,6 +68,7 @@ class ContextForge:
 
         self._index = MemoryIndex()
         self._index.build_from_tree(self._tree)
+        self._wiki = WikiMemory(self._tree)
 
         # -- Proactive loader --
         self._loader = ProactiveLoader(
@@ -125,11 +127,43 @@ class ContextForge:
         title: str = "untitled",
         category: str = "general",
         path: Optional[str] = None,
+        compile_wiki: bool = False,
+        metadata: Optional[dict] = None,
     ) -> None:
         """Ingest a single text document."""
         node_path = path or f"{category}/{title.lower().replace(' ', '_')}"
-        self._tree.add(path=node_path, title=title, content=text, category=category)
+        node = self._tree.add(path=node_path, title=title, content=text, category=category, metadata=metadata)
+        if compile_wiki:
+            self._wiki.compile_source_node(node)
         self._index.build_from_tree(self._tree)
+        self._loader.invalidate_cache()
+
+    async def ingest_wiki_text(
+        self,
+        text: str,
+        title: str = "untitled",
+        category: str = "general",
+        path: Optional[str] = None,
+        metadata: Optional[dict] = None,
+    ) -> WikiCompilationResult:
+        """Ingest text and compile it into source-backed wiki memory pages."""
+        node_path = path or f"{category}/{title.lower().replace(' ', '_')}"
+        node = self._tree.add(path=node_path, title=title, content=text, category=category, metadata=metadata)
+        result = self._wiki.compile_source_node(node)
+        self._index.build_from_tree(self._tree)
+        self._loader.invalidate_cache()
+        return result
+
+    def compile_wiki(self, source_prefix: str = "") -> int:
+        """Compile existing non-wiki knowledge nodes into the wiki layer."""
+        count = self._wiki.compile_existing(prefix=source_prefix)
+        self._index.build_from_tree(self._tree)
+        self._loader.invalidate_cache()
+        return count
+
+    def lint_wiki(self) -> list[WikiIssue]:
+        """Run consistency checks over compiled wiki memory."""
+        return self._wiki.lint()
 
     async def ingest_code(
         self,
@@ -147,7 +181,7 @@ class ContextForge:
 
     # -- chat interface ---------------------------------------------------
 
-    async def chat(self, message: str, **kwargs) -> str:
+    async def chat(self, message: str, use_wiki: bool = False, **kwargs) -> str:
         """Send a message and get a complete response.
 
         Proactively loads relevant knowledge, maintains session context,
@@ -160,7 +194,10 @@ class ContextForge:
         conv_context = self._recent_context()
 
         # Proactive knowledge loading
-        loaded = self._loader.load(message, conversation_context=conv_context)
+        if use_wiki:
+            loaded = self._loader.load_wiki(message, conversation_context=conv_context)
+        else:
+            loaded = self._loader.load(message, conversation_context=conv_context)
 
         # Assemble messages
         messages = self._build_messages(message, loaded)
@@ -292,6 +329,11 @@ class ContextForge:
     def infinite(self) -> InfiniteContext:
         """Access the infinite context engine."""
         return self._infinite
+
+    @property
+    def wiki(self) -> WikiMemory:
+        """Access the compiled wiki memory manager."""
+        return self._wiki
 
     async def set_permanent_context(self, text: str) -> None:
         """Set permanent context that persists across all queries.

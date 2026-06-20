@@ -1,0 +1,134 @@
+{
+  "contextforge": {
+    "checkpoints": 19,
+    "hallucinationRate": 7.911111111111111,
+    "overallScore": 4.832,
+    "questionsEvaluated": 1125,
+    "scorePercent": 80.53333333333333,
+    "secondsPerEval": 3.1688506666666667
+  },
+  "contextforgeCategoryScores": [
+    {
+      "category": "contradiction-resolution",
+      "meanScore": 5.254545454545455,
+      "questionCount": 55
+    },
+    {
+      "category": "cross-reference",
+      "meanScore": 4.936507936507937,
+      "questionCount": 63
+    },
+    {
+      "category": "decision-tracking",
+      "meanScore": 4.124223602484472,
+      "questionCount": 161
+    },
+    {
+      "category": "factual-recall",
+      "meanScore": 5.111111111111111,
+      "questionCount": 387
+    },
+    {
+      "category": "negative-recall",
+      "meanScore": 5.1265822784810124,
+      "questionCount": 158
+    },
+    {
+      "category": "recency-bias-resistance",
+      "meanScore": 5.588888888888889,
+      "questionCount": 90
+    },
+    {
+      "category": "synthesis",
+      "meanScore": 4.928994082840236,
+      "questionCount": 169
+    },
+    {
+      "category": "temporal-reasoning",
+      "meanScore": 1.1428571428571428,
+      "questionCount": 42
+    }
+  ],
+  "createdAt": "2026-06-19T07:12:57.773202+00:00",
+  "delta": {
+    "hallucinationRate": -0.5872387238723871,
+    "overallScore": -0.6184950495049506,
+    "scorePoints": -10.30825082508251,
+    "secondsPerEval": -7.646931511551155,
+    "speedupVsOpenClaws": 3.4131561616297335
+  },
+  "openclaws": {
+    "checkpoints": 19,
+    "hallucinationRate": 8.498349834983498,
+    "overallScore": 5.4504950495049505,
+    "questionsEvaluated": 1212,
+    "scorePercent": 90.84158415841584,
+    "secondsPerEval": 10.815782178217821
+  },
+  "openclawsCategoryScores": [
+    {
+      "category": "contradiction-resolution",
+      "meanScore": 5.418918918918919,
+      "questionCount": 74
+    },
+    {
+      "category": "cross-reference",
+      "meanScore": 5.163934426229508,
+      "questionCount": 61
+    },
+    {
+      "category": "decision-tracking",
+      "meanScore": 5.601769911504425,
+      "questionCount": 113
+    },
+    {
+      "category": "factual-recall",
+      "meanScore": 5.491883116883117,
+      "questionCount": 616
+    },
+    {
+      "category": "negative-recall",
+      "meanScore": 5.694915254237288,
+      "questionCount": 177
+    },
+    {
+      "category": "recency-bias-resistance",
+      "meanScore": 5.8,
+      "questionCount": 35
+    },
+    {
+      "category": "synthesis",
+      "meanScore": 4.651785714285714,
+      "questionCount": 112
+    },
+    {
+      "category": "temporal-reasoning",
+      "meanScore": 5.916666666666667,
+      "questionCount": 24
+    }
+  ],
+  "openclawsProgress": "/tmp/recall/bench-results/openclaw/ea-180d-openclaw/progress.jsonl",
+  "ranges": [
+    "72d",
+    "78d",
+    "84d",
+    "90d",
+    "96d",
+    "102d",
+    "108d",
+    "114d",
+    "120d",
+    "126d",
+    "132d",
+    "138d",
+    "144d",
+    "150d",
+    "156d",
+    "162d",
+    "168d",
+    "174d",
+    "180d"
+  ],
+  "sliceRunDir": "/home/derek/repo/ContextForge/bench-results/contextforge-gpt54-stateless-expanded-clean-180d-30ckpt-sample50-mini-primary-gpt54-appellate-20260619-015200-openclaws-72d-180d-slice",
+  "sourceRunDir": "/home/derek/repo/ContextForge/bench-results/contextforge-gpt54-stateless-expanded-clean-180d-30ckpt-sample50-mini-primary-gpt54-appellate-20260619-015200"
+}
