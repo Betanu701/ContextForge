@@ -178,15 +178,12 @@ class KnowledgeTree:
             category=category,
             parent_id=parent_id,
             token_estimate=tok_est,
-            metadata=metadata or {},
         )
 
     def get(self, path: str) -> Optional[KnowledgeNode]:
         """Retrieve a single node by path."""
-        import json
-
         row = self.conn.execute(
-            "SELECT id, path, title, content, category, parent_id, token_estimate, metadata_json "
+            "SELECT id, path, title, content, category, parent_id, token_estimate "
             "FROM knowledge_nodes WHERE path = ?",
             (path,),
         ).fetchone()
@@ -200,7 +197,6 @@ class KnowledgeTree:
             category=row[4],
             parent_id=row[5],
             token_estimate=row[6],
-            metadata=json.loads(row[7] or "{}"),
         )
 
     def remove(self, path: str) -> bool:
@@ -233,10 +229,8 @@ class KnowledgeTree:
         parent = self.get(path)
         if not parent:
             return []
-        import json
-
         rows = self.conn.execute(
-            "SELECT id, path, title, content, category, parent_id, token_estimate, metadata_json "
+            "SELECT id, path, title, content, category, parent_id, token_estimate "
             "FROM knowledge_nodes WHERE parent_id = ? ORDER BY path",
             (parent.id,),
         ).fetchall()
@@ -244,7 +238,6 @@ class KnowledgeTree:
             KnowledgeNode(
                 id=r[0], path=r[1], title=r[2], content=r[3],
                 category=r[4], parent_id=r[5], token_estimate=r[6],
-                metadata=json.loads(r[7] or "{}"),
             )
             for r in rows
         ]
@@ -258,10 +251,8 @@ class KnowledgeTree:
         queue = [root.id]
         while queue:
             pid = queue.pop(0)
-            import json
-
             rows = self.conn.execute(
-                "SELECT id, path, title, content, category, parent_id, token_estimate, metadata_json "
+                "SELECT id, path, title, content, category, parent_id, token_estimate "
                 "FROM knowledge_nodes WHERE parent_id = ? ORDER BY path",
                 (pid,),
             ).fetchall()
@@ -269,7 +260,6 @@ class KnowledgeTree:
                 node = KnowledgeNode(
                     id=r[0], path=r[1], title=r[2], content=r[3],
                     category=r[4], parent_id=r[5], token_estimate=r[6],
-                    metadata=json.loads(r[7] or "{}"),
                 )
                 result.append(node)
                 queue.append(node.id)
@@ -296,10 +286,8 @@ class KnowledgeTree:
             params.extend([kw, kw])
 
         where = " AND ".join(conditions) if conditions else "1=1"
-        import json
-
         rows = self.conn.execute(
-            f"SELECT id, path, title, content, category, parent_id, token_estimate, metadata_json "
+            f"SELECT id, path, title, content, category, parent_id, token_estimate "
             f"FROM knowledge_nodes WHERE {where} ORDER BY path",
             params,
         ).fetchall()
@@ -307,7 +295,6 @@ class KnowledgeTree:
             KnowledgeNode(
                 id=r[0], path=r[1], title=r[2], content=r[3],
                 category=r[4], parent_id=r[5], token_estimate=r[6],
-                metadata=json.loads(r[7] or "{}"),
             )
             for r in rows
         ]
