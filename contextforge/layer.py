@@ -128,10 +128,11 @@ class ContextForge:
         category: str = "general",
         path: Optional[str] = None,
         compile_wiki: bool = False,
+        metadata: Optional[dict] = None,
     ) -> None:
         """Ingest a single text document."""
         node_path = path or f"{category}/{title.lower().replace(' ', '_')}"
-        node = self._tree.add(path=node_path, title=title, content=text, category=category)
+        node = self._tree.add(path=node_path, title=title, content=text, category=category, metadata=metadata)
         if compile_wiki:
             self._wiki.compile_source_node(node)
         self._index.build_from_tree(self._tree)
@@ -143,10 +144,11 @@ class ContextForge:
         title: str = "untitled",
         category: str = "general",
         path: Optional[str] = None,
+        metadata: Optional[dict] = None,
     ) -> WikiCompilationResult:
         """Ingest text and compile it into source-backed wiki memory pages."""
         node_path = path or f"{category}/{title.lower().replace(' ', '_')}"
-        node = self._tree.add(path=node_path, title=title, content=text, category=category)
+        node = self._tree.add(path=node_path, title=title, content=text, category=category, metadata=metadata)
         result = self._wiki.compile_source_node(node)
         self._index.build_from_tree(self._tree)
         self._loader.invalidate_cache()

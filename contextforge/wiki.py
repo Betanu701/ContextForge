@@ -27,6 +27,7 @@ _ENTITY_STOP_WORDS = {
     "January", "February", "March", "April", "May", "June", "July", "August",
     "September", "October", "November", "December", "Today", "Tomorrow", "Yesterday",
     "Morning", "Afternoon", "Evening", "Subject", "From", "To", "Cc", "Bcc",
+    "Source", "Date", "Day",
 }
 
 _DECISION_WORDS = {
@@ -38,6 +39,35 @@ _DECISION_WORDS = {
 _NEGATIVE_WORDS = {
     "not", "never", "no longer", "cancelled", "canceled", "declined", "rejected",
     "blocked", "unavailable", "cannot", "can't", "won't", "without",
+}
+
+_STATUS_WORDS = {
+    "approved": {"approved", "approval", "confirmed", "accepted", "granted"},
+    "blocked": {"blocked", "stalled", "waiting", "pending", "cannot", "can't"},
+    "cancelled": {"cancelled", "canceled", "called off", "scrapped"},
+    "deferred": {"deferred", "delayed", "postponed", "rescheduled", "moved"},
+    "rejected": {"rejected", "declined", "denied", "not granted"},
+    "superseded": {"changed", "superseded", "replaced", "no longer"},
+}
+
+_CONSTRAINT_WORDS = {
+    "constraint", "constrained", "gating", "gate", "blocked", "pending", "waiting",
+    "dependency", "dependencies", "requires", "required", "prerequisite", "before",
+    "until", "unless", "permission", "permissions", "approval", "hold", "holds",
+    "must", "cannot", "can't", "without",
+}
+
+_APPROVAL_EXCEPTION_WORDS = {
+    "approved", "approval", "authorized", "authorization", "granted", "not granted",
+    "denied", "declined", "exception", "exceptions", "disclosure", "external",
+    "circulate", "circulation", "distribution", "distributed", "send", "sent",
+    "share", "shared", "review", "permission", "permissions",
+}
+
+_CHANGE_WORDS = {
+    "changed", "shifted", "moved", "became", "converted", "transitioned",
+    "from", "to", "before", "after", "by", "latest", "prior", "earlier",
+    "remained", "still", "no longer", "superseded", "replaced", "follow-through",
 }
 
 
@@ -82,6 +112,7 @@ class WikiMemory:
             title=node.title,
             content=node.content,
             source_category=node.category,
+            metadata=node.metadata,
         )
 
     def compile_source(
@@ -90,13 +121,14 @@ class WikiMemory:
         title: str,
         content: str,
         source_category: str = "general",
+        metadata: Optional[dict] = None,
     ) -> WikiCompilationResult:
         """Compile one raw source into wiki pages and return touched paths."""
         result = WikiCompilationResult(source_path=source_path)
         source_page = self._upsert_page(
             path=f"wiki/sources/{self._slug(source_path)}",
             title=f"Source Summary: {title}",
-            content=self._source_summary(source_path, title, content, source_category),
+            content=self._source_summary(source_path, title, content, source_category, metadata),
             page_type="source",
         )
         self._record_touch(result, source_page)
@@ -126,9 +158,43 @@ class WikiMemory:
             self._record_touch(result, page)
             related_pages.append(page)
 
-        timeline_page = self._timeline_page(source_path, title, content, related_pages)
+        timeline_page = self._timeline_page(source_path, title, content, related_pages, metadata)
         if timeline_page:
             self._record_touch(result, timeline_page)
+
+        temporal_facts = self._temporal_facts(source_path, title, content, metadata)
+        if temporal_facts:
+            page = self._merge_fact_page(
+                path="wiki/facts/temporal-state",
+                title="Temporal State",
+                page_type="temporal-facts",
+                source_path=source_path,
+                facts=temporal_facts,
+                related=related_pages[:8],
+            )
+            self._record_touch(result, page)
+
+        for status, facts in self._status_facts(content).items():
+            page = self._merge_fact_page(
+                path=f"wiki/status/{self._slug(status)}",
+                title=f"Status: {status}",
+                page_type="status-register",
+                source_path=source_path,
+                facts=facts,
+                related=related_pages[:8],
+            )
+            self._record_touch(result, page)
+
+        for thread in self._extract_threads(content, title):
+            page = self._merge_fact_page(
+                path=f"wiki/threads/{self._slug(thread)}",
+                title=f"Thread: {thread}",
+                page_type="thread",
+                source_path=source_path,
+                facts=self._sentences_for_terms(content, thread.split(), limit=5),
+                related=related_pages[:8],
+            )
+            self._record_touch(result, page)
 
         decision_facts = self._decision_facts(content)
         if decision_facts:
@@ -150,6 +216,42 @@ class WikiMemory:
                 page_type="negative-facts",
                 source_path=source_path,
                 facts=negative_facts,
+                related=related_pages[:8],
+            )
+            self._record_touch(result, page)
+
+        constraint_facts = self._constraint_facts(content)
+        if constraint_facts:
+            page = self._merge_fact_page(
+                path="wiki/facts/constraints",
+                title="Constraints and Gating Items",
+                page_type="constraint-facts",
+                source_path=source_path,
+                facts=constraint_facts,
+                related=related_pages[:8],
+            )
+            self._record_touch(result, page)
+
+        approval_exception_facts = self._approval_exception_facts(content)
+        if approval_exception_facts:
+            page = self._merge_fact_page(
+                path="wiki/facts/approvals-and-exceptions",
+                title="Approvals and Exceptions",
+                page_type="approval-exception-facts",
+                source_path=source_path,
+                facts=approval_exception_facts,
+                related=related_pages[:8],
+            )
+            self._record_touch(result, page)
+
+        change_facts = self._change_facts(source_path, title, content, metadata)
+        if change_facts:
+            page = self._merge_fact_page(
+                path="wiki/facts/change-log",
+                title="Change Log",
+                page_type="change-facts",
+                source_path=source_path,
+                facts=change_facts,
                 related=related_pages[:8],
             )
             self._record_touch(result, page)
@@ -282,11 +384,18 @@ class WikiMemory:
         self._tree.add(path, title, content, category=WIKI_CATEGORY, metadata={"type": page_type})
         return path if existed else f"+{path}"
 
-    def _source_summary(self, source_path: str, title: str, content: str, source_category: str) -> str:
+    def _source_summary(
+        self,
+        source_path: str,
+        title: str,
+        content: str,
+        source_category: str,
+        metadata: Optional[dict] = None,
+    ) -> str:
         sentences = self._top_sentences(content, limit=8)
         keywords = self._extract_concepts(content, title)[:12]
         entities = self._extract_entities(content)[:12]
-        dates = self._extract_dates_and_days(source_path, title, content)
+        dates = self._extract_dates_and_days(source_path, title, content, metadata)
         parts = self._page_header(f"Source Summary: {title}", "source")
         parts.extend([
             "## Source",
@@ -311,8 +420,9 @@ class WikiMemory:
         title: str,
         content: str,
         related: list[str],
+        metadata: Optional[dict] = None,
     ) -> Optional[str]:
-        dates = self._extract_dates_and_days(source_path, title, content)
+        dates = self._extract_dates_and_days(source_path, title, content, metadata)
         if not dates:
             return None
         facts = self._top_sentences(content, limit=5)
@@ -445,9 +555,114 @@ class WikiMemory:
             if any(word in sentence.lower() for word in _NEGATIVE_WORDS)
         ][:12]
 
-    def _extract_dates_and_days(self, source_path: str, title: str, content: str) -> list[str]:
+    def _constraint_facts(self, content: str) -> list[str]:
+        return [
+            f"Constraint: {sentence}"
+            for sentence in self._sentences(content)
+            if any(word in sentence.lower() for word in _CONSTRAINT_WORDS)
+        ][:12]
+
+    def _approval_exception_facts(self, content: str) -> list[str]:
+        return [
+            f"Approval/Exception: {sentence}"
+            for sentence in self._sentences(content)
+            if any(word in sentence.lower() for word in _APPROVAL_EXCEPTION_WORDS)
+        ][:12]
+
+    def _change_facts(self, source_path: str, title: str, content: str, metadata: Optional[dict] = None) -> list[str]:
+        dates = self._extract_dates_and_days(source_path, title, content, metadata)
+        time_label = ", ".join(dates[:2]) if dates else "unspecified-time"
+        return [
+            f"Time: {time_label} | Change: {sentence}"
+            for sentence in self._sentences(content)
+            if any(word in sentence.lower() for word in _CHANGE_WORDS)
+        ][:12]
+
+    def _temporal_facts(self, source_path: str, title: str, content: str, metadata: Optional[dict] = None) -> list[str]:
+        dates = self._extract_dates_and_days(source_path, title, content, metadata)
+        status_by_sentence = self._status_by_sentence(content)
+        facts: list[str] = []
+        for sentence in self._sentences(content):
+            sentence_dates = self._extract_dates_and_days("", "", sentence) or dates[:2]
+            sentence_statuses = status_by_sentence.get(sentence, [])
+            if not sentence_dates and not sentence_statuses:
+                continue
+            time_label = ", ".join(sentence_dates) if sentence_dates else "unspecified-time"
+            status_label = ", ".join(sentence_statuses) if sentence_statuses else "observed"
+            facts.append(f"Time: {time_label} | Status: {status_label} | Fact: {sentence}")
+            if len(facts) >= 16:
+                break
+        return facts
+
+    def _status_facts(self, content: str) -> dict[str, list[str]]:
+        by_status: dict[str, list[str]] = {}
+        for sentence, statuses in self._status_by_sentence(content).items():
+            for status in statuses:
+                by_status.setdefault(status, []).append(f"Status: {status} | Fact: {sentence}")
+        return {status: facts[:12] for status, facts in by_status.items()}
+
+    def _status_by_sentence(self, content: str) -> dict[str, list[str]]:
+        by_sentence: dict[str, list[str]] = {}
+        for sentence in self._sentences(content):
+            lower = sentence.lower()
+            statuses = [
+                status for status, words in _STATUS_WORDS.items()
+                if any(word in lower for word in words)
+            ]
+            if statuses:
+                by_sentence[sentence] = statuses
+        return by_sentence
+
+    def _extract_threads(self, content: str, title: str) -> list[str]:
+        entities = self._extract_entities(content)
+        concepts = self._extract_concepts(content, title)
+        threads: list[str] = []
+        seen: set[str] = set()
+
+        for entity in entities[:6]:
+            if entity.lower() not in seen:
+                threads.append(entity)
+                seen.add(entity.lower())
+
+        for concept in concepts[:8]:
+            if concept in {"source", "date", "day"}:
+                continue
+            concept_title = concept.replace("_", " ").title()
+            if concept_title.lower() in seen:
+                continue
+            threads.append(concept_title)
+            seen.add(concept_title.lower())
+            if len(threads) >= 10:
+                break
+
+        return threads
+
+    def _extract_dates_and_days(
+        self,
+        source_path: str,
+        title: str,
+        content: str,
+        metadata: Optional[dict] = None,
+    ) -> list[str]:
         text = f"{source_path} {title} {content}"
         values: list[str] = []
+        if metadata:
+            source_date = str(metadata.get("source_date") or metadata.get("date") or "").strip()
+            if source_date and source_date not in values:
+                values.append(source_date)
+            for anchor in metadata.get("temporal_anchors", []) or []:
+                if not isinstance(anchor, dict):
+                    continue
+                kind = str(anchor.get("kind") or "").strip().lower()
+                unit = str(anchor.get("unit") or "").strip().lower()
+                value = anchor.get("value")
+                if kind in {"sequence", "ordinal"} and unit == "day" and value is not None:
+                    try:
+                        label = f"day-{int(value)}"
+                    except (TypeError, ValueError):
+                        continue
+                    if label not in values:
+                        values.append(label)
         for value in _DATE_RE.findall(text):
             if value not in values:
                 values.append(value)

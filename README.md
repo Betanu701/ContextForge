@@ -28,6 +28,8 @@ response = await forge.chat("What happened with the Europe rollout?", use_wiki=T
 
 The wiki memory design is inspired by source-backed LLM wiki patterns popularized in public LLM-memory discussions, including Andrej Karpathy's notes on LLM wikis. The ContextForge implementation is original: it compiles local sources into attributed entity, concept, timeline, decision, and negative-fact pages, and keeps raw sources as the authority for retrieval.
 
+For a technical explanation of the implementation, diagrams, and reorganization latency, see [docs/wiki_memory.md](docs/wiki_memory.md).
+
 ## What ContextForge Provides
 
 - **Hierarchical knowledge storage** backed by SQLite.
