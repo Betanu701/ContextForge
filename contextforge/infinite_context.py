@@ -129,9 +129,19 @@ class InfiniteContext:
         """
         budget = max_knowledge_tokens or self._dynamic_budget()
 
-        # 1–3: Load a working set via the tree
-        keywords = extract_keywords(message, top_k=15)
-        working_set = self.tree.get_working_set(keywords, max_tokens=budget)
+        # 1–3: Load a temporal, quantized semantic working set via the loader
+        original_loader_budget = self.loader.max_context_tokens
+        self.loader.max_context_tokens = budget
+        try:
+            loaded = self.loader.load(message, conversation_context=self._compacted_history)
+        finally:
+            self.loader.max_context_tokens = original_loader_budget
+        working_set = WorkingSet(
+            content=loaded.system_prefix,
+            node_paths=loaded.branch_paths,
+            total_tokens=loaded.total_tokens,
+            node_ids=[],
+        )
         self._track_branches(working_set)
 
         # 4: Build messages

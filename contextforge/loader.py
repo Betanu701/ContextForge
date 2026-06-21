@@ -6,6 +6,12 @@ import re
 from dataclasses import dataclass, field
 from typing import Optional
 
+from .hyperdense import (
+    TemporalMemoryRecord,
+    compact_timeline,
+    deduplicate_latest_state,
+    temporal_sort,
+)
 from .index import MemoryIndex, SearchResult
 from .tree import KnowledgeTree
 from .utils import estimate_tokens, extract_keywords
@@ -134,6 +140,7 @@ class ProactiveLoader:
             top_k=20,
             category=category_hint,
         )
+        results = self._temporal_chrono_pass(results)
 
         if not results:
             return LoadedContext(
@@ -164,6 +171,7 @@ class ProactiveLoader:
         """
         combined = f"{query} {conversation_context}".strip()
         results = self._index.search(query=combined, top_k=30)
+        results = self._temporal_chrono_pass(results)
 
         if not results:
             return []
@@ -175,7 +183,7 @@ class ProactiveLoader:
 
         contexts = []
         for category, cat_results in by_category.items():
-            selected = self._select_nodes(cat_results)
+            selected = self._select_nodes(self._temporal_chrono_pass(cat_results))
             if selected:
                 ctx = self._assemble(selected, label=category)
                 contexts.append(ctx)
@@ -200,6 +208,7 @@ class ProactiveLoader:
 
         wiki_results = self._index.search(combined, top_k=20, category=WIKI_CATEGORY)
         wiki_results = self._prioritize_wiki_results(combined, wiki_results)
+        wiki_results = self._temporal_chrono_pass(wiki_results)
         best_loaded = LoadedContext(system_prefix="", sources=[], total_tokens=0, branch_paths=[])
         ceiling = max(1, self._max_tokens)
 
@@ -455,29 +464,33 @@ class ProactiveLoader:
         return False
 
     def _select_nodes(self, results: list[SearchResult]) -> list[SearchResult]:
-        """Select nodes within the token budget, boosting cached branches."""
-        budget = self._max_tokens
-        selected: list[SearchResult] = []
+        """Select a chronological timeline within the hard token budget."""
+        if not results:
+            return []
 
         # Boost cached entries
-        scored = []
+        candidates: list[SearchResult] = []
         for r in results:
-            boost = 1.0
             if r.path in self._cache:
-                boost = 1.5
                 self._cache[r.path].hits += 1
-            scored.append((r, r.score * boost))
+            candidates.append(r)
 
-        scored.sort(key=lambda x: -x[1])
+        by_id = {r.node_id: r for r in candidates}
+        records: list[TemporalMemoryRecord] = []
 
-        for r, _ in scored:
+        for r in candidates:
             node = self._tree.get(r.path)
             if not node:
                 continue
-            if budget - node.token_estimate < 0 and selected:
-                continue
-            budget -= node.token_estimate
-            selected.append(r)
+            records.append(
+                TemporalMemoryRecord(
+                    key=r.node_id,
+                    token_estimate=node.token_estimate or estimate_tokens(node.content),
+                    timestamp=r.timestamp,
+                    turn_sequence=r.turn_sequence,
+                    state_anchors=r.state_anchors,
+                )
+            )
 
             # Cache this branch
             if r.path not in self._cache:
@@ -487,7 +500,34 @@ class ProactiveLoader:
                     tokens=node.token_estimate,
                 )
 
-        return selected
+        compacted = compact_timeline(
+            records,
+            max(1, self._max_tokens),
+            foundation_states=self._index.config.foundation_states,
+            recent_states=self._index.config.recent_states,
+        )
+        return [by_id[int(record.key)] for record in compacted if int(record.key) in by_id]
+
+    def _temporal_chrono_pass(self, results: list[SearchResult]) -> list[SearchResult]:
+        """Sort semantic candidates chronologically and remove stale state updates."""
+        if not results:
+            return []
+        records = [
+            TemporalMemoryRecord(
+                key=result.node_id,
+                token_estimate=0,
+                timestamp=result.timestamp,
+                turn_sequence=result.turn_sequence,
+                state_anchors=result.state_anchors,
+            )
+            for result in results
+        ]
+        if self._index.config.enable_state_deduplication:
+            records = deduplicate_latest_state(records)
+        else:
+            records = temporal_sort(records)
+        by_id = {result.node_id: result for result in results}
+        return [by_id[int(record.key)] for record in records if int(record.key) in by_id]
 
     def _select_results_with_budget(
         self,
