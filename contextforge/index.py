@@ -154,6 +154,7 @@ class MemoryIndex:
 
     def remove_document(self, node_id: int) -> None:
         """Remove a document from the index."""
+        existed = node_id in self._documents or node_id in self._node_terms
         terms = self._node_terms.pop(node_id, set())
         for term in terms:
             self._index[term] = [e for e in self._index[term] if e.node_id != node_id]
@@ -161,7 +162,8 @@ class MemoryIndex:
                 del self._index[term]
         self._doc_lengths.pop(node_id, None)
         self._documents.pop(node_id, None)
-        self._num_docs = max(0, self._num_docs - 1)
+        if existed:
+            self._num_docs = max(0, self._num_docs - 1)
         if self._num_docs > 0:
             self._avg_dl = sum(self._doc_lengths.values()) / self._num_docs
         else:
@@ -184,6 +186,8 @@ class MemoryIndex:
             return []
 
         scores, matched, entry_info = self._keyword_scores(terms, category)
+        if terms and not scores:
+            return []
 
         semantic_limit = max(top_k, top_k * self.config.search_multiplier)
         semantic_hits = self._semantic.search(query, top_k=semantic_limit)

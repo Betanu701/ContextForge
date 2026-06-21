@@ -275,12 +275,13 @@ class InfiniteContext:
         active = self._current_active_tokens()
         disk = self._total_disk_tokens()
         total = disk if disk > 0 else 1
+        compression_ratio = min(1.0, active / total)
 
         return InfiniteContextStats(
             active_tokens=active,
             disk_tokens=disk,
             permanent_tokens=self._permanent_tokens,
-            compression_ratio=active / total,
+            compression_ratio=compression_ratio,
             recycles=self._recycles,
             peak_active=self._peak_active,
         )

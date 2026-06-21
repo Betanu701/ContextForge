@@ -208,7 +208,6 @@ class ProactiveLoader:
 
         wiki_results = self._index.search(combined, top_k=20, category=WIKI_CATEGORY)
         wiki_results = self._prioritize_wiki_results(combined, wiki_results)
-        wiki_results = self._temporal_chrono_pass(wiki_results)
         best_loaded = LoadedContext(system_prefix="", sources=[], total_tokens=0, branch_paths=[])
         ceiling = max(1, self._max_tokens)
 
@@ -393,7 +392,7 @@ class ProactiveLoader:
                 if path.startswith("wiki/timeline/") and dates:
                     score += 20.0
                 if path.startswith("wiki/sources/") and dates:
-                    score += 10.0
+                    score += 35.0
                 if path.startswith("wiki/status/") and statuses:
                     score += 2.0
                 if path.startswith("wiki/threads/") and (entities or terms):
@@ -522,7 +521,9 @@ class ProactiveLoader:
             )
             for result in results
         ]
-        if self._index.config.enable_state_deduplication:
+        if self._index.config.enable_state_deduplication and not all(
+            result.category == WIKI_CATEGORY for result in results
+        ):
             records = deduplicate_latest_state(records)
         else:
             records = temporal_sort(records)
