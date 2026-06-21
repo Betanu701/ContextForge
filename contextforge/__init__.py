@@ -16,6 +16,7 @@ __version__ = "0.1.0"
 
 from .infinite_context import InfiniteContext, InfiniteContextStats
 from .layer import ContextForge
+from .hyperdense import HyperDenseMemoryConfig, QuantizationBounds, SQ8VectorIndex
 from .providers import LLMProvider, get_provider
 from .tree import WorkingSet
 from .wiki import WikiCompilationResult, WikiIssue, WikiMemory
@@ -24,7 +25,10 @@ __all__ = [
     "ContextForge",
     "InfiniteContext",
     "InfiniteContextStats",
+    "HyperDenseMemoryConfig",
     "LLMProvider",
+    "QuantizationBounds",
+    "SQ8VectorIndex",
     "WorkingSet",
     "WikiCompilationResult",
     "WikiIssue",

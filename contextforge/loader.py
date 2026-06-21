@@ -6,6 +6,12 @@ import re
 from dataclasses import dataclass, field
 from typing import Optional
 
+from .hyperdense import (
+    TemporalMemoryRecord,
+    compact_timeline,
+    deduplicate_latest_state,
+    temporal_sort,
+)
 from .index import MemoryIndex, SearchResult
 from .tree import KnowledgeTree
 from .utils import estimate_tokens, extract_keywords
@@ -13,6 +19,7 @@ from .wiki import WIKI_CATEGORY, WikiMemory
 
 
 _WIKI_AUTO_BUDGET_RATIOS = (0.50, 0.75, 1.0)
+_DATED_SOURCE_REF_BOOST = 35.0
 _DATE_RE = re.compile(r"\b20\d{2}-\d{2}-\d{2}\b")
 _DAY_RE = re.compile(r"\bday[-_\s]*(\d{1,4})\b", re.IGNORECASE)
 _ENTITY_RE = re.compile(r"\b[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,2}\b")
@@ -134,6 +141,7 @@ class ProactiveLoader:
             top_k=20,
             category=category_hint,
         )
+        results = self._temporal_chrono_pass(results)
 
         if not results:
             return LoadedContext(
@@ -164,6 +172,7 @@ class ProactiveLoader:
         """
         combined = f"{query} {conversation_context}".strip()
         results = self._index.search(query=combined, top_k=30)
+        results = self._temporal_chrono_pass(results)
 
         if not results:
             return []
@@ -175,7 +184,7 @@ class ProactiveLoader:
 
         contexts = []
         for category, cat_results in by_category.items():
-            selected = self._select_nodes(cat_results)
+            selected = self._select_nodes(self._temporal_chrono_pass(cat_results))
             if selected:
                 ctx = self._assemble(selected, label=category)
                 contexts.append(ctx)
@@ -384,7 +393,7 @@ class ProactiveLoader:
                 if path.startswith("wiki/timeline/") and dates:
                     score += 20.0
                 if path.startswith("wiki/sources/") and dates:
-                    score += 10.0
+                    score += _DATED_SOURCE_REF_BOOST
                 if path.startswith("wiki/status/") and statuses:
                     score += 2.0
                 if path.startswith("wiki/threads/") and (entities or terms):
@@ -455,29 +464,33 @@ class ProactiveLoader:
         return False
 
     def _select_nodes(self, results: list[SearchResult]) -> list[SearchResult]:
-        """Select nodes within the token budget, boosting cached branches."""
-        budget = self._max_tokens
-        selected: list[SearchResult] = []
+        """Select a chronological timeline within the hard token budget."""
+        if not results:
+            return []
 
         # Boost cached entries
-        scored = []
+        candidates: list[SearchResult] = []
         for r in results:
-            boost = 1.0
             if r.path in self._cache:
-                boost = 1.5
                 self._cache[r.path].hits += 1
-            scored.append((r, r.score * boost))
+            candidates.append(r)
 
-        scored.sort(key=lambda x: -x[1])
+        by_id = {r.node_id: r for r in candidates}
+        records: list[TemporalMemoryRecord] = []
 
-        for r, _ in scored:
+        for r in candidates:
             node = self._tree.get(r.path)
             if not node:
                 continue
-            if budget - node.token_estimate < 0 and selected:
-                continue
-            budget -= node.token_estimate
-            selected.append(r)
+            records.append(
+                TemporalMemoryRecord(
+                    key=r.node_id,
+                    token_estimate=node.token_estimate or estimate_tokens(node.content),
+                    timestamp=r.timestamp,
+                    turn_sequence=r.turn_sequence,
+                    state_anchors=r.state_anchors,
+                )
+            )
 
             # Cache this branch
             if r.path not in self._cache:
@@ -487,7 +500,36 @@ class ProactiveLoader:
                     tokens=node.token_estimate,
                 )
 
-        return selected
+        compacted = compact_timeline(
+            records,
+            max(1, self._max_tokens),
+            foundation_states=self._index.config.foundation_states,
+            recent_states=self._index.config.recent_states,
+        )
+        return [by_id[int(record.key)] for record in compacted if int(record.key) in by_id]
+
+    def _temporal_chrono_pass(self, results: list[SearchResult]) -> list[SearchResult]:
+        """Sort semantic candidates chronologically and remove stale state updates."""
+        if not results:
+            return []
+        records = [
+            TemporalMemoryRecord(
+                key=result.node_id,
+                token_estimate=0,
+                timestamp=result.timestamp,
+                turn_sequence=result.turn_sequence,
+                state_anchors=result.state_anchors,
+            )
+            for result in results
+        ]
+        if self._index.config.enable_state_deduplication and not all(
+            result.category == WIKI_CATEGORY for result in results
+        ):
+            records = deduplicate_latest_state(records)
+        else:
+            records = temporal_sort(records)
+        by_id = {result.node_id: result for result in results}
+        return [by_id[int(record.key)] for record in records if int(record.key) in by_id]
 
     def _select_results_with_budget(
         self,

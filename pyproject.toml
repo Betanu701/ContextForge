@@ -28,6 +28,7 @@ classifiers = [
 
 dependencies = [
     "httpx>=0.25",
+    "numpy>=1.26.4",
 ]
 
 [project.optional-dependencies]

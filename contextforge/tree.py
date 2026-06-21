@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import os
+import json
 import sqlite3
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -122,8 +124,6 @@ class KnowledgeTree:
 
         If the path already exists, updates the content.
         """
-        import json
-
         parent_id = None
         if parent_path:
             row = self.conn.execute(
@@ -132,7 +132,10 @@ class KnowledgeTree:
             if row:
                 parent_id = row[0]
 
-        meta_json = json.dumps(metadata or {})
+        meta = dict(metadata or {})
+        meta.setdefault("timestamp", time.time())
+        meta.setdefault("turn_sequence", self._next_turn_sequence())
+        meta_json = json.dumps(meta)
         tok_est = estimate_tokens(content)
 
         existing = self.conn.execute(
@@ -178,13 +181,11 @@ class KnowledgeTree:
             category=category,
             parent_id=parent_id,
             token_estimate=tok_est,
-            metadata=metadata or {},
+            metadata=meta,
         )
 
     def get(self, path: str) -> Optional[KnowledgeNode]:
         """Retrieve a single node by path."""
-        import json
-
         row = self.conn.execute(
             "SELECT id, path, title, content, category, parent_id, token_estimate, metadata_json "
             "FROM knowledge_nodes WHERE path = ?",
@@ -233,8 +234,6 @@ class KnowledgeTree:
         parent = self.get(path)
         if not parent:
             return []
-        import json
-
         rows = self.conn.execute(
             "SELECT id, path, title, content, category, parent_id, token_estimate, metadata_json "
             "FROM knowledge_nodes WHERE parent_id = ? ORDER BY path",
@@ -258,8 +257,6 @@ class KnowledgeTree:
         queue = [root.id]
         while queue:
             pid = queue.pop(0)
-            import json
-
             rows = self.conn.execute(
                 "SELECT id, path, title, content, category, parent_id, token_estimate, metadata_json "
                 "FROM knowledge_nodes WHERE parent_id = ? ORDER BY path",
@@ -315,6 +312,21 @@ class KnowledgeTree:
     def total_nodes(self) -> int:
         row = self.conn.execute("SELECT COUNT(*) FROM knowledge_nodes").fetchone()
         return row[0] if row else 0
+
+    def _next_turn_sequence(self) -> int:
+        """Return the next monotonically increasing knowledge turn sequence."""
+        rows = self.conn.execute("SELECT metadata_json FROM knowledge_nodes").fetchall()
+        max_sequence = -1
+        for row in rows:
+            try:
+                meta = json.loads(row[0] or "{}")
+            except json.JSONDecodeError:
+                continue
+            try:
+                max_sequence = max(max_sequence, int(meta.get("turn_sequence", -1)))
+            except (TypeError, ValueError):
+                continue
+        return max_sequence + 1
 
     # -- bulk ingestion ---------------------------------------------------
 

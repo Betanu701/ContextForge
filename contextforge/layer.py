@@ -352,6 +352,7 @@ class ContextForge:
             "knowledge_nodes": self._tree.total_nodes(),
             "index_terms": self._index.num_terms,
             "index_docs": self._index.num_docs,
+            "quantized_index_bytes": self._index.quantized_bytes,
             "sessions": len(self._sessions.list_sessions()),
             "cache": self._loader.cache_stats(),
             "infinite_context": {
