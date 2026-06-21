@@ -16,6 +16,7 @@ from .utils import estimate_tokens
 DistanceMetric = Literal["cosine", "euclidean"]
 
 _TOKEN_RE = re.compile(r"[A-Za-z0-9_./:-]+")
+_MAX_TOKEN_WEIGHT_LENGTH = 24
 _STATE_PATTERNS = (
     re.compile(r"\b(?:file|path|module)\s*[:=]\s*([A-Za-z0-9_./\\-]+)", re.IGNORECASE),
     re.compile(r"\b([A-Za-z_][A-Za-z0-9_]*)\s*(?:=|:=|->|became|changed to|updated to)", re.IGNORECASE),
@@ -96,7 +97,7 @@ def text_to_embedding(text: str, dimensions: int) -> np.ndarray:
         digest = hashlib.blake2b(token.encode("utf-8"), digest_size=8).digest()
         bucket = int.from_bytes(digest[:4], "little") % dimensions
         sign = 1.0 if digest[4] & 1 else -1.0
-        weight = 1.0 + min(len(token), 24) / 24.0
+        weight = 1.0 + min(len(token), _MAX_TOKEN_WEIGHT_LENGTH) / _MAX_TOKEN_WEIGHT_LENGTH
         vector[bucket] += sign * weight
 
     norm = float(np.linalg.norm(vector))

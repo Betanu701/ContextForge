@@ -15,6 +15,8 @@ from .hyperdense import (
 )
 from .utils import extract_keywords
 
+_SEMANTIC_SCORE_WEIGHT = 10.0
+
 
 @dataclass
 class IndexEntry:
@@ -202,7 +204,7 @@ class MemoryIndex:
                 continue
             if category and doc[2] != category:
                 continue
-            combined[node_id] += semantic_score * 10.0
+            combined[node_id] += semantic_score * _SEMANTIC_SCORE_WEIGHT
 
         for node_id, keyword_score in scores.items():
             combined[node_id] += keyword_score

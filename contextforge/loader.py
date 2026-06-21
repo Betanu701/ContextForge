@@ -19,6 +19,7 @@ from .wiki import WIKI_CATEGORY, WikiMemory
 
 
 _WIKI_AUTO_BUDGET_RATIOS = (0.50, 0.75, 1.0)
+_DATED_SOURCE_REF_BOOST = 35.0
 _DATE_RE = re.compile(r"\b20\d{2}-\d{2}-\d{2}\b")
 _DAY_RE = re.compile(r"\bday[-_\s]*(\d{1,4})\b", re.IGNORECASE)
 _ENTITY_RE = re.compile(r"\b[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,2}\b")
@@ -392,7 +393,7 @@ class ProactiveLoader:
                 if path.startswith("wiki/timeline/") and dates:
                     score += 20.0
                 if path.startswith("wiki/sources/") and dates:
-                    score += 35.0
+                    score += _DATED_SOURCE_REF_BOOST
                 if path.startswith("wiki/status/") and statuses:
                     score += 2.0
                 if path.startswith("wiki/threads/") and (entities or terms):
