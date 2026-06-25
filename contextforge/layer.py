@@ -49,7 +49,12 @@ class ContextForge:
         knowledge_dir: Optional[str] = None,
         db_path: str = "./contextforge.db",
         max_context_tokens: int = 4096,
-        system_prompt: str = "You are a helpful assistant with access to a knowledge base.",
+        system_prompt: str = (
+            "You are a helpful assistant with access to a knowledge base. "
+            "Answer using ONLY the information in the provided knowledge. "
+            "If the answer is not contained in the knowledge, say you do not have "
+            "that information rather than guessing or using outside knowledge."
+        ),
         llm_provider: Optional[LLMProvider] = None,
     ) -> None:
         # -- LLM provider --
