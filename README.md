@@ -90,6 +90,8 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+The quickstart uses `chat()`, which keeps ordinary session continuity by replaying the active conversation history along with retrieved knowledge. That is the most familiar chatbot path, but it is not the flat-forever context-recycling path. For workloads where prompt size must stay bounded across many turns, use the infinite-context engine via `forge.infinite.query(...)` and permanent context helpers.
+
 ## Local LLM Setup
 
 ContextForge's `local` provider talks to any OpenAI-compatible `/v1/chat/completions` endpoint using `httpx`; no vendor SDK is required.
@@ -174,16 +176,19 @@ The default workflow is:
 4. Send the assembled system prompt, session history, and user message to the configured LLM.
 5. Store the turn in the session database for later recall.
 
+This default `chat()` workflow preserves the full active transcript, so its prompt grows like a normal chatbot until the session is reset or compacted externally. The flat-forever property belongs to the infinite-context query path, which loads a bounded working set, carries compacted history, and recycles branches after each turn.
+
 ## API Reference
 
 ### `ContextForge`
 
 | Method | Description |
 |--------|-------------|
-| `await chat(message)` | Send a message and receive a complete response. |
+| `await chat(message)` | Send a message and receive a complete response using normal session-history replay. |
 | `await stream(message)` | Stream response tokens incrementally. |
 | `await analyze(query)` | Run multi-pass analysis across matching knowledge domains. |
 | `await set_permanent_context(text)` | Store permanent context for the infinite-context engine. |
+| `await infinite.query(message, provider)` | Query through the bounded context-recycling engine. |
 | `await ingest(path)` | Ingest a directory of files. |
 | `await ingest_text(text, ...)` | Ingest a single text document. |
 | `await ingest_wiki_text(text, ...)` | Ingest text and compile it into source-backed wiki memory. |

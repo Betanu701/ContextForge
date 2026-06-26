@@ -24,11 +24,11 @@ async def main():
         category="product",
     )
 
-    # Chat — knowledge is loaded automatically
+    # Chat loads knowledge automatically and preserves normal session history.
     response = await layer.chat("What is ContextForge?")
     print(response)
 
-    # Follow-up — context is preserved
+    # Follow-up — the previous user/assistant turns are replayed like a normal chatbot.
     response = await layer.chat("How does the lookup work?")
     print(response)
 
