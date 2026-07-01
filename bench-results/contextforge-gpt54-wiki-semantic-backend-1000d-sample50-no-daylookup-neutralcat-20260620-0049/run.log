@@ -1,0 +1,96 @@
+[bench preflight] OK
+  [bench] [ 1/ 5] backend-eng-saas    30d  + 30d ingest=  6.5s · q=52 (new=52 hist=0/0) query=124.4s · score=93.9%
+  [bench] [ 2/ 5] backend-eng-saas    90d  + 60d ingest= 52.3s · q=150 (new=100 hist=50/52) query=637.0s · score=91.9%
+  [bench] [ 3/ 5] backend-eng-saas    6mo  + 90d ingest=180.0s · q=213 (new=163 hist=50/152) query=1214.1s · score=91.3%
+  [bench] [ 4/ 5] backend-eng-saas     1y  +185d ingest=816.0s · q=377 (new=327 hist=50/315) query=3441.3s · score=96.6%
+  [bench] [ 5/ 5] backend-eng-saas   full  +635d ingest=7351.5s · q=1187 (new=1137 hist=50/642) query=20958.0s · score=93.5%
+[bench] JSON results → /home/derek/repo/ContextForge/bench-results/contextforge-gpt54-wiki-semantic-backend-1000d-sample50-no-daylookup-neutralcat-20260620-0049/result.json
+[bench] Heatmap PNG → /home/derek/repo/ContextForge/bench-results/contextforge-gpt54-wiki-semantic-backend-1000d-sample50-no-daylookup-neutralcat-20260620-0049/heatmap.png
+Recall Bench Report — ContextForge Memory System
+Timestamp: 2026-06-20T04:49:37.415Z
+Duration:  9h 39m 42s
+Judge model:      benchmarks/recall_bench_adapter/foundry_gpt54_mini_judge.mjs (grounded, ±1d memory window)
+Appellate judge:  benchmarks/recall_bench_adapter/foundry_gpt54_judge.mjs · 147 appellate reviews
+Q&A pairs:        1817 unique · 1979 total evaluations · sample=50/checkpoint
+Group support:    off (group/boundary categories skipped)
+Ranges: 30d, 90d, 6mo, 1y, full
+Personas: 1
+
+───────────────────────────────────────────────────────────
+Persona: backend-eng-saas
+───────────────────────────────────────────────────────────
+  [30d] Days: 30 | Questions: 52 | Score: 5.63/6.0 (93.9%) | Hallucination: 3.8%
+    factual-recall               5.56/6.0 (92.7%) [n=16]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=2]
+    decision-tracking            6.00/6.0 (100.0%) [n=7]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=12]
+  [90d] Days: 90 | Questions: 150 | Score: 5.51/6.0 (91.9%) | Hallucination: 8.0%
+    factual-recall               5.87/6.0 (97.9%) [n=47]
+    temporal-reasoning           3.20/6.0 (53.3%) [n=5]
+    decision-tracking            5.50/6.0 (91.7%) [n=26]
+    contradiction-resolution     5.33/6.0 (88.9%) [n=9]
+    cross-reference              4.60/6.0 (76.7%) [n=10]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=12]
+    synthesis                    5.90/6.0 (98.3%) [n=10]
+    negative-recall              5.39/6.0 (89.8%) [n=31]
+  [6mo] Days: 180 | Questions: 213 | Score: 5.48/6.0 (91.3%) | Hallucination: 9.9%
+    factual-recall               5.72/6.0 (95.4%) [n=58]
+    temporal-reasoning           4.75/6.0 (79.2%) [n=8]
+    decision-tracking            5.58/6.0 (93.0%) [n=50]
+    contradiction-resolution     5.40/6.0 (90.0%) [n=15]
+    cross-reference              5.08/6.0 (84.7%) [n=12]
+    recency-bias-resistance      5.85/6.0 (97.4%) [n=13]
+    synthesis                    5.33/6.0 (88.9%) [n=18]
+    negative-recall              5.23/6.0 (87.2%) [n=39]
+  [1y] Days: 365 | Questions: 377 | Score: 5.79/6.0 (96.6%) | Hallucination: 2.9%
+    factual-recall               5.86/6.0 (97.6%) [n=125]
+    temporal-reasoning           3.75/6.0 (62.5%) [n=4]
+    decision-tracking            5.75/6.0 (95.8%) [n=92]
+    contradiction-resolution     5.85/6.0 (97.6%) [n=41]
+    cross-reference              5.71/6.0 (95.1%) [n=24]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=9]
+    synthesis                    5.70/6.0 (94.9%) [n=23]
+    negative-recall              5.86/6.0 (97.7%) [n=59]
+  [full] Days: 1000 | Questions: 1187 | Score: 5.61/6.0 (93.5%) | Hallucination: 5.1%
+    factual-recall               5.72/6.0 (95.4%) [n=345]
+    temporal-reasoning           3.67/6.0 (61.1%) [n=18]
+    decision-tracking            5.67/6.0 (94.5%) [n=293]
+    contradiction-resolution     5.74/6.0 (95.7%) [n=104]
+    cross-reference              5.69/6.0 (94.8%) [n=100]
+    recency-bias-resistance      5.70/6.0 (95.0%) [n=30]
+    synthesis                    5.34/6.0 (89.1%) [n=102]
+    negative-recall              5.50/6.0 (91.7%) [n=195]
+
+Heatmap (category × time range):
+                                   30d     90d     6mo      1y    full
+                              ────────────────────────────────────────
+factual-recall                  5.6     5.9     5.7     5.9     5.7   
+temporal-reasoning              0.0     3.2     4.8     3.8     3.7   
+decision-tracking               6.0     5.5     5.6     5.8     5.7   
+contradiction-resolution        6.0     5.3     5.4     5.9     5.7   
+cross-reference                 6.0     4.6     5.1     5.7     5.7   
+recency-bias-resistance         6.0     6.0     5.8     6.0     5.7   
+synthesis                       6.0     5.9     5.3     5.7     5.3   
+negative-recall                 6.0     5.4     5.2     5.9     5.5   
+group-session-attribution        --      --      --      --      --   
+information-boundary             --      --      --      --      --   
+
+═══════════════════════════════════════════════════════════
+AGGREGATE HEATMAP (category × time range)
+═══════════════════════════════════════════════════════════
+                                   30d     90d     6mo      1y    full
+                              ────────────────────────────────────────
+factual-recall                  5.6     5.9     5.7     5.9     5.7   
+temporal-reasoning              0.0     3.2     4.8     3.8     3.7   
+decision-tracking               6.0     5.5     5.6     5.8     5.7   
+contradiction-resolution        6.0     5.3     5.4     5.9     5.7   
+cross-reference                 6.0     4.6     5.1     5.7     5.7   
+recency-bias-resistance         6.0     6.0     5.8     6.0     5.7   
+synthesis                       6.0     5.9     5.3     5.7     5.3   
+negative-recall                 6.0     5.4     5.2     5.9     5.5   
+group-session-attribution        --      --      --      --      --   
+information-boundary             --      --      --      --      --   

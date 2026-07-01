@@ -1,0 +1,1 @@
+{"type":"header","timestamp":"2026-06-20T15:13:11.261Z","adapterName":"grpc://127.0.0.1:50061","ranges":[{"label":"1000d","days":1000}],"sample":50,"judgeMemoryWindow":1,"groupsEnabled":false,"judgeModel":"benchmarks/recall_bench_adapter/foundry_gpt54_mini_judge.mjs","appellateJudgeModel":"benchmarks/recall_bench_adapter/foundry_gpt54_judge.mjs"}

@@ -1,0 +1,1474 @@
+[bench preflight] OK
+  [bench] [ 1/143] backend-eng-saas     7d  +  7d ingest=  1.0s · q=12 (new=12 hist=0/0) query= 30.3s · score=91.7%
+  [bench] [ 2/143] backend-eng-saas    14d  +  7d ingest=  0.5s · q=24 (new=12 hist=12/12) query= 63.3s · score=86.8%
+  [bench] [ 3/143] backend-eng-saas    21d  +  7d ingest=  1.5s · q=38 (new=14 hist=24/24) query=108.7s · score=91.7%
+  [bench] [ 4/143] backend-eng-saas    28d  +  7d ingest=  2.1s · q=50 (new=12 hist=38/38) query=140.0s · score=93.7%
+  [bench] [ 5/143] backend-eng-saas    35d  +  7d ingest=  3.2s · q=62 (new=12 hist=50/50) query=193.0s · score=94.6%
+  [bench] [ 6/143] backend-eng-saas    42d  +  7d ingest=  3.6s · q=62 (new=12 hist=50/62) query=212.8s · score=88.4%
+  [bench] [ 7/143] backend-eng-saas    49d  +  7d ingest=  4.7s · q=62 (new=12 hist=50/74) query=208.1s · score=94.6%
+  [bench] [ 8/143] backend-eng-saas    56d  +  7d ingest=  5.6s · q=61 (new=11 hist=50/86) query=225.7s · score=92.1%
+  [bench] [ 9/143] backend-eng-saas    63d  +  7d ingest=  6.8s · q=63 (new=13 hist=50/97) query=226.6s · score=92.1%
+  [bench] [10/143] backend-eng-saas    70d  +  7d ingest=  7.3s · q=62 (new=12 hist=50/110) query=245.8s · score=87.1%
+  [bench] [11/143] backend-eng-saas    77d  +  7d ingest=  7.9s · q=63 (new=13 hist=50/122) query=232.1s · score=92.9%
+  [bench] [12/143] backend-eng-saas    84d  +  7d ingest=  8.6s · q=62 (new=12 hist=50/135) query=237.0s · score=92.2%
+  [bench] [13/143] backend-eng-saas    91d  +  7d ingest=  9.6s · q=62 (new=12 hist=50/147) query=259.9s · score=90.3%
+  [bench] [14/143] backend-eng-saas    98d  +  7d ingest=  9.6s · q=63 (new=13 hist=50/159) query=268.8s · score=91.3%
+  [bench] [15/143] backend-eng-saas   105d  +  7d ingest= 10.6s · q=61 (new=11 hist=50/172) query=262.0s · score=90.4%
+  [bench] [16/143] backend-eng-saas   112d  +  7d ingest= 11.4s · q=62 (new=12 hist=50/183) query=285.1s · score=86.8%
+  [bench] [17/143] backend-eng-saas   119d  +  7d ingest= 12.1s · q=63 (new=13 hist=50/195) query=287.6s · score=92.1%
+  [bench] [18/143] backend-eng-saas   126d  +  7d ingest= 12.9s · q=62 (new=12 hist=50/208) query=288.8s · score=94.6%
+  [bench] [19/143] backend-eng-saas   133d  +  7d ingest= 13.6s · q=62 (new=12 hist=50/220) query=300.5s · score=91.1%
+  [bench] [20/143] backend-eng-saas   140d  +  7d ingest= 14.1s · q=62 (new=12 hist=50/232) query=315.0s · score=93.3%
+  [bench] [21/143] backend-eng-saas   147d  +  7d ingest= 14.9s · q=62 (new=12 hist=50/244) query=322.3s · score=84.9%
+  [bench] [22/143] backend-eng-saas   154d  +  7d ingest= 15.5s · q=64 (new=14 hist=50/256) query=344.9s · score=84.9%
+  [bench] [23/143] backend-eng-saas   161d  +  7d ingest= 16.1s · q=62 (new=12 hist=50/270) query=330.5s · score=86.6%
+  [bench] [24/143] backend-eng-saas   168d  +  7d ingest= 17.7s · q=62 (new=12 hist=50/282) query=335.7s · score=91.9%
+  [bench] [25/143] backend-eng-saas   175d  +  7d ingest= 17.5s · q=62 (new=12 hist=50/294) query=329.6s · score=94.6%
+  [bench] [26/143] backend-eng-saas   182d  +  7d ingest= 17.8s · q=64 (new=14 hist=50/306) query=334.2s · score=94.3%
+  [bench] [27/143] backend-eng-saas   189d  +  7d ingest= 18.3s · q=62 (new=12 hist=50/320) query=337.1s · score=91.7%
+  [bench] [28/143] backend-eng-saas   196d  +  7d ingest= 19.3s · q=62 (new=12 hist=50/332) query=345.6s · score=89.5%
+  [bench] [29/143] backend-eng-saas   203d  +  7d ingest= 20.2s · q=62 (new=12 hist=50/344) query=362.5s · score=89.8%
+  [bench] [30/143] backend-eng-saas   210d  +  7d ingest= 20.8s · q=62 (new=12 hist=50/356) query=357.1s · score=96.2%
+  [bench] [31/143] backend-eng-saas   217d  +  7d ingest= 21.7s · q=62 (new=12 hist=50/368) query=365.0s · score=91.9%
+  [bench] [32/143] backend-eng-saas   224d  +  7d ingest= 22.6s · q=62 (new=12 hist=50/380) query=375.0s · score=94.9%
+  [bench] [33/143] backend-eng-saas   231d  +  7d ingest= 24.1s · q=62 (new=12 hist=50/392) query=394.2s · score=93.8%
+  [bench] [34/143] backend-eng-saas   238d  +  7d ingest= 24.8s · q=62 (new=12 hist=50/404) query=387.9s · score=92.7%
+  [bench] [35/143] backend-eng-saas   245d  +  7d ingest= 25.8s · q=62 (new=12 hist=50/416) query=381.4s · score=96.2%
+  [bench] [36/143] backend-eng-saas   252d  +  7d ingest= 27.0s · q=62 (new=12 hist=50/428) query=393.6s · score=97.8%
+  [bench] [37/143] backend-eng-saas   259d  +  7d ingest= 28.5s · q=62 (new=12 hist=50/440) query=414.0s · score=95.7%
+  [bench] [38/143] backend-eng-saas   266d  +  7d ingest= 29.6s · q=62 (new=12 hist=50/452) query=424.1s · score=97.6%
+  [bench] [39/143] backend-eng-saas   273d  +  7d ingest= 30.8s · q=62 (new=12 hist=50/464) query=446.8s · score=94.6%
+  [bench] [40/143] backend-eng-saas   280d  +  7d ingest= 31.8s · q=63 (new=13 hist=50/476) query=457.2s · score=96.3%
+  [bench] [41/143] backend-eng-saas   287d  +  7d ingest= 32.6s · q=62 (new=12 hist=50/489) query=447.6s · score=93.3%
+  [bench] [42/143] backend-eng-saas   294d  +  7d ingest= 34.1s · q=62 (new=12 hist=50/501) query=472.9s · score=94.6%
+  [bench] [43/143] backend-eng-saas   301d  +  7d ingest= 35.7s · q=63 (new=13 hist=50/513) query=489.0s · score=93.4%
+  [bench] [44/143] backend-eng-saas   308d  +  7d ingest= 34.9s · q=63 (new=13 hist=50/526) query=505.8s · score=92.6%
+  [bench] [45/143] backend-eng-saas   315d  +  7d ingest= 36.8s · q=62 (new=12 hist=50/539) query=496.9s · score=94.1%
+  [bench] [46/143] backend-eng-saas   322d  +  7d ingest= 38.2s · q=62 (new=12 hist=50/551) query=498.1s · score=94.9%
+  [bench] [47/143] backend-eng-saas   329d  +  7d ingest= 39.2s · q=62 (new=12 hist=50/563) query=510.4s · score=94.1%
+  [bench] [48/143] backend-eng-saas   336d  +  7d ingest= 43.4s · q=62 (new=12 hist=50/575) query=517.3s · score=90.1%
+  [bench] [49/143] backend-eng-saas   343d  +  7d ingest= 41.0s · q=68 (new=18 hist=50/587) query=581.8s · score=96.3%
+  [bench] [50/143] backend-eng-saas   350d  +  7d ingest= 42.5s · q=62 (new=12 hist=50/605) query=530.8s · score=94.9%
+  [bench] [51/143] backend-eng-saas   357d  +  7d ingest= 43.0s · q=63 (new=13 hist=50/617) query=565.1s · score=97.9%
+  [bench] [52/143] backend-eng-saas   364d  +  7d ingest= 44.3s · q=62 (new=12 hist=50/630) query=555.1s · score=95.2%
+  [bench] [53/143] backend-eng-saas   371d  +  7d ingest= 44.4s · q=64 (new=14 hist=50/642) query=561.3s · score=99.2%
+  [bench] [54/143] backend-eng-saas   378d  +  7d ingest= 46.1s · q=62 (new=12 hist=50/656) query=560.0s · score=93.0%
+  [bench] [55/143] backend-eng-saas   385d  +  7d ingest= 46.3s · q=65 (new=15 hist=50/668) query=607.1s · score=93.8%
+  [bench] [56/143] backend-eng-saas   392d  +  7d ingest= 46.2s · q=62 (new=12 hist=50/683) query=622.2s · score=93.0%
+  [bench] [57/143] backend-eng-saas   399d  +  7d ingest= 48.3s · q=63 (new=13 hist=50/695) query=600.1s · score=91.0%
+  [bench] [58/143] backend-eng-saas   406d  +  7d ingest= 49.3s · q=66 (new=16 hist=50/708) query=641.3s · score=91.9%
+  [bench] [59/143] backend-eng-saas   413d  +  7d ingest= 50.1s · q=66 (new=16 hist=50/724) query=672.8s · score=92.7%
+  [bench] [60/143] backend-eng-saas   420d  +  7d ingest= 51.4s · q=64 (new=14 hist=50/740) query=652.6s · score=90.1%
+  [bench] [61/143] backend-eng-saas   427d  +  7d ingest= 52.5s · q=62 (new=12 hist=50/754) query=609.1s · score=97.3%
+  [bench] [62/143] backend-eng-saas   434d  +  7d ingest= 53.7s · q=62 (new=12 hist=50/766) query=632.8s · score=90.6%
+  [bench] [63/143] backend-eng-saas   441d  +  7d ingest= 54.4s · q=66 (new=16 hist=50/778) query=669.9s · score=97.5%
+  [bench] [64/143] backend-eng-saas   448d  +  7d ingest= 54.6s · q=64 (new=14 hist=50/794) query=654.1s · score=97.4%
+  [bench] [65/143] backend-eng-saas   455d  +  7d ingest= 56.6s · q=65 (new=15 hist=50/808) query=689.8s · score=97.7%
+  [bench] [66/143] backend-eng-saas   462d  +  7d ingest= 57.5s · q=62 (new=12 hist=50/823) query=660.2s · score=95.4%
+  [bench] [67/143] backend-eng-saas   469d  +  7d ingest= 58.1s · q=63 (new=13 hist=50/835) query=665.3s · score=97.4%
+  [bench] [68/143] backend-eng-saas   476d  +  7d ingest= 59.3s · q=64 (new=14 hist=50/848) query=681.6s · score=96.1%
+  [bench] [69/143] backend-eng-saas   483d  +  7d ingest= 60.2s · q=66 (new=16 hist=50/862) query=730.8s · score=94.2%
+  [bench] [70/143] backend-eng-saas   490d  +  7d ingest= 60.7s · q=66 (new=16 hist=50/878) query=722.3s · score=93.4%
+  [bench] [71/143] backend-eng-saas   497d  +  7d ingest= 58.8s · q=64 (new=14 hist=50/894) query=706.2s · score=95.6%
+  [bench] [72/143] backend-eng-saas   504d  +  7d ingest= 59.6s · q=62 (new=12 hist=50/908) query=692.9s · score=87.6%
+  [bench] [73/143] backend-eng-saas   511d  +  7d ingest= 61.5s · q=61 (new=11 hist=50/920) query=685.5s · score=94.0%
+  [bench] [74/143] backend-eng-saas   518d  +  7d ingest= 61.4s · q=64 (new=14 hist=50/931) query=717.6s · score=91.9%
+  [bench] [75/143] backend-eng-saas   525d  +  7d ingest= 61.9s · q=62 (new=12 hist=50/945) query=732.3s · score=90.6%
+  [bench] [76/143] backend-eng-saas   532d  +  7d ingest= 63.4s · q=65 (new=15 hist=50/957) query=753.0s · score=97.9%
+  [bench] [77/143] backend-eng-saas   539d  +  7d ingest= 65.9s · q=62 (new=12 hist=50/972) query=713.2s · score=98.4%
+  [bench] [78/143] backend-eng-saas   546d  +  7d ingest= 66.0s · q=61 (new=11 hist=50/984) query=718.7s · score=88.5%
+  [bench] [79/143] backend-eng-saas   553d  +  7d ingest= 66.4s · q=60 (new=10 hist=50/995) query=726.5s · score=93.9%
+  [bench] [80/143] backend-eng-saas   560d  +  7d ingest= 68.2s · q=64 (new=14 hist=50/1005) query=768.6s · score=94.3%
+  [bench] [81/143] backend-eng-saas   567d  +  7d ingest= 68.6s · q=64 (new=14 hist=50/1019) query=795.0s · score=93.8%
+  [bench] [82/143] backend-eng-saas   574d  +  7d ingest= 69.3s · q=65 (new=15 hist=50/1033) query=816.7s · score=90.5%
+  [bench] [83/143] backend-eng-saas   581d  +  7d ingest= 71.8s · q=62 (new=12 hist=50/1048) query=777.4s · score=91.1%
+  [bench] [84/143] backend-eng-saas   588d  +  7d ingest= 71.3s · q=62 (new=12 hist=50/1060) query=774.0s · score=91.9%
+  [bench] [85/143] backend-eng-saas   595d  +  7d ingest= 71.4s · q=62 (new=12 hist=50/1072) query=767.5s · score=96.8%
+  [bench] [86/143] backend-eng-saas   602d  +  7d ingest= 72.5s · q=62 (new=12 hist=50/1084) query=795.2s · score=94.1%
+  [bench] [87/143] backend-eng-saas   609d  +  7d ingest= 74.4s · q=64 (new=14 hist=50/1096) query=820.3s · score=92.2%
+  [bench] [88/143] backend-eng-saas   616d  +  7d ingest= 76.0s · q=62 (new=12 hist=50/1110) query=812.3s · score=94.6%
+  [bench] [89/143] backend-eng-saas   623d  +  7d ingest= 75.9s · q=66 (new=16 hist=50/1122) query=838.3s · score=97.7%
+  [bench] [90/143] backend-eng-saas   630d  +  7d ingest= 76.9s · q=65 (new=15 hist=50/1138) query=848.5s · score=93.3%
+  [bench] [91/143] backend-eng-saas   637d  +  7d ingest= 77.6s · q=62 (new=12 hist=50/1153) query=843.9s · score=91.7%
+  [bench] [92/143] backend-eng-saas   644d  +  7d ingest= 77.7s · q=62 (new=12 hist=50/1165) query=848.1s · score=93.3%
+  [bench] [93/143] backend-eng-saas   651d  +  7d ingest= 79.6s · q=62 (new=12 hist=50/1177) query=848.5s · score=96.5%
+  [bench] [94/143] backend-eng-saas   658d  +  7d ingest= 80.2s · q=63 (new=13 hist=50/1189) query=859.6s · score=95.5%
+  [bench] [95/143] backend-eng-saas   665d  +  7d ingest= 81.8s · q=62 (new=12 hist=50/1202) query=848.8s · score=93.0%
+  [bench] [96/143] backend-eng-saas   672d  +  7d ingest= 82.7s · q=62 (new=12 hist=50/1214) query=870.3s · score=95.7%
+  [bench] [97/143] backend-eng-saas   679d  +  7d ingest= 84.9s · q=62 (new=12 hist=50/1226) query=872.0s · score=93.8%
+  [bench] [98/143] backend-eng-saas   686d  +  7d ingest= 84.3s · q=60 (new=10 hist=50/1238) query=855.1s · score=90.8%
+  [bench] [99/143] backend-eng-saas   693d  +  7d ingest= 85.8s · q=61 (new=11 hist=50/1248) query=881.5s · score=94.0%
+  [bench] [100/143] backend-eng-saas   700d  +  7d ingest= 86.4s · q=61 (new=11 hist=50/1259) query=884.4s · score=92.3%
+  [bench] [101/143] backend-eng-saas   707d  +  7d ingest= 87.9s · q=61 (new=11 hist=50/1270) query=910.7s · score=93.4%
+  [bench] [102/143] backend-eng-saas   714d  +  7d ingest= 89.8s · q=65 (new=15 hist=50/1281) query=960.5s · score=94.1%
+  [bench] [103/143] backend-eng-saas   721d  +  7d ingest= 88.5s · q=62 (new=12 hist=50/1296) query=925.0s · score=92.2%
+  [bench] [104/143] backend-eng-saas   728d  +  7d ingest= 90.9s · q=62 (new=12 hist=50/1308) query=914.0s · score=97.0%
+  [bench] [105/143] backend-eng-saas   735d  +  7d ingest= 90.8s · q=62 (new=12 hist=50/1320) query=929.1s · score=96.5%
+  [bench] [106/143] backend-eng-saas   742d  +  7d ingest= 92.0s · q=62 (new=12 hist=50/1332) query=943.1s · score=97.3%
+  [bench] [107/143] backend-eng-saas   749d  +  7d ingest= 93.1s · q=60 (new=10 hist=50/1344) query=918.1s · score=95.6%
+  [bench] [108/143] backend-eng-saas   756d  +  7d ingest= 93.4s · q=61 (new=11 hist=50/1354) query=932.5s · score=94.3%
+  [bench] [109/143] backend-eng-saas   763d  +  7d ingest= 94.1s · q=62 (new=12 hist=50/1365) query=951.2s · score=98.4%
+  [bench] [110/143] backend-eng-saas   770d  +  7d ingest= 94.6s · q=61 (new=11 hist=50/1377) query=945.9s · score=95.1%
+  [bench] [111/143] backend-eng-saas   777d  +  7d ingest= 95.4s · q=62 (new=12 hist=50/1388) query=962.4s · score=96.5%
+  [bench] [112/143] backend-eng-saas   784d  +  7d ingest= 96.6s · q=62 (new=12 hist=50/1400) query=972.3s · score=96.0%
+  [bench] [113/143] backend-eng-saas   791d  +  7d ingest= 97.7s · q=62 (new=12 hist=50/1412) query=973.4s · score=96.8%
+  [bench] [114/143] backend-eng-saas   798d  +  7d ingest= 97.3s · q=62 (new=12 hist=50/1424) query=971.3s · score=97.3%
+  [bench] [115/143] backend-eng-saas   805d  +  7d ingest= 98.5s · q=62 (new=12 hist=50/1436) query=1000.7s · score=89.2%
+  [bench] [116/143] backend-eng-saas   812d  +  7d ingest= 99.0s · q=65 (new=15 hist=50/1448) query=1046.7s · score=93.1%
+  [bench] [117/143] backend-eng-saas   819d  +  7d ingest=100.1s · q=61 (new=11 hist=50/1463) query=1020.3s · score=83.9%
+  [bench] [118/143] backend-eng-saas   826d  +  7d ingest=100.0s · q=61 (new=11 hist=50/1474) query=1000.5s · score=95.1%
+  [bench] [119/143] backend-eng-saas   833d  +  7d ingest=100.9s · q=60 (new=10 hist=50/1485) query=973.3s · score=94.2%
+  [bench] [120/143] backend-eng-saas   840d  +  7d ingest=101.2s · q=61 (new=11 hist=50/1495) query=999.7s · score=95.4%
+  [bench] [121/143] backend-eng-saas   847d  +  7d ingest=101.8s · q=62 (new=12 hist=50/1506) query=1014.5s · score=94.9%
+  [bench] [122/143] backend-eng-saas   854d  +  7d ingest=102.4s · q=62 (new=12 hist=50/1518) query=1024.5s · score=92.2%
+  [bench] [123/143] backend-eng-saas   861d  +  7d ingest=102.9s · q=62 (new=12 hist=50/1530) query=1033.0s · score=92.7%
+  [bench] [124/143] backend-eng-saas   868d  +  7d ingest=103.4s · q=64 (new=14 hist=50/1542) query=1081.0s · score=91.1%
+  [bench] [125/143] backend-eng-saas   875d  +  7d ingest=103.9s · q=60 (new=10 hist=50/1556) query=1012.7s · score=96.4%
+  [bench] [126/143] backend-eng-saas   882d  +  7d ingest=104.0s · q=62 (new=12 hist=50/1566) query=1057.7s · score=92.7%
+  [bench] [127/143] backend-eng-saas   889d  +  7d ingest=106.7s · q=61 (new=11 hist=50/1578) query=1027.8s · score=93.4%
+  [bench] [128/143] backend-eng-saas   896d  +  7d ingest=106.2s · q=61 (new=11 hist=50/1589) query=1050.6s · score=94.5%
+[foundry-judge] 503 from gpt-5.4-mini; retrying in 2s (1/8)
+  [bench] [129/143] backend-eng-saas   903d  +  7d ingest=106.2s · q=61 (new=11 hist=50/1600) query=1036.3s · score=97.5%
+  [bench] [130/143] backend-eng-saas   910d  +  7d ingest=107.6s · q=61 (new=11 hist=50/1611) query=1050.8s · score=91.5%
+  [bench] [131/143] backend-eng-saas   917d  +  7d ingest=106.5s · q=63 (new=13 hist=50/1622) query=1079.3s · score=95.5%
+  [bench] [132/143] backend-eng-saas   924d  +  7d ingest=107.5s · q=61 (new=11 hist=50/1635) query=1052.8s · score=97.3%
+  [bench] [133/143] backend-eng-saas   931d  +  7d ingest=107.9s · q=65 (new=15 hist=50/1646) query=1109.8s · score=94.6%
+  [bench] [134/143] backend-eng-saas   938d  +  7d ingest=109.5s · q=61 (new=11 hist=50/1661) query=1065.7s · score=94.8%
+  [bench] [135/143] backend-eng-saas   945d  +  7d ingest=110.2s · q=61 (new=11 hist=50/1672) query=1067.2s · score=94.8%
+  [bench] [136/143] backend-eng-saas   952d  +  7d ingest=108.5s · q=62 (new=12 hist=50/1683) query=1085.0s · score=93.5%
+  [bench] [137/143] backend-eng-saas   959d  +  7d ingest=105.1s · q=62 (new=12 hist=50/1695) query=1077.4s · score=90.9%
+  [bench] [138/143] backend-eng-saas   966d  +  7d ingest=104.4s · q=62 (new=12 hist=50/1707) query=1085.9s · score=86.3%
+  [bench] [139/143] backend-eng-saas   973d  +  7d ingest=104.6s · q=62 (new=12 hist=50/1719) query=1100.1s · score=85.2%
+  [bench] [140/143] backend-eng-saas   980d  +  7d ingest=105.0s · q=62 (new=12 hist=50/1731) query=1072.0s · score=85.5%
+  [bench] [141/143] backend-eng-saas   987d  +  7d ingest=103.2s · q=62 (new=12 hist=50/1743) query=1079.8s · score=84.7%
+  [bench] [142/143] backend-eng-saas   994d  +  7d ingest=104.1s · q=62 (new=12 hist=50/1755) query=1091.7s · score=86.0%
+  [bench] [143/143] backend-eng-saas  1000d  +  6d ingest= 89.3s · q=62 (new=12 hist=50/1767) query=1090.0s · score=89.0%
+[bench] JSON results → /home/derek/repo/ContextForge/bench-results/contextforge-gpt54-wiki-semantic-backend-1000d-weekly143-sample50-no-daylookup-neutralcat-csvranges-20260620-1116/result.json
+[bench] Heatmap PNG → /home/derek/repo/ContextForge/bench-results/contextforge-gpt54-wiki-semantic-backend-1000d-weekly143-sample50-no-daylookup-neutralcat-csvranges-20260620-1116/heatmap.png
+Recall Bench Report — ContextForge Memory System
+Timestamp: 2026-06-20T15:17:00.194Z
+Duration:  29h 21m 46s
+Judge model:      benchmarks/recall_bench_adapter/foundry_gpt54_mini_judge.mjs (grounded, ±1d memory window)
+Appellate judge:  benchmarks/recall_bench_adapter/foundry_gpt54_judge.mjs · 666 appellate reviews
+Q&A pairs:        1817 unique · 8803 total evaluations · sample=50/checkpoint
+Group support:    off (group/boundary categories skipped)
+Ranges: 7d, 14d, 21d, 28d, 35d, 42d, 49d, 56d, 63d, 70d, 77d, 84d, 91d, 98d, 105d, 112d, 119d, 126d, 133d, 140d, 147d, 154d, 161d, 168d, 175d, 182d, 189d, 196d, 203d, 210d, 217d, 224d, 231d, 238d, 245d, 252d, 259d, 266d, 273d, 280d, 287d, 294d, 301d, 308d, 315d, 322d, 329d, 336d, 343d, 350d, 357d, 364d, 371d, 378d, 385d, 392d, 399d, 406d, 413d, 420d, 427d, 434d, 441d, 448d, 455d, 462d, 469d, 476d, 483d, 490d, 497d, 504d, 511d, 518d, 525d, 532d, 539d, 546d, 553d, 560d, 567d, 574d, 581d, 588d, 595d, 602d, 609d, 616d, 623d, 630d, 637d, 644d, 651d, 658d, 665d, 672d, 679d, 686d, 693d, 700d, 707d, 714d, 721d, 728d, 735d, 742d, 749d, 756d, 763d, 770d, 777d, 784d, 791d, 798d, 805d, 812d, 819d, 826d, 833d, 840d, 847d, 854d, 861d, 868d, 875d, 882d, 889d, 896d, 903d, 910d, 917d, 924d, 931d, 938d, 945d, 952d, 959d, 966d, 973d, 980d, 987d, 994d, 1000d
+Personas: 1
+
+───────────────────────────────────────────────────────────
+Persona: backend-eng-saas
+───────────────────────────────────────────────────────────
+  [7d] Days: 7 | Questions: 12 | Score: 5.50/6.0 (91.7%) | Hallucination: 0.0%
+    factual-recall               4.80/6.0 (80.0%) [n=5]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=1]
+    synthesis                    6.00/6.0 (100.0%) [n=1]
+    negative-recall              6.00/6.0 (100.0%) [n=4]
+  [14d] Days: 14 | Questions: 24 | Score: 5.21/6.0 (86.8%) | Hallucination: 8.3%
+    factual-recall               5.00/6.0 (83.3%) [n=7]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=2]
+    decision-tracking            6.00/6.0 (100.0%) [n=1]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=2]
+    cross-reference              6.00/6.0 (100.0%) [n=1]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=1]
+    synthesis                    6.00/6.0 (100.0%) [n=2]
+    negative-recall              6.00/6.0 (100.0%) [n=8]
+  [21d] Days: 21 | Questions: 38 | Score: 5.50/6.0 (91.7%) | Hallucination: 5.3%
+    factual-recall               5.36/6.0 (89.4%) [n=11]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=2]
+    decision-tracking            6.00/6.0 (100.0%) [n=3]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=3]
+    cross-reference              6.00/6.0 (100.0%) [n=2]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [28d] Days: 28 | Questions: 50 | Score: 5.62/6.0 (93.7%) | Hallucination: 4.0%
+    factual-recall               5.56/6.0 (92.7%) [n=16]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=2]
+    decision-tracking            6.00/6.0 (100.0%) [n=6]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=12]
+  [35d] Days: 35 | Questions: 62 | Score: 5.68/6.0 (94.6%) | Hallucination: 3.2%
+    factual-recall               5.63/6.0 (93.9%) [n=19]
+    temporal-reasoning           1.67/6.0 (27.8%) [n=3]
+    decision-tracking            6.00/6.0 (100.0%) [n=8]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    6.00/6.0 (100.0%) [n=6]
+    negative-recall              6.00/6.0 (100.0%) [n=14]
+  [42d] Days: 42 | Questions: 62 | Score: 5.31/6.0 (88.4%) | Hallucination: 9.7%
+    factual-recall               5.53/6.0 (92.1%) [n=19]
+    temporal-reasoning           1.33/6.0 (22.2%) [n=3]
+    decision-tracking            5.40/6.0 (90.0%) [n=10]
+    contradiction-resolution     4.50/6.0 (75.0%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      5.50/6.0 (91.7%) [n=4]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.57/6.0 (92.9%) [n=14]
+  [49d] Days: 49 | Questions: 62 | Score: 5.68/6.0 (94.6%) | Hallucination: 3.2%
+    factual-recall               6.00/6.0 (100.0%) [n=20]
+    temporal-reasoning           2.00/6.0 (33.3%) [n=2]
+    decision-tracking            5.50/6.0 (91.7%) [n=10]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=3]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              5.60/6.0 (93.3%) [n=15]
+  [56d] Days: 56 | Questions: 61 | Score: 5.52/6.0 (92.1%) | Hallucination: 6.6%
+    factual-recall               5.74/6.0 (95.6%) [n=19]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.40/6.0 (90.0%) [n=10]
+    contradiction-resolution     4.50/6.0 (75.0%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              5.57/6.0 (92.9%) [n=14]
+  [63d] Days: 63 | Questions: 63 | Score: 5.52/6.0 (92.1%) | Hallucination: 7.9%
+    factual-recall               5.90/6.0 (98.4%) [n=21]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            4.80/6.0 (80.0%) [n=10]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=3]
+    cross-reference              4.75/6.0 (79.2%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              5.79/6.0 (96.4%) [n=14]
+  [70d] Days: 70 | Questions: 62 | Score: 5.23/6.0 (87.1%) | Hallucination: 11.3%
+    factual-recall               5.74/6.0 (95.6%) [n=19]
+    temporal-reasoning           3.33/6.0 (55.6%) [n=3]
+    decision-tracking            4.89/6.0 (81.5%) [n=9]
+    contradiction-resolution     4.75/6.0 (79.2%) [n=4]
+    cross-reference              4.50/6.0 (75.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=5]
+    synthesis                    5.50/6.0 (91.7%) [n=4]
+    negative-recall              5.14/6.0 (85.7%) [n=14]
+  [77d] Days: 77 | Questions: 63 | Score: 5.57/6.0 (92.9%) | Hallucination: 4.8%
+    factual-recall               5.75/6.0 (95.8%) [n=20]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.73/6.0 (95.5%) [n=11]
+    contradiction-resolution     3.25/6.0 (54.2%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=6]
+    synthesis                    5.50/6.0 (91.7%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=13]
+  [84d] Days: 84 | Questions: 62 | Score: 5.53/6.0 (92.2%) | Hallucination: 8.1%
+    factual-recall               5.89/6.0 (98.2%) [n=19]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=3]
+    decision-tracking            5.50/6.0 (91.7%) [n=10]
+    contradiction-resolution     4.00/6.0 (66.7%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=5]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              5.38/6.0 (89.7%) [n=13]
+  [91d] Days: 91 | Questions: 62 | Score: 5.42/6.0 (90.3%) | Hallucination: 11.3%
+    factual-recall               5.89/6.0 (98.1%) [n=18]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=3]
+    decision-tracking            4.91/6.0 (81.8%) [n=11]
+    contradiction-resolution     4.33/6.0 (72.2%) [n=3]
+    cross-reference              5.25/6.0 (87.5%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=6]
+    synthesis                    5.50/6.0 (91.7%) [n=4]
+    negative-recall              5.54/6.0 (92.3%) [n=13]
+  [98d] Days: 98 | Questions: 63 | Score: 5.48/6.0 (91.3%) | Hallucination: 11.1%
+    factual-recall               6.00/6.0 (100.0%) [n=18]
+    temporal-reasoning           2.00/6.0 (33.3%) [n=3]
+    decision-tracking            5.67/6.0 (94.4%) [n=12]
+    contradiction-resolution     4.50/6.0 (75.0%) [n=4]
+    cross-reference              5.25/6.0 (87.5%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              5.54/6.0 (92.3%) [n=13]
+  [105d] Days: 105 | Questions: 61 | Score: 5.43/6.0 (90.4%) | Hallucination: 4.9%
+    factual-recall               5.94/6.0 (99.1%) [n=18]
+    temporal-reasoning           2.00/6.0 (33.3%) [n=3]
+    decision-tracking            5.55/6.0 (92.4%) [n=11]
+    contradiction-resolution     4.75/6.0 (79.2%) [n=4]
+    cross-reference              5.50/6.0 (91.7%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              5.25/6.0 (87.5%) [n=12]
+  [112d] Days: 112 | Questions: 62 | Score: 5.21/6.0 (86.8%) | Hallucination: 9.7%
+    factual-recall               5.45/6.0 (90.8%) [n=20]
+    temporal-reasoning           5.50/6.0 (91.7%) [n=2]
+    decision-tracking            5.00/6.0 (83.3%) [n=12]
+    contradiction-resolution     3.25/6.0 (54.2%) [n=4]
+    cross-reference              4.25/6.0 (70.8%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    4.25/6.0 (70.8%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=12]
+  [119d] Days: 119 | Questions: 63 | Score: 5.52/6.0 (92.1%) | Hallucination: 6.3%
+    factual-recall               6.00/6.0 (100.0%) [n=21]
+    temporal-reasoning           5.00/6.0 (83.3%) [n=2]
+    decision-tracking            5.25/6.0 (87.5%) [n=12]
+    contradiction-resolution     4.67/6.0 (77.8%) [n=3]
+    cross-reference              5.33/6.0 (88.9%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=5]
+    synthesis                    4.60/6.0 (76.7%) [n=5]
+    negative-recall              5.50/6.0 (91.7%) [n=12]
+  [126d] Days: 126 | Questions: 62 | Score: 5.68/6.0 (94.6%) | Hallucination: 4.8%
+    factual-recall               5.72/6.0 (95.4%) [n=18]
+    temporal-reasoning           5.00/6.0 (83.3%) [n=3]
+    decision-tracking            5.91/6.0 (98.5%) [n=11]
+    contradiction-resolution     4.75/6.0 (79.2%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.54/6.0 (92.3%) [n=13]
+  [133d] Days: 133 | Questions: 62 | Score: 5.47/6.0 (91.1%) | Hallucination: 6.5%
+    factual-recall               5.65/6.0 (94.1%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.25/6.0 (87.5%) [n=12]
+    contradiction-resolution     4.75/6.0 (79.2%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=5]
+    synthesis                    4.60/6.0 (76.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=13]
+  [140d] Days: 140 | Questions: 62 | Score: 5.60/6.0 (93.3%) | Hallucination: 4.8%
+    factual-recall               5.72/6.0 (95.4%) [n=18]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=3]
+    decision-tracking            5.92/6.0 (98.7%) [n=13]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=4]
+    cross-reference              4.75/6.0 (79.2%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              5.36/6.0 (89.4%) [n=11]
+  [147d] Days: 147 | Questions: 62 | Score: 5.10/6.0 (84.9%) | Hallucination: 12.9%
+    factual-recall               5.41/6.0 (90.2%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.00/6.0 (83.3%) [n=14]
+    contradiction-resolution     4.50/6.0 (75.0%) [n=4]
+    cross-reference              5.00/6.0 (83.3%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    5.00/6.0 (83.3%) [n=6]
+    negative-recall              5.08/6.0 (84.7%) [n=12]
+  [154d] Days: 154 | Questions: 64 | Score: 5.09/6.0 (84.9%) | Hallucination: 14.1%
+    factual-recall               5.19/6.0 (86.5%) [n=16]
+    temporal-reasoning           2.33/6.0 (38.9%) [n=3]
+    decision-tracking            5.64/6.0 (94.0%) [n=14]
+    contradiction-resolution     4.75/6.0 (79.2%) [n=4]
+    cross-reference              4.75/6.0 (79.2%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=5]
+    synthesis                    4.40/6.0 (73.3%) [n=5]
+    negative-recall              5.15/6.0 (85.9%) [n=13]
+  [161d] Days: 161 | Questions: 62 | Score: 5.19/6.0 (86.6%) | Hallucination: 11.3%
+    factual-recall               5.50/6.0 (91.7%) [n=18]
+    temporal-reasoning           3.50/6.0 (58.3%) [n=2]
+    decision-tracking            5.83/6.0 (97.2%) [n=12]
+    contradiction-resolution     4.75/6.0 (79.2%) [n=4]
+    cross-reference              3.67/6.0 (61.1%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=5]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              4.62/6.0 (76.9%) [n=13]
+  [168d] Days: 168 | Questions: 62 | Score: 5.52/6.0 (91.9%) | Hallucination: 8.1%
+    factual-recall               5.82/6.0 (97.1%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.93/6.0 (98.8%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=4]
+    cross-reference              4.50/6.0 (75.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=5]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              4.82/6.0 (80.3%) [n=11]
+  [175d] Days: 175 | Questions: 62 | Score: 5.68/6.0 (94.6%) | Hallucination: 4.8%
+    factual-recall               5.67/6.0 (94.4%) [n=18]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.92/6.0 (98.7%) [n=13]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    6.00/6.0 (100.0%) [n=6]
+    negative-recall              5.42/6.0 (90.3%) [n=12]
+  [182d] Days: 182 | Questions: 64 | Score: 5.66/6.0 (94.3%) | Hallucination: 6.3%
+    factual-recall               5.88/6.0 (98.0%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.73/6.0 (95.6%) [n=15]
+    contradiction-resolution     4.75/6.0 (79.2%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.00/6.0 (83.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=13]
+  [189d] Days: 189 | Questions: 62 | Score: 5.50/6.0 (91.7%) | Hallucination: 8.1%
+    factual-recall               6.00/6.0 (100.0%) [n=18]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.71/6.0 (95.2%) [n=14]
+    contradiction-resolution     4.60/6.0 (76.7%) [n=5]
+    cross-reference              3.33/6.0 (55.6%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              5.50/6.0 (91.7%) [n=12]
+  [196d] Days: 196 | Questions: 62 | Score: 5.37/6.0 (89.5%) | Hallucination: 11.3%
+    factual-recall               5.89/6.0 (98.1%) [n=18]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.14/6.0 (85.7%) [n=14]
+    contradiction-resolution     5.40/6.0 (90.0%) [n=5]
+    cross-reference              3.50/6.0 (58.3%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              5.50/6.0 (91.7%) [n=12]
+  [203d] Days: 203 | Questions: 62 | Score: 5.39/6.0 (89.8%) | Hallucination: 8.1%
+    factual-recall               5.82/6.0 (97.1%) [n=17]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.88/6.0 (97.9%) [n=16]
+    contradiction-resolution     2.00/6.0 (33.3%) [n=5]
+    cross-reference              4.25/6.0 (70.8%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.45/6.0 (90.9%) [n=11]
+  [210d] Days: 210 | Questions: 62 | Score: 5.77/6.0 (96.2%) | Hallucination: 3.2%
+    factual-recall               5.61/6.0 (93.5%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=14]
+    contradiction-resolution     5.00/6.0 (83.3%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    5.75/6.0 (95.8%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [217d] Days: 217 | Questions: 62 | Score: 5.52/6.0 (91.9%) | Hallucination: 9.7%
+    factual-recall               6.00/6.0 (100.0%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.07/6.0 (84.5%) [n=14]
+    contradiction-resolution     5.50/6.0 (91.7%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              5.36/6.0 (89.4%) [n=11]
+  [224d] Days: 224 | Questions: 62 | Score: 5.69/6.0 (94.9%) | Hallucination: 3.2%
+    factual-recall               5.84/6.0 (97.4%) [n=19]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.85/6.0 (97.4%) [n=13]
+    contradiction-resolution     4.80/6.0 (80.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      5.50/6.0 (91.7%) [n=4]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [231d] Days: 231 | Questions: 62 | Score: 5.63/6.0 (93.8%) | Hallucination: 6.5%
+    factual-recall               5.56/6.0 (92.6%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.50/6.0 (91.7%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.27/6.0 (87.9%) [n=11]
+  [238d] Days: 238 | Questions: 62 | Score: 5.56/6.0 (92.7%) | Hallucination: 6.5%
+    factual-recall               5.72/6.0 (95.4%) [n=18]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.57/6.0 (92.9%) [n=14]
+    contradiction-resolution     4.80/6.0 (80.0%) [n=5]
+    cross-reference              5.50/6.0 (91.7%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [245d] Days: 245 | Questions: 62 | Score: 5.77/6.0 (96.2%) | Hallucination: 1.6%
+    factual-recall               5.74/6.0 (95.6%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.93/6.0 (98.8%) [n=14]
+    contradiction-resolution     5.00/6.0 (83.3%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.82/6.0 (97.0%) [n=11]
+  [252d] Days: 252 | Questions: 62 | Score: 5.87/6.0 (97.8%) | Hallucination: 3.2%
+    factual-recall               6.00/6.0 (100.0%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=2]
+    decision-tracking            5.92/6.0 (98.7%) [n=13]
+    contradiction-resolution     5.00/6.0 (83.3%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [259d] Days: 259 | Questions: 62 | Score: 5.74/6.0 (95.7%) | Hallucination: 4.8%
+    factual-recall               6.00/6.0 (100.0%) [n=20]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.69/6.0 (94.9%) [n=13]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              5.00/6.0 (83.3%) [n=11]
+  [266d] Days: 266 | Questions: 62 | Score: 5.85/6.0 (97.6%) | Hallucination: 3.2%
+    factual-recall               6.00/6.0 (100.0%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.92/6.0 (98.7%) [n=13]
+    contradiction-resolution     5.50/6.0 (91.7%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=4]
+    synthesis                    5.75/6.0 (95.8%) [n=4]
+    negative-recall              5.64/6.0 (93.9%) [n=11]
+  [273d] Days: 273 | Questions: 62 | Score: 5.68/6.0 (94.6%) | Hallucination: 4.8%
+    factual-recall               5.74/6.0 (95.6%) [n=19]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.57/6.0 (92.9%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              5.45/6.0 (90.9%) [n=11]
+  [280d] Days: 280 | Questions: 63 | Score: 5.78/6.0 (96.3%) | Hallucination: 4.8%
+    factual-recall               5.89/6.0 (98.2%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.64/6.0 (94.0%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    4.60/6.0 (76.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [287d] Days: 287 | Questions: 62 | Score: 5.60/6.0 (93.3%) | Hallucination: 4.8%
+    factual-recall               5.89/6.0 (98.2%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.00/6.0 (83.3%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.18/6.0 (86.4%) [n=11]
+  [294d] Days: 294 | Questions: 62 | Score: 5.68/6.0 (94.6%) | Hallucination: 4.8%
+    factual-recall               6.00/6.0 (100.0%) [n=20]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.38/6.0 (89.7%) [n=13]
+    contradiction-resolution     5.00/6.0 (83.3%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.40/6.0 (90.0%) [n=5]
+    negative-recall              5.64/6.0 (93.9%) [n=11]
+  [301d] Days: 301 | Questions: 63 | Score: 5.60/6.0 (93.4%) | Hallucination: 4.8%
+    factual-recall               5.90/6.0 (98.3%) [n=20]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=13]
+    contradiction-resolution     5.00/6.0 (83.3%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      5.67/6.0 (94.4%) [n=3]
+    synthesis                    5.00/6.0 (83.3%) [n=5]
+    negative-recall              5.18/6.0 (86.4%) [n=11]
+  [308d] Days: 308 | Questions: 63 | Score: 5.56/6.0 (92.6%) | Hallucination: 7.9%
+    factual-recall               5.90/6.0 (98.3%) [n=20]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.57/6.0 (92.9%) [n=14]
+    contradiction-resolution     5.17/6.0 (86.1%) [n=6]
+    cross-reference              5.25/6.0 (87.5%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.75/6.0 (95.8%) [n=4]
+    negative-recall              5.00/6.0 (83.3%) [n=11]
+  [315d] Days: 315 | Questions: 62 | Score: 5.65/6.0 (94.1%) | Hallucination: 4.8%
+    factual-recall               5.95/6.0 (99.1%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.85/6.0 (97.4%) [n=13]
+    contradiction-resolution     4.83/6.0 (80.6%) [n=6]
+    cross-reference              5.20/6.0 (86.7%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              5.45/6.0 (90.9%) [n=11]
+  [322d] Days: 322 | Questions: 62 | Score: 5.69/6.0 (94.9%) | Hallucination: 1.6%
+    factual-recall               6.00/6.0 (100.0%) [n=19]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.14/6.0 (85.7%) [n=14]
+    contradiction-resolution     5.71/6.0 (95.2%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              5.80/6.0 (96.7%) [n=10]
+  [329d] Days: 329 | Questions: 62 | Score: 5.65/6.0 (94.1%) | Hallucination: 3.2%
+    factual-recall               5.50/6.0 (91.7%) [n=18]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.69/6.0 (94.8%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              5.33/6.0 (88.9%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [336d] Days: 336 | Questions: 62 | Score: 5.40/6.0 (90.1%) | Hallucination: 8.1%
+    factual-recall               5.11/6.0 (85.2%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.50/6.0 (91.7%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              5.00/6.0 (83.3%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.50/6.0 (91.7%) [n=4]
+    negative-recall              5.30/6.0 (88.3%) [n=10]
+  [343d] Days: 343 | Questions: 68 | Score: 5.78/6.0 (96.3%) | Hallucination: 2.9%
+    factual-recall               5.92/6.0 (98.6%) [n=24]
+    temporal-reasoning           5.00/6.0 (83.3%) [n=2]
+    decision-tracking            5.50/6.0 (91.7%) [n=16]
+    contradiction-resolution     5.83/6.0 (97.2%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.50/6.0 (91.7%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [350d] Days: 350 | Questions: 62 | Score: 5.69/6.0 (94.9%) | Hallucination: 3.2%
+    factual-recall               5.37/6.0 (89.5%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    4.60/6.0 (76.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [357d] Days: 357 | Questions: 63 | Score: 5.87/6.0 (97.9%) | Hallucination: 1.6%
+    factual-recall               5.76/6.0 (96.0%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.79/6.0 (96.4%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=11]
+  [364d] Days: 364 | Questions: 62 | Score: 5.71/6.0 (95.2%) | Hallucination: 4.8%
+    factual-recall               6.00/6.0 (100.0%) [n=20]
+    temporal-reasoning           5.00/6.0 (83.3%) [n=1]
+    decision-tracking            5.20/6.0 (86.7%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.75/6.0 (95.8%) [n=4]
+    negative-recall              5.64/6.0 (93.9%) [n=11]
+  [371d] Days: 371 | Questions: 64 | Score: 5.95/6.0 (99.2%) | Hallucination: 0.0%
+    factual-recall               5.95/6.0 (99.2%) [n=22]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=3]
+    negative-recall              5.82/6.0 (97.0%) [n=11]
+  [378d] Days: 378 | Questions: 62 | Score: 5.58/6.0 (93.0%) | Hallucination: 6.5%
+    factual-recall               5.65/6.0 (94.2%) [n=20]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.13/6.0 (85.4%) [n=16]
+    contradiction-resolution     5.17/6.0 (86.1%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [385d] Days: 385 | Questions: 65 | Score: 5.63/6.0 (93.8%) | Hallucination: 6.2%
+    factual-recall               6.00/6.0 (100.0%) [n=22]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.20/6.0 (86.7%) [n=15]
+    contradiction-resolution     5.86/6.0 (97.6%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.11/6.0 (85.2%) [n=9]
+  [392d] Days: 392 | Questions: 62 | Score: 5.58/6.0 (93.0%) | Hallucination: 6.5%
+    factual-recall               5.81/6.0 (96.8%) [n=21]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.33/6.0 (88.9%) [n=15]
+    contradiction-resolution     5.57/6.0 (92.9%) [n=7]
+    cross-reference              5.00/6.0 (83.3%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=3]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [399d] Days: 399 | Questions: 63 | Score: 5.46/6.0 (91.0%) | Hallucination: 9.5%
+    factual-recall               5.55/6.0 (92.5%) [n=20]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.41/6.0 (90.2%) [n=17]
+    contradiction-resolution     5.17/6.0 (86.1%) [n=6]
+    cross-reference              5.50/6.0 (91.7%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    4.50/6.0 (75.0%) [n=4]
+    negative-recall              5.78/6.0 (96.3%) [n=9]
+  [406d] Days: 406 | Questions: 66 | Score: 5.52/6.0 (91.9%) | Hallucination: 10.6%
+    factual-recall               5.65/6.0 (94.2%) [n=23]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.25/6.0 (87.5%) [n=16]
+    contradiction-resolution     5.57/6.0 (92.9%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.25/6.0 (87.5%) [n=4]
+    negative-recall              5.56/6.0 (92.6%) [n=9]
+  [413d] Days: 413 | Questions: 66 | Score: 5.56/6.0 (92.7%) | Hallucination: 6.1%
+    factual-recall               5.45/6.0 (90.8%) [n=20]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.71/6.0 (95.1%) [n=17]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              5.40/6.0 (90.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              5.33/6.0 (88.9%) [n=9]
+  [420d] Days: 420 | Questions: 64 | Score: 5.41/6.0 (90.1%) | Hallucination: 9.4%
+    factual-recall               5.64/6.0 (93.9%) [n=22]
+    temporal-reasoning           2.00/6.0 (33.3%) [n=1]
+    decision-tracking            5.50/6.0 (91.7%) [n=16]
+    contradiction-resolution     4.86/6.0 (81.0%) [n=7]
+    cross-reference              4.67/6.0 (77.8%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=3]
+    negative-recall              5.40/6.0 (90.0%) [n=10]
+  [427d] Days: 427 | Questions: 62 | Score: 5.84/6.0 (97.3%) | Hallucination: 3.2%
+    factual-recall               5.95/6.0 (99.2%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.81/6.0 (96.9%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              4.67/6.0 (77.8%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=3]
+    negative-recall              5.78/6.0 (96.3%) [n=9]
+  [434d] Days: 434 | Questions: 62 | Score: 5.44/6.0 (90.6%) | Hallucination: 9.7%
+    factual-recall               5.74/6.0 (95.6%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=2]
+    decision-tracking            5.20/6.0 (86.7%) [n=15]
+    contradiction-resolution     5.29/6.0 (88.1%) [n=7]
+    cross-reference              4.50/6.0 (75.0%) [n=4]
+    recency-bias-resistance      4.67/6.0 (77.8%) [n=3]
+    synthesis                    5.00/6.0 (83.3%) [n=3]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [441d] Days: 441 | Questions: 66 | Score: 5.85/6.0 (97.5%) | Hallucination: 4.5%
+    factual-recall               5.81/6.0 (96.8%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.76/6.0 (96.1%) [n=17]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=8]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=3]
+    negative-recall              5.80/6.0 (96.7%) [n=10]
+  [448d] Days: 448 | Questions: 64 | Score: 5.84/6.0 (97.4%) | Hallucination: 4.7%
+    factual-recall               5.68/6.0 (94.7%) [n=22]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.81/6.0 (96.9%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [455d] Days: 455 | Questions: 65 | Score: 5.86/6.0 (97.7%) | Hallucination: 3.1%
+    factual-recall               5.95/6.0 (99.2%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.88/6.0 (98.0%) [n=17]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=3]
+    negative-recall              5.70/6.0 (95.0%) [n=10]
+  [462d] Days: 462 | Questions: 62 | Score: 5.73/6.0 (95.4%) | Hallucination: 8.1%
+    factual-recall               6.00/6.0 (100.0%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=16]
+    contradiction-resolution     5.50/6.0 (91.7%) [n=6]
+    cross-reference              5.40/6.0 (90.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    4.50/6.0 (75.0%) [n=4]
+    negative-recall              5.44/6.0 (90.7%) [n=9]
+  [469d] Days: 469 | Questions: 63 | Score: 5.84/6.0 (97.4%) | Hallucination: 1.6%
+    factual-recall               5.90/6.0 (98.4%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.60/6.0 (93.3%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.67/6.0 (94.4%) [n=3]
+    negative-recall              5.90/6.0 (98.3%) [n=10]
+  [476d] Days: 476 | Questions: 64 | Score: 5.77/6.0 (96.1%) | Hallucination: 4.7%
+    factual-recall               5.63/6.0 (93.9%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=2]
+    decision-tracking            5.67/6.0 (94.4%) [n=15]
+    contradiction-resolution     5.57/6.0 (92.9%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=6]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [483d] Days: 483 | Questions: 66 | Score: 5.65/6.0 (94.2%) | Hallucination: 7.6%
+    factual-recall               5.64/6.0 (93.9%) [n=22]
+    temporal-reasoning           2.00/6.0 (33.3%) [n=1]
+    decision-tracking            5.88/6.0 (97.9%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.00/6.0 (83.3%) [n=9]
+  [490d] Days: 490 | Questions: 66 | Score: 5.61/6.0 (93.4%) | Hallucination: 7.6%
+    factual-recall               5.65/6.0 (94.2%) [n=20]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.31/6.0 (88.5%) [n=16]
+    contradiction-resolution     5.83/6.0 (97.2%) [n=6]
+    cross-reference              5.60/6.0 (93.3%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.17/6.0 (86.1%) [n=6]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [497d] Days: 497 | Questions: 64 | Score: 5.73/6.0 (95.6%) | Hallucination: 4.7%
+    factual-recall               5.90/6.0 (98.4%) [n=21]
+    temporal-reasoning           2.00/6.0 (33.3%) [n=1]
+    decision-tracking            5.31/6.0 (88.5%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [504d] Days: 504 | Questions: 62 | Score: 5.26/6.0 (87.6%) | Hallucination: 12.9%
+    factual-recall               5.25/6.0 (87.5%) [n=20]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=1]
+    decision-tracking            5.20/6.0 (86.7%) [n=15]
+    contradiction-resolution     5.83/6.0 (97.2%) [n=6]
+    cross-reference              4.25/6.0 (70.8%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [511d] Days: 511 | Questions: 61 | Score: 5.64/6.0 (94.0%) | Hallucination: 6.6%
+    factual-recall               5.89/6.0 (98.2%) [n=19]
+    temporal-reasoning           1.00/6.0 (16.7%) [n=1]
+    decision-tracking            5.13/6.0 (85.4%) [n=16]
+    contradiction-resolution     5.83/6.0 (97.2%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [518d] Days: 518 | Questions: 64 | Score: 5.52/6.0 (91.9%) | Hallucination: 9.4%
+    factual-recall               6.00/6.0 (100.0%) [n=19]
+    temporal-reasoning           5.00/6.0 (83.3%) [n=2]
+    decision-tracking            5.13/6.0 (85.4%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.40/6.0 (90.0%) [n=5]
+    negative-recall              4.67/6.0 (77.8%) [n=9]
+  [525d] Days: 525 | Questions: 62 | Score: 5.44/6.0 (90.6%) | Hallucination: 11.3%
+    factual-recall               5.63/6.0 (93.9%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.00/6.0 (83.3%) [n=16]
+    contradiction-resolution     5.50/6.0 (91.7%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.33/6.0 (88.9%) [n=6]
+    negative-recall              5.38/6.0 (89.6%) [n=8]
+  [532d] Days: 532 | Questions: 65 | Score: 5.88/6.0 (97.9%) | Hallucination: 3.1%
+    factual-recall               5.90/6.0 (98.4%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.00/6.0 (83.3%) [n=6]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [539d] Days: 539 | Questions: 62 | Score: 5.90/6.0 (98.4%) | Hallucination: 0.0%
+    factual-recall               5.94/6.0 (99.1%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.94/6.0 (99.0%) [n=16]
+    contradiction-resolution     5.86/6.0 (97.6%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.40/6.0 (90.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=8]
+  [546d] Days: 546 | Questions: 61 | Score: 5.31/6.0 (88.5%) | Hallucination: 8.2%
+    factual-recall               5.42/6.0 (90.4%) [n=19]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=1]
+    decision-tracking            5.07/6.0 (84.4%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              4.75/6.0 (79.2%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.33/6.0 (88.9%) [n=9]
+  [553d] Days: 553 | Questions: 60 | Score: 5.63/6.0 (93.9%) | Hallucination: 8.3%
+    factual-recall               5.88/6.0 (98.0%) [n=17]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=1]
+    decision-tracking            5.86/6.0 (97.6%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              5.25/6.0 (87.5%) [n=4]
+    recency-bias-resistance      5.33/6.0 (88.9%) [n=3]
+    synthesis                    4.60/6.0 (76.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [560d] Days: 560 | Questions: 64 | Score: 5.66/6.0 (94.3%) | Hallucination: 4.7%
+    factual-recall               5.90/6.0 (98.4%) [n=21]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=1]
+    decision-tracking            5.60/6.0 (93.3%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              5.00/6.0 (83.3%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [567d] Days: 567 | Questions: 64 | Score: 5.63/6.0 (93.8%) | Hallucination: 9.4%
+    factual-recall               5.95/6.0 (99.2%) [n=20]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=1]
+    decision-tracking            5.63/6.0 (93.8%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              5.22/6.0 (87.0%) [n=9]
+  [574d] Days: 574 | Questions: 65 | Score: 5.43/6.0 (90.5%) | Hallucination: 9.2%
+    factual-recall               5.62/6.0 (93.7%) [n=21]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=1]
+    decision-tracking            5.13/6.0 (85.6%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              5.40/6.0 (90.0%) [n=10]
+  [581d] Days: 581 | Questions: 62 | Score: 5.47/6.0 (91.1%) | Hallucination: 9.7%
+    factual-recall               5.80/6.0 (96.7%) [n=20]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=1]
+    decision-tracking            5.57/6.0 (92.9%) [n=14]
+    contradiction-resolution     5.29/6.0 (88.1%) [n=7]
+    cross-reference              4.50/6.0 (75.0%) [n=4]
+    recency-bias-resistance      5.00/6.0 (83.3%) [n=3]
+    synthesis                    5.40/6.0 (90.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=8]
+  [588d] Days: 588 | Questions: 62 | Score: 5.52/6.0 (91.9%) | Hallucination: 8.1%
+    factual-recall               5.95/6.0 (99.2%) [n=21]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.42/6.0 (90.3%) [n=12]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.33/6.0 (88.9%) [n=6]
+    negative-recall              4.50/6.0 (75.0%) [n=8]
+  [595d] Days: 595 | Questions: 62 | Score: 5.81/6.0 (96.8%) | Hallucination: 3.2%
+    factual-recall               5.94/6.0 (99.1%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=2]
+    decision-tracking            5.60/6.0 (93.3%) [n=15]
+    contradiction-resolution     5.50/6.0 (91.7%) [n=6]
+    cross-reference              5.50/6.0 (91.7%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [602d] Days: 602 | Questions: 62 | Score: 5.65/6.0 (94.1%) | Hallucination: 6.5%
+    factual-recall               5.90/6.0 (98.3%) [n=20]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.20/6.0 (86.7%) [n=15]
+    contradiction-resolution     5.57/6.0 (92.9%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=3]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [609d] Days: 609 | Questions: 64 | Score: 5.53/6.0 (92.2%) | Hallucination: 4.7%
+    factual-recall               5.05/6.0 (84.2%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.67/6.0 (94.4%) [n=18]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              5.33/6.0 (88.9%) [n=9]
+  [616d] Days: 616 | Questions: 62 | Score: 5.68/6.0 (94.6%) | Hallucination: 6.5%
+    factual-recall               6.00/6.0 (100.0%) [n=18]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=17]
+    contradiction-resolution     5.14/6.0 (85.7%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=4]
+    negative-recall              5.22/6.0 (87.0%) [n=9]
+  [623d] Days: 623 | Questions: 66 | Score: 5.86/6.0 (97.7%) | Hallucination: 1.5%
+    factual-recall               5.90/6.0 (98.4%) [n=21]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              5.60/6.0 (93.3%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [630d] Days: 630 | Questions: 65 | Score: 5.60/6.0 (93.3%) | Hallucination: 4.6%
+    factual-recall               5.70/6.0 (95.0%) [n=20]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.33/6.0 (88.9%) [n=15]
+    contradiction-resolution     5.67/6.0 (94.4%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.40/6.0 (90.0%) [n=10]
+  [637d] Days: 637 | Questions: 62 | Score: 5.50/6.0 (91.7%) | Hallucination: 6.5%
+    factual-recall               5.63/6.0 (93.9%) [n=19]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      5.50/6.0 (91.7%) [n=2]
+    synthesis                    4.40/6.0 (73.3%) [n=5]
+    negative-recall              4.67/6.0 (77.8%) [n=9]
+  [644d] Days: 644 | Questions: 62 | Score: 5.60/6.0 (93.3%) | Hallucination: 3.2%
+    factual-recall               5.67/6.0 (94.4%) [n=21]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.87/6.0 (97.8%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              5.50/6.0 (91.7%) [n=4]
+    recency-bias-resistance      5.50/6.0 (91.7%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=4]
+    negative-recall              5.33/6.0 (88.9%) [n=9]
+  [651d] Days: 651 | Questions: 62 | Score: 5.79/6.0 (96.5%) | Hallucination: 1.6%
+    factual-recall               5.53/6.0 (92.1%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.94/6.0 (99.0%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      5.67/6.0 (94.4%) [n=3]
+    synthesis                    5.50/6.0 (91.7%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [658d] Days: 658 | Questions: 63 | Score: 5.73/6.0 (95.5%) | Hallucination: 1.6%
+    factual-recall               5.89/6.0 (98.2%) [n=19]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.75/6.0 (95.8%) [n=16]
+    contradiction-resolution     5.83/6.0 (97.2%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              5.50/6.0 (91.7%) [n=10]
+  [665d] Days: 665 | Questions: 62 | Score: 5.58/6.0 (93.0%) | Hallucination: 8.1%
+    factual-recall               5.70/6.0 (95.0%) [n=20]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.50/6.0 (91.7%) [n=16]
+    contradiction-resolution     5.43/6.0 (90.5%) [n=7]
+    cross-reference              5.50/6.0 (91.7%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.25/6.0 (87.5%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=8]
+  [672d] Days: 672 | Questions: 62 | Score: 5.74/6.0 (95.7%) | Hallucination: 4.8%
+    factual-recall               5.79/6.0 (96.5%) [n=19]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=15]
+    contradiction-resolution     5.29/6.0 (88.1%) [n=7]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [679d] Days: 679 | Questions: 62 | Score: 5.63/6.0 (93.8%) | Hallucination: 9.7%
+    factual-recall               5.72/6.0 (95.4%) [n=18]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.31/6.0 (88.5%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.25/6.0 (87.5%) [n=4]
+    negative-recall              5.80/6.0 (96.7%) [n=10]
+  [686d] Days: 686 | Questions: 60 | Score: 5.45/6.0 (90.8%) | Hallucination: 6.7%
+    factual-recall               5.53/6.0 (92.2%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.75/6.0 (95.8%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              3.25/6.0 (54.2%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.50/6.0 (91.7%) [n=4]
+    negative-recall              5.50/6.0 (91.7%) [n=10]
+  [693d] Days: 693 | Questions: 61 | Score: 5.64/6.0 (94.0%) | Hallucination: 9.8%
+    factual-recall               5.84/6.0 (97.4%) [n=19]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.47/6.0 (91.1%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              4.00/6.0 (66.7%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=3]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [700d] Days: 700 | Questions: 61 | Score: 5.54/6.0 (92.3%) | Hallucination: 6.6%
+    factual-recall               5.76/6.0 (96.1%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.57/6.0 (92.9%) [n=14]
+    contradiction-resolution     4.67/6.0 (77.8%) [n=6]
+    cross-reference              4.60/6.0 (76.7%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [707d] Days: 707 | Questions: 61 | Score: 5.61/6.0 (93.4%) | Hallucination: 4.9%
+    factual-recall               5.19/6.0 (86.5%) [n=16]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.88/6.0 (97.9%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              5.33/6.0 (88.9%) [n=6]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              5.50/6.0 (91.7%) [n=10]
+  [714d] Days: 714 | Questions: 65 | Score: 5.65/6.0 (94.1%) | Hallucination: 7.7%
+    factual-recall               5.71/6.0 (95.2%) [n=21]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.40/6.0 (90.0%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              5.83/6.0 (97.2%) [n=6]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.00/6.0 (83.3%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [721d] Days: 721 | Questions: 62 | Score: 5.53/6.0 (92.2%) | Hallucination: 6.5%
+    factual-recall               5.60/6.0 (93.3%) [n=20]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.06/6.0 (84.4%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=3]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [728d] Days: 728 | Questions: 62 | Score: 5.82/6.0 (97.0%) | Hallucination: 3.2%
+    factual-recall               6.00/6.0 (100.0%) [n=18]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.79/6.0 (96.4%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              5.83/6.0 (97.2%) [n=6]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [735d] Days: 735 | Questions: 62 | Score: 5.79/6.0 (96.5%) | Hallucination: 4.8%
+    factual-recall               6.00/6.0 (100.0%) [n=18]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.80/6.0 (96.7%) [n=15]
+    contradiction-resolution     5.67/6.0 (94.4%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.75/6.0 (95.8%) [n=4]
+    negative-recall              5.50/6.0 (91.7%) [n=10]
+  [742d] Days: 742 | Questions: 62 | Score: 5.84/6.0 (97.3%) | Hallucination: 3.2%
+    factual-recall               5.94/6.0 (99.0%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.64/6.0 (94.0%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=7]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [749d] Days: 749 | Questions: 60 | Score: 5.73/6.0 (95.6%) | Hallucination: 5.0%
+    factual-recall               6.00/6.0 (100.0%) [n=18]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            5.57/6.0 (92.9%) [n=14]
+    contradiction-resolution     5.80/6.0 (96.7%) [n=5]
+    cross-reference              5.33/6.0 (88.9%) [n=6]
+    recency-bias-resistance      5.33/6.0 (88.9%) [n=3]
+    synthesis                    6.00/6.0 (100.0%) [n=4]
+    negative-recall              5.89/6.0 (98.1%) [n=9]
+  [756d] Days: 756 | Questions: 61 | Score: 5.66/6.0 (94.3%) | Hallucination: 3.3%
+    factual-recall               5.53/6.0 (92.2%) [n=17]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.33/6.0 (88.9%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=6]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [763d] Days: 763 | Questions: 62 | Score: 5.90/6.0 (98.4%) | Hallucination: 1.6%
+    factual-recall               6.00/6.0 (100.0%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.71/6.0 (95.2%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              5.78/6.0 (96.3%) [n=9]
+  [770d] Days: 770 | Questions: 61 | Score: 5.70/6.0 (95.1%) | Hallucination: 6.6%
+    factual-recall               5.61/6.0 (93.5%) [n=18]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.50/6.0 (91.7%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [777d] Days: 777 | Questions: 62 | Score: 5.79/6.0 (96.5%) | Hallucination: 1.6%
+    factual-recall               5.86/6.0 (97.6%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.87/6.0 (97.8%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              5.13/6.0 (85.4%) [n=8]
+  [784d] Days: 784 | Questions: 62 | Score: 5.76/6.0 (96.0%) | Hallucination: 1.6%
+    factual-recall               5.65/6.0 (94.2%) [n=20]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.64/6.0 (94.0%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.40/6.0 (90.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [791d] Days: 791 | Questions: 62 | Score: 5.81/6.0 (96.8%) | Hallucination: 3.2%
+    factual-recall               6.00/6.0 (100.0%) [n=19]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=1]
+    decision-tracking            5.73/6.0 (95.6%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [798d] Days: 798 | Questions: 62 | Score: 5.84/6.0 (97.3%) | Hallucination: 1.6%
+    factual-recall               5.95/6.0 (99.2%) [n=20]
+    temporal-reasoning           4.00/6.0 (66.7%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              4.83/6.0 (80.6%) [n=6]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [805d] Days: 805 | Questions: 62 | Score: 5.35/6.0 (89.2%) | Hallucination: 9.7%
+    factual-recall               5.56/6.0 (92.6%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            4.93/6.0 (82.2%) [n=15]
+    contradiction-resolution     5.83/6.0 (97.2%) [n=6]
+    cross-reference              5.60/6.0 (93.3%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.17/6.0 (86.1%) [n=6]
+    negative-recall              5.11/6.0 (85.2%) [n=9]
+  [812d] Days: 812 | Questions: 65 | Score: 5.58/6.0 (93.1%) | Hallucination: 6.2%
+    factual-recall               5.50/6.0 (91.7%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=2]
+    decision-tracking            5.50/6.0 (91.7%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              4.71/6.0 (78.6%) [n=7]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [819d] Days: 819 | Questions: 61 | Score: 5.03/6.0 (83.9%) | Hallucination: 13.1%
+    factual-recall               5.11/6.0 (85.2%) [n=18]
+    temporal-reasoning           5.50/6.0 (91.7%) [n=2]
+    decision-tracking            5.00/6.0 (83.3%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              3.60/6.0 (60.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    2.80/6.0 (46.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [826d] Days: 826 | Questions: 61 | Score: 5.70/6.0 (95.1%) | Hallucination: 3.3%
+    factual-recall               5.44/6.0 (90.7%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.80/6.0 (96.7%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.40/6.0 (90.0%) [n=5]
+    negative-recall              5.78/6.0 (96.3%) [n=9]
+  [833d] Days: 833 | Questions: 60 | Score: 5.65/6.0 (94.2%) | Hallucination: 5.0%
+    factual-recall               6.00/6.0 (100.0%) [n=16]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.40/6.0 (90.0%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              5.20/6.0 (86.7%) [n=5]
+    recency-bias-resistance      5.67/6.0 (94.4%) [n=3]
+    synthesis                    5.67/6.0 (94.4%) [n=6]
+    negative-recall              5.44/6.0 (90.7%) [n=9]
+  [840d] Days: 840 | Questions: 61 | Score: 5.72/6.0 (95.4%) | Hallucination: 4.9%
+    factual-recall               6.00/6.0 (100.0%) [n=17]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.63/6.0 (93.8%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              5.67/6.0 (94.4%) [n=6]
+    recency-bias-resistance      5.00/6.0 (83.3%) [n=3]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              5.75/6.0 (95.8%) [n=8]
+  [847d] Days: 847 | Questions: 62 | Score: 5.69/6.0 (94.9%) | Hallucination: 4.8%
+    factual-recall               5.94/6.0 (99.1%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.93/6.0 (98.9%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              5.33/6.0 (88.9%) [n=6]
+    recency-bias-resistance      3.50/6.0 (58.3%) [n=2]
+    synthesis                    4.80/6.0 (80.0%) [n=5]
+    negative-recall              5.78/6.0 (96.3%) [n=9]
+  [854d] Days: 854 | Questions: 62 | Score: 5.53/6.0 (92.2%) | Hallucination: 6.5%
+    factual-recall               5.22/6.0 (87.0%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.87/6.0 (97.8%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=6]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      4.00/6.0 (66.7%) [n=3]
+    synthesis                    4.60/6.0 (76.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [861d] Days: 861 | Questions: 62 | Score: 5.56/6.0 (92.7%) | Hallucination: 6.5%
+    factual-recall               5.42/6.0 (90.4%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.69/6.0 (94.8%) [n=16]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              4.20/6.0 (70.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [868d] Days: 868 | Questions: 64 | Score: 5.47/6.0 (91.1%) | Hallucination: 7.8%
+    factual-recall               5.37/6.0 (89.5%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.22/6.0 (87.0%) [n=18]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              5.20/6.0 (86.7%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.20/6.0 (86.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [875d] Days: 875 | Questions: 60 | Score: 5.78/6.0 (96.4%) | Hallucination: 1.7%
+    factual-recall               5.53/6.0 (92.2%) [n=17]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            6.00/6.0 (100.0%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              5.67/6.0 (94.4%) [n=6]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    5.40/6.0 (90.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=8]
+  [882d] Days: 882 | Questions: 62 | Score: 5.56/6.0 (92.7%) | Hallucination: 8.1%
+    factual-recall               5.94/6.0 (99.0%) [n=17]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.29/6.0 (88.2%) [n=17]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              4.20/6.0 (70.0%) [n=5]
+    recency-bias-resistance      4.00/6.0 (66.7%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=6]
+    negative-recall              5.89/6.0 (98.1%) [n=9]
+  [889d] Days: 889 | Questions: 61 | Score: 5.61/6.0 (93.4%) | Hallucination: 6.6%
+    factual-recall               5.88/6.0 (98.0%) [n=17]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=2]
+    decision-tracking            5.41/6.0 (90.2%) [n=17]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      3.00/6.0 (50.0%) [n=2]
+    synthesis                    4.50/6.0 (75.0%) [n=4]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [896d] Days: 896 | Questions: 61 | Score: 5.67/6.0 (94.5%) | Hallucination: 3.3%
+    factual-recall               5.78/6.0 (96.3%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.87/6.0 (97.8%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              4.80/6.0 (80.0%) [n=5]
+    recency-bias-resistance      4.00/6.0 (66.7%) [n=3]
+    synthesis                    5.60/6.0 (93.3%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [903d] Days: 903 | Questions: 61 | Score: 5.85/6.0 (97.5%) | Hallucination: 3.3%
+    factual-recall               6.00/6.0 (100.0%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.73/6.0 (95.6%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.33/6.0 (88.9%) [n=6]
+    negative-recall              5.89/6.0 (98.1%) [n=9]
+  [910d] Days: 910 | Questions: 61 | Score: 5.49/6.0 (91.5%) | Hallucination: 6.6%
+    factual-recall               5.89/6.0 (98.2%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.00/6.0 (83.3%) [n=14]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              3.20/6.0 (53.3%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [917d] Days: 917 | Questions: 63 | Score: 5.73/6.0 (95.5%) | Hallucination: 1.6%
+    factual-recall               5.95/6.0 (99.1%) [n=19]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.79/6.0 (96.4%) [n=14]
+    contradiction-resolution     5.00/6.0 (83.3%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.33/6.0 (88.9%) [n=6]
+    negative-recall              5.64/6.0 (93.9%) [n=11]
+  [924d] Days: 924 | Questions: 61 | Score: 5.84/6.0 (97.3%) | Hallucination: 1.6%
+    factual-recall               5.83/6.0 (97.2%) [n=18]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=1]
+    decision-tracking            5.60/6.0 (93.3%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.83/6.0 (97.2%) [n=6]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [931d] Days: 931 | Questions: 65 | Score: 5.68/6.0 (94.6%) | Hallucination: 1.5%
+    factual-recall               5.52/6.0 (92.1%) [n=21]
+    temporal-reasoning           6.00/6.0 (100.0%) [n=2]
+    decision-tracking            5.40/6.0 (90.0%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              5.60/6.0 (93.3%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    6.00/6.0 (100.0%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [938d] Days: 938 | Questions: 61 | Score: 5.69/6.0 (94.8%) | Hallucination: 1.6%
+    factual-recall               5.78/6.0 (96.3%) [n=18]
+    temporal-reasoning           1.00/6.0 (16.7%) [n=1]
+    decision-tracking            5.40/6.0 (90.0%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.80/6.0 (96.7%) [n=5]
+    negative-recall              6.00/6.0 (100.0%) [n=10]
+  [945d] Days: 945 | Questions: 61 | Score: 5.69/6.0 (94.8%) | Hallucination: 3.3%
+    factual-recall               6.00/6.0 (100.0%) [n=17]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=1]
+    decision-tracking            5.93/6.0 (98.8%) [n=14]
+    contradiction-resolution     5.80/6.0 (96.7%) [n=5]
+    cross-reference              5.50/6.0 (91.7%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=3]
+    synthesis                    4.67/6.0 (77.8%) [n=6]
+    negative-recall              5.91/6.0 (98.5%) [n=11]
+  [952d] Days: 952 | Questions: 62 | Score: 5.61/6.0 (93.5%) | Hallucination: 4.8%
+    factual-recall               5.89/6.0 (98.2%) [n=19]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.47/6.0 (91.1%) [n=15]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=4]
+    cross-reference              5.60/6.0 (93.3%) [n=5]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=6]
+    negative-recall              6.00/6.0 (100.0%) [n=9]
+  [959d] Days: 959 | Questions: 62 | Score: 5.45/6.0 (90.9%) | Hallucination: 6.5%
+    factual-recall               6.00/6.0 (100.0%) [n=17]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=2]
+    decision-tracking            5.69/6.0 (94.9%) [n=13]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=6]
+    negative-recall              5.08/6.0 (84.6%) [n=13]
+  [966d] Days: 966 | Questions: 62 | Score: 5.18/6.0 (86.3%) | Hallucination: 14.5%
+    factual-recall               5.50/6.0 (91.7%) [n=18]
+    temporal-reasoning           3.50/6.0 (58.3%) [n=2]
+    decision-tracking            5.00/6.0 (83.3%) [n=12]
+    contradiction-resolution     4.40/6.0 (73.3%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.67/6.0 (94.4%) [n=6]
+    negative-recall              4.85/6.0 (80.8%) [n=13]
+  [973d] Days: 973 | Questions: 62 | Score: 5.11/6.0 (85.2%) | Hallucination: 11.3%
+    factual-recall               5.33/6.0 (88.9%) [n=18]
+    temporal-reasoning           3.50/6.0 (58.3%) [n=2]
+    decision-tracking            4.62/6.0 (76.9%) [n=13]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    4.40/6.0 (73.3%) [n=5]
+    negative-recall              5.08/6.0 (84.6%) [n=13]
+  [980d] Days: 980 | Questions: 62 | Score: 5.13/6.0 (85.5%) | Hallucination: 11.3%
+    factual-recall               5.18/6.0 (86.3%) [n=17]
+    temporal-reasoning           0.00/6.0 (0.0%) [n=2]
+    decision-tracking            5.77/6.0 (96.2%) [n=13]
+    contradiction-resolution     4.80/6.0 (80.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      6.00/6.0 (100.0%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=5]
+    negative-recall              5.00/6.0 (83.3%) [n=14]
+  [987d] Days: 987 | Questions: 62 | Score: 5.08/6.0 (84.7%) | Hallucination: 14.5%
+    factual-recall               5.65/6.0 (94.1%) [n=17]
+    temporal-reasoning           0.50/6.0 (8.3%) [n=2]
+    decision-tracking            5.62/6.0 (93.6%) [n=13]
+    contradiction-resolution     6.00/6.0 (100.0%) [n=4]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      4.00/6.0 (66.7%) [n=3]
+    synthesis                    4.67/6.0 (77.8%) [n=6]
+    negative-recall              4.38/6.0 (73.1%) [n=13]
+  [994d] Days: 994 | Questions: 62 | Score: 5.16/6.0 (86.0%) | Hallucination: 11.3%
+    factual-recall               5.50/6.0 (91.7%) [n=18]
+    temporal-reasoning           0.50/6.0 (8.3%) [n=2]
+    decision-tracking            5.92/6.0 (98.7%) [n=13]
+    contradiction-resolution     4.80/6.0 (80.0%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      5.50/6.0 (91.7%) [n=2]
+    synthesis                    4.80/6.0 (80.0%) [n=5]
+    negative-recall              4.62/6.0 (76.9%) [n=13]
+  [1000d] Days: 1000 | Questions: 62 | Score: 5.34/6.0 (89.0%) | Hallucination: 9.7%
+    factual-recall               5.78/6.0 (96.3%) [n=18]
+    temporal-reasoning           3.00/6.0 (50.0%) [n=2]
+    decision-tracking            5.85/6.0 (97.4%) [n=13]
+    contradiction-resolution     5.00/6.0 (83.3%) [n=5]
+    cross-reference              6.00/6.0 (100.0%) [n=4]
+    recency-bias-resistance      5.50/6.0 (91.7%) [n=2]
+    synthesis                    5.00/6.0 (83.3%) [n=5]
+    negative-recall              4.62/6.0 (76.9%) [n=13]
+
+Heatmap (category × time range):
+                                    7d     14d     21d     28d     35d     42d     49d     56d     63d     70d     77d     84d     91d     98d    105d    112d    119d    126d    133d    140d    147d    154d    161d    168d    175d    182d    189d    196d    203d    210d    217d    224d    231d    238d    245d    252d    259d    266d    273d    280d    287d    294d    301d    308d    315d    322d    329d    336d    343d    350d    357d    364d    371d    378d    385d    392d    399d    406d    413d    420d    427d    434d    441d    448d    455d    462d    469d    476d    483d    490d    497d    504d    511d    518d    525d    532d    539d    546d    553d    560d    567d    574d    581d    588d    595d    602d    609d    616d    623d    630d    637d    644d    651d    658d    665d    672d    679d    686d    693d    700d    707d    714d    721d    728d    735d    742d    749d    756d    763d    770d    777d    784d    791d    798d    805d    812d    819d    826d    833d    840d    847d    854d    861d    868d    875d    882d    889d    896d    903d    910d    917d    924d    931d    938d    945d    952d    959d    966d    973d    980d    987d    994d   1000d
+                              ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+factual-recall                  4.8     5.0     5.4     5.6     5.6     5.5     6.0     5.7     5.9     5.7     5.8     5.9     5.9     6.0     5.9     5.5     6.0     5.7     5.6     5.7     5.4     5.2     5.5     5.8     5.7     5.9     6.0     5.9     5.8     5.6     6.0     5.8     5.6     5.7     5.7     6.0     6.0     6.0     5.7     5.9     5.9     6.0     5.9     5.9     5.9     6.0     5.5     5.1     5.9     5.4     5.8     6.0     6.0     5.7     6.0     5.8     5.5     5.7     5.5     5.6     6.0     5.7     5.8     5.7     6.0     6.0     5.9     5.6     5.6     5.7     5.9     5.3     5.9     6.0     5.6     5.9     5.9     5.4     5.9     5.9     6.0     5.6     5.8     6.0     5.9     5.9     5.1     6.0     5.9     5.7     5.6     5.7     5.5     5.9     5.7     5.8     5.7     5.5     5.8     5.8     5.2     5.7     5.6     6.0     6.0     5.9     6.0     5.5     6.0     5.6     5.9     5.7     6.0     6.0     5.6     5.5     5.1     5.4     6.0     6.0     5.9     5.2     5.4     5.4     5.5     5.9     5.9     5.8     6.0     5.9     5.9     5.8     5.5     5.8     6.0     5.9     6.0     5.5     5.3     5.2     5.6     5.5     5.8   
+temporal-reasoning              6.0     0.0     0.0     0.0     1.7     1.3     2.0     3.0     3.0     3.3     3.0     4.0     4.0     2.0     2.0     5.5     5.0     5.0     3.0     4.0     3.0     2.3     3.5     3.0     3.0     3.0     3.0     3.0     6.0     6.0     3.0     3.0     6.0     3.0     6.0     6.0     6.0     6.0     4.0     6.0     6.0     6.0     4.0     6.0     6.0     4.0     4.0     6.0     5.0     6.0     6.0     5.0     6.0     6.0     3.0     4.0     6.0     4.0     6.0     2.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     2.0     6.0     2.0     0.0     1.0     5.0     6.0     6.0     6.0     0.0     0.0     0.0     0.0     0.0     0.0     3.0     6.0     3.0     6.0     3.0     3.0     4.0     3.0     3.0     6.0     3.0     3.0     3.0     4.0     3.0     3.0     3.0     6.0     3.0     3.0     3.0     4.0     3.0     4.0     3.0     6.0     3.0     6.0     6.0     3.0     4.0     6.0     6.0     5.5     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     1.0     0.0     3.0     0.0     3.5     3.5     0.0     0.5     0.5     3.0   
+decision-tracking                --     6.0     6.0     6.0     6.0     5.4     5.5     5.4     4.8     4.9     5.7     5.5     4.9     5.7     5.5     5.0     5.3     5.9     5.3     5.9     5.0     5.6     5.8     5.9     5.9     5.7     5.7     5.1     5.9     6.0     5.1     5.8     5.5     5.6     5.9     5.9     5.7     5.9     5.6     5.6     5.0     5.4     6.0     5.6     5.8     5.1     5.7     5.5     5.5     6.0     5.8     5.2     6.0     5.1     5.2     5.3     5.4     5.3     5.7     5.5     5.8     5.2     5.8     5.8     5.9     6.0     5.6     5.7     5.9     5.3     5.3     5.2     5.1     5.1     5.0     6.0     5.9     5.1     5.9     5.6     5.6     5.1     5.6     5.4     5.6     5.2     5.7     6.0     6.0     5.3     6.0     5.9     5.9     5.8     5.5     6.0     5.3     5.8     5.5     5.6     5.9     5.4     5.1     5.8     5.8     5.6     5.6     5.3     5.7     5.5     5.9     5.6     5.7     6.0     4.9     5.5     5.0     5.8     5.4     5.6     5.9     5.9     5.7     5.2     6.0     5.3     5.4     5.9     5.7     5.0     5.8     5.6     5.4     5.4     5.9     5.5     5.7     5.0     4.6     5.8     5.6     5.9     5.8   
+contradiction-resolution        6.0     6.0     6.0     6.0     6.0     4.5     6.0     4.5     6.0     4.8     3.3     4.0     4.3     4.5     4.8     3.3     4.7     4.8     4.8     6.0     4.5     4.8     4.8     6.0     6.0     4.8     4.6     5.4     2.0     5.0     5.5     4.8     6.0     4.8     5.0     5.0     6.0     5.5     6.0     6.0     6.0     5.0     5.0     5.2     4.8     5.7     6.0     6.0     5.8     6.0     6.0     6.0     6.0     5.2     5.9     5.6     5.2     5.6     6.0     4.9     6.0     5.3     6.0     6.0     6.0     5.5     6.0     5.6     6.0     5.8     6.0     5.8     5.8     6.0     5.5     6.0     5.9     6.0     6.0     6.0     6.0     6.0     5.3     6.0     5.5     5.6     6.0     5.1     6.0     5.7     6.0     6.0     6.0     5.8     5.4     5.3     6.0     6.0     6.0     4.7     6.0     6.0     6.0     6.0     5.7     6.0     5.8     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.8     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.0     6.0     6.0     6.0     5.8     6.0     6.0     4.4     6.0     4.8     6.0     4.8     5.0   
+cross-reference                  --     6.0     6.0     6.0     6.0     6.0     6.0     6.0     4.8     4.5     6.0     6.0     5.3     5.3     5.5     4.3     5.3     6.0     6.0     4.8     5.0     4.8     3.7     4.5     6.0     6.0     3.3     3.5     4.3     6.0     6.0     6.0     6.0     5.5     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.3     5.2     6.0     5.3     5.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.0     5.5     6.0     5.4     4.7     4.7     4.5     6.0     6.0     6.0     5.4     6.0     6.0     6.0     5.6     6.0     4.3     6.0     6.0     6.0     6.0     6.0     4.8     5.3     5.0     6.0     6.0     4.5     6.0     5.5     6.0     6.0     6.0     5.6     6.0     6.0     5.5     6.0     6.0     5.5     6.0     6.0     3.3     4.0     4.6     5.3     5.8     6.0     5.8     6.0     6.0     5.3     6.0     6.0     6.0     6.0     6.0     6.0     4.8     5.6     4.7     3.6     6.0     5.2     5.7     5.3     6.0     4.2     5.2     5.7     4.2     6.0     4.8     6.0     3.2     6.0     6.0     5.6     6.0     5.5     5.6     6.0     6.0     6.0     6.0     6.0     6.0     6.0   
+recency-bias-resistance          --     6.0     6.0     6.0     6.0     5.5     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.5     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.7     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     4.7     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.3     6.0     6.0     6.0     5.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.5     5.5     5.7     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.3     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.7     5.0     3.5     4.0     6.0     6.0     6.0     4.0     3.0     4.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     4.0     5.5     5.5   
+synthesis                       6.0     6.0     6.0     6.0     6.0     6.0     5.8     6.0     5.6     5.5     5.5     6.0     5.5     5.6     5.8     4.3     4.6     6.0     4.6     5.8     5.0     4.4     5.2     5.8     6.0     5.0     6.0     6.0     6.0     5.8     5.8     6.0     6.0     5.6     6.0     5.6     5.8     5.8     5.8     4.6     6.0     5.4     5.0     5.8     5.6     5.8     5.2     5.5     5.5     4.6     6.0     5.8     6.0     6.0     6.0     5.0     4.5     5.3     5.2     6.0     6.0     5.0     6.0     6.0     5.0     4.5     5.7     6.0     6.0     5.2     6.0     5.0     6.0     5.4     5.3     5.0     5.4     6.0     4.6     5.2     5.2     5.2     5.4     5.3     6.0     5.6     6.0     5.0     5.6     6.0     4.4     5.0     5.5     5.6     5.3     5.0     5.3     5.5     6.0     6.0     6.0     5.0     5.0     5.2     5.8     5.8     6.0     6.0     6.0     6.0     5.8     5.4     5.0     6.0     5.2     5.8     2.8     5.4     5.7     5.2     4.8     4.6     5.6     5.2     5.4     6.0     4.5     5.6     5.3     5.8     5.3     5.8     6.0     5.8     4.7     5.0     5.0     5.7     4.4     5.0     4.7     4.8     5.0   
+negative-recall                 6.0     6.0     6.0     6.0     6.0     5.6     5.6     5.6     5.8     5.1     6.0     5.4     5.5     5.5     5.3     6.0     5.5     5.5     6.0     5.4     5.1     5.2     4.6     4.8     5.4     6.0     5.5     5.5     5.5     6.0     5.4     6.0     5.3     6.0     5.8     6.0     5.0     5.6     5.5     6.0     5.2     5.6     5.2     5.0     5.5     5.8     6.0     5.3     6.0     6.0     6.0     5.6     5.8     6.0     5.1     6.0     5.8     5.6     5.3     5.4     5.8     6.0     5.8     6.0     5.7     5.4     5.9     6.0     5.0     6.0     6.0     6.0     6.0     4.7     5.4     6.0     6.0     5.3     6.0     6.0     5.2     5.4     6.0     4.5     6.0     6.0     5.3     5.2     6.0     5.4     4.7     5.3     6.0     5.5     6.0     6.0     5.8     5.5     6.0     6.0     5.5     6.0     6.0     6.0     5.5     6.0     5.9     6.0     5.8     6.0     5.1     6.0     6.0     6.0     5.1     6.0     6.0     5.8     5.4     5.8     5.8     6.0     6.0     6.0     6.0     5.9     6.0     6.0     5.9     6.0     5.6     6.0     6.0     6.0     5.9     6.0     5.1     4.8     5.1     5.0     4.4     4.6     4.6   
+group-session-attribution        --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --   
+information-boundary             --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --   
+
+═══════════════════════════════════════════════════════════
+AGGREGATE HEATMAP (category × time range)
+═══════════════════════════════════════════════════════════
+                                    7d     14d     21d     28d     35d     42d     49d     56d     63d     70d     77d     84d     91d     98d    105d    112d    119d    126d    133d    140d    147d    154d    161d    168d    175d    182d    189d    196d    203d    210d    217d    224d    231d    238d    245d    252d    259d    266d    273d    280d    287d    294d    301d    308d    315d    322d    329d    336d    343d    350d    357d    364d    371d    378d    385d    392d    399d    406d    413d    420d    427d    434d    441d    448d    455d    462d    469d    476d    483d    490d    497d    504d    511d    518d    525d    532d    539d    546d    553d    560d    567d    574d    581d    588d    595d    602d    609d    616d    623d    630d    637d    644d    651d    658d    665d    672d    679d    686d    693d    700d    707d    714d    721d    728d    735d    742d    749d    756d    763d    770d    777d    784d    791d    798d    805d    812d    819d    826d    833d    840d    847d    854d    861d    868d    875d    882d    889d    896d    903d    910d    917d    924d    931d    938d    945d    952d    959d    966d    973d    980d    987d    994d   1000d
+                              ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+factual-recall                  4.8     5.0     5.4     5.6     5.6     5.5     6.0     5.7     5.9     5.7     5.8     5.9     5.9     6.0     5.9     5.5     6.0     5.7     5.6     5.7     5.4     5.2     5.5     5.8     5.7     5.9     6.0     5.9     5.8     5.6     6.0     5.8     5.6     5.7     5.7     6.0     6.0     6.0     5.7     5.9     5.9     6.0     5.9     5.9     5.9     6.0     5.5     5.1     5.9     5.4     5.8     6.0     6.0     5.7     6.0     5.8     5.5     5.7     5.5     5.6     6.0     5.7     5.8     5.7     6.0     6.0     5.9     5.6     5.6     5.7     5.9     5.3     5.9     6.0     5.6     5.9     5.9     5.4     5.9     5.9     6.0     5.6     5.8     6.0     5.9     5.9     5.1     6.0     5.9     5.7     5.6     5.7     5.5     5.9     5.7     5.8     5.7     5.5     5.8     5.8     5.2     5.7     5.6     6.0     6.0     5.9     6.0     5.5     6.0     5.6     5.9     5.7     6.0     6.0     5.6     5.5     5.1     5.4     6.0     6.0     5.9     5.2     5.4     5.4     5.5     5.9     5.9     5.8     6.0     5.9     5.9     5.8     5.5     5.8     6.0     5.9     6.0     5.5     5.3     5.2     5.6     5.5     5.8   
+temporal-reasoning              6.0     0.0     0.0     0.0     1.7     1.3     2.0     3.0     3.0     3.3     3.0     4.0     4.0     2.0     2.0     5.5     5.0     5.0     3.0     4.0     3.0     2.3     3.5     3.0     3.0     3.0     3.0     3.0     6.0     6.0     3.0     3.0     6.0     3.0     6.0     6.0     6.0     6.0     4.0     6.0     6.0     6.0     4.0     6.0     6.0     4.0     4.0     6.0     5.0     6.0     6.0     5.0     6.0     6.0     3.0     4.0     6.0     4.0     6.0     2.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     2.0     6.0     2.0     0.0     1.0     5.0     6.0     6.0     6.0     0.0     0.0     0.0     0.0     0.0     0.0     3.0     6.0     3.0     6.0     3.0     3.0     4.0     3.0     3.0     6.0     3.0     3.0     3.0     4.0     3.0     3.0     3.0     6.0     3.0     3.0     3.0     4.0     3.0     4.0     3.0     6.0     3.0     6.0     6.0     3.0     4.0     6.0     6.0     5.5     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     1.0     0.0     3.0     0.0     3.5     3.5     0.0     0.5     0.5     3.0   
+decision-tracking                --     6.0     6.0     6.0     6.0     5.4     5.5     5.4     4.8     4.9     5.7     5.5     4.9     5.7     5.5     5.0     5.3     5.9     5.3     5.9     5.0     5.6     5.8     5.9     5.9     5.7     5.7     5.1     5.9     6.0     5.1     5.8     5.5     5.6     5.9     5.9     5.7     5.9     5.6     5.6     5.0     5.4     6.0     5.6     5.8     5.1     5.7     5.5     5.5     6.0     5.8     5.2     6.0     5.1     5.2     5.3     5.4     5.3     5.7     5.5     5.8     5.2     5.8     5.8     5.9     6.0     5.6     5.7     5.9     5.3     5.3     5.2     5.1     5.1     5.0     6.0     5.9     5.1     5.9     5.6     5.6     5.1     5.6     5.4     5.6     5.2     5.7     6.0     6.0     5.3     6.0     5.9     5.9     5.8     5.5     6.0     5.3     5.8     5.5     5.6     5.9     5.4     5.1     5.8     5.8     5.6     5.6     5.3     5.7     5.5     5.9     5.6     5.7     6.0     4.9     5.5     5.0     5.8     5.4     5.6     5.9     5.9     5.7     5.2     6.0     5.3     5.4     5.9     5.7     5.0     5.8     5.6     5.4     5.4     5.9     5.5     5.7     5.0     4.6     5.8     5.6     5.9     5.8   
+contradiction-resolution        6.0     6.0     6.0     6.0     6.0     4.5     6.0     4.5     6.0     4.8     3.3     4.0     4.3     4.5     4.8     3.3     4.7     4.8     4.8     6.0     4.5     4.8     4.8     6.0     6.0     4.8     4.6     5.4     2.0     5.0     5.5     4.8     6.0     4.8     5.0     5.0     6.0     5.5     6.0     6.0     6.0     5.0     5.0     5.2     4.8     5.7     6.0     6.0     5.8     6.0     6.0     6.0     6.0     5.2     5.9     5.6     5.2     5.6     6.0     4.9     6.0     5.3     6.0     6.0     6.0     5.5     6.0     5.6     6.0     5.8     6.0     5.8     5.8     6.0     5.5     6.0     5.9     6.0     6.0     6.0     6.0     6.0     5.3     6.0     5.5     5.6     6.0     5.1     6.0     5.7     6.0     6.0     6.0     5.8     5.4     5.3     6.0     6.0     6.0     4.7     6.0     6.0     6.0     6.0     5.7     6.0     5.8     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.8     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.0     6.0     6.0     6.0     5.8     6.0     6.0     4.4     6.0     4.8     6.0     4.8     5.0   
+cross-reference                  --     6.0     6.0     6.0     6.0     6.0     6.0     6.0     4.8     4.5     6.0     6.0     5.3     5.3     5.5     4.3     5.3     6.0     6.0     4.8     5.0     4.8     3.7     4.5     6.0     6.0     3.3     3.5     4.3     6.0     6.0     6.0     6.0     5.5     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.3     5.2     6.0     5.3     5.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.0     5.5     6.0     5.4     4.7     4.7     4.5     6.0     6.0     6.0     5.4     6.0     6.0     6.0     5.6     6.0     4.3     6.0     6.0     6.0     6.0     6.0     4.8     5.3     5.0     6.0     6.0     4.5     6.0     5.5     6.0     6.0     6.0     5.6     6.0     6.0     5.5     6.0     6.0     5.5     6.0     6.0     3.3     4.0     4.6     5.3     5.8     6.0     5.8     6.0     6.0     5.3     6.0     6.0     6.0     6.0     6.0     6.0     4.8     5.6     4.7     3.6     6.0     5.2     5.7     5.3     6.0     4.2     5.2     5.7     4.2     6.0     4.8     6.0     3.2     6.0     6.0     5.6     6.0     5.5     5.6     6.0     6.0     6.0     6.0     6.0     6.0     6.0   
+recency-bias-resistance          --     6.0     6.0     6.0     6.0     5.5     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.5     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.7     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     4.7     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.3     6.0     6.0     6.0     5.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.5     5.5     5.7     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.3     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     5.7     5.0     3.5     4.0     6.0     6.0     6.0     4.0     3.0     4.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     6.0     4.0     5.5     5.5   
+synthesis                       6.0     6.0     6.0     6.0     6.0     6.0     5.8     6.0     5.6     5.5     5.5     6.0     5.5     5.6     5.8     4.3     4.6     6.0     4.6     5.8     5.0     4.4     5.2     5.8     6.0     5.0     6.0     6.0     6.0     5.8     5.8     6.0     6.0     5.6     6.0     5.6     5.8     5.8     5.8     4.6     6.0     5.4     5.0     5.8     5.6     5.8     5.2     5.5     5.5     4.6     6.0     5.8     6.0     6.0     6.0     5.0     4.5     5.3     5.2     6.0     6.0     5.0     6.0     6.0     5.0     4.5     5.7     6.0     6.0     5.2     6.0     5.0     6.0     5.4     5.3     5.0     5.4     6.0     4.6     5.2     5.2     5.2     5.4     5.3     6.0     5.6     6.0     5.0     5.6     6.0     4.4     5.0     5.5     5.6     5.3     5.0     5.3     5.5     6.0     6.0     6.0     5.0     5.0     5.2     5.8     5.8     6.0     6.0     6.0     6.0     5.8     5.4     5.0     6.0     5.2     5.8     2.8     5.4     5.7     5.2     4.8     4.6     5.6     5.2     5.4     6.0     4.5     5.6     5.3     5.8     5.3     5.8     6.0     5.8     4.7     5.0     5.0     5.7     4.4     5.0     4.7     4.8     5.0   
+negative-recall                 6.0     6.0     6.0     6.0     6.0     5.6     5.6     5.6     5.8     5.1     6.0     5.4     5.5     5.5     5.3     6.0     5.5     5.5     6.0     5.4     5.1     5.2     4.6     4.8     5.4     6.0     5.5     5.5     5.5     6.0     5.4     6.0     5.3     6.0     5.8     6.0     5.0     5.6     5.5     6.0     5.2     5.6     5.2     5.0     5.5     5.8     6.0     5.3     6.0     6.0     6.0     5.6     5.8     6.0     5.1     6.0     5.8     5.6     5.3     5.4     5.8     6.0     5.8     6.0     5.7     5.4     5.9     6.0     5.0     6.0     6.0     6.0     6.0     4.7     5.4     6.0     6.0     5.3     6.0     6.0     5.2     5.4     6.0     4.5     6.0     6.0     5.3     5.2     6.0     5.4     4.7     5.3     6.0     5.5     6.0     6.0     5.8     5.5     6.0     6.0     5.5     6.0     6.0     6.0     5.5     6.0     5.9     6.0     5.8     6.0     5.1     6.0     6.0     6.0     5.1     6.0     6.0     5.8     5.4     5.8     5.8     6.0     6.0     6.0     6.0     5.9     6.0     6.0     5.9     6.0     5.6     6.0     6.0     6.0     5.9     6.0     5.1     4.8     5.1     5.0     4.4     4.6     4.6   
+group-session-attribution        --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --   
+information-boundary             --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --      --   
