@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="680" viewBox="0 0 1500 680" role="img" aria-labelledby="title desc">
+  <title id="title">Why ContextForge wins the 500d apples-to-apples comparison</title>
+  <desc id="desc">A concise comparison card showing ContextForge versus OpenClaw on 500d benchmark accuracy, hallucination, query speed, ingest speed, extra rows, and caveats.</desc>
+  <rect width="1500" height="680" fill="#f7fbff"/>
+  <rect x="2" y="2" width="1496" height="676" rx="10" fill="#eef6ff" stroke="#d7e8ff" stroke-width="2"/>
+  <rect x="2" y="2" width="9" height="676" rx="4" fill="#2563eb"/>
+
+  <text x="46" y="74" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800" fill="#0f172a">Why ContextForge wins the 500d apples-to-apples</text>
+  <text x="48" y="108" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Same-row comparison against OpenClaw on 41 matching checkpoints, plus the extra scored rows captured in the combined run.</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <circle cx="64" cy="165" r="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="64" y="172" text-anchor="middle" font-size="24" font-weight="800" fill="#15803d">1</text>
+    <text x="96" y="168" font-size="27" font-weight="800" fill="#0f172a">Better same-row accuracy.</text>
+    <text x="458" y="168" font-size="27" fill="#0f172a">ContextForge scores </text>
+    <text x="710" y="168" font-size="27" font-weight="800" fill="#0f172a">5.106/6 (85.1%)</text>
+    <text x="948" y="168" font-size="27" fill="#0f172a"> vs OpenClaw </text>
+    <text x="1134" y="168" font-size="27" font-weight="800" fill="#0f172a">4.999/6 (83.3%)</text>
+    <text x="96" y="205" font-size="27" fill="#0f172a">for a </text>
+    <text x="165" y="205" font-size="27" font-weight="800" fill="#0f172a">+0.107/6 (+1.8 pp)</text>
+    <text x="424" y="205" font-size="27" fill="#0f172a"> lift and wins </text>
+    <text x="594" y="205" font-size="27" font-weight="800" fill="#0f172a">25 of 41</text>
+    <text x="710" y="205" font-size="27" fill="#0f172a"> matching rows.</text>
+
+    <circle cx="64" cy="272" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="64" y="279" text-anchor="middle" font-size="24" font-weight="800" fill="#b45309">2</text>
+    <text x="96" y="275" font-size="27" font-weight="800" fill="#0f172a">Far fewer hallucinations.</text>
+    <text x="438" y="275" font-size="27" fill="#0f172a">Weighted hallucination falls from </text>
+    <text x="814" y="275" font-size="27" font-weight="800" fill="#0f172a">17.8%</text>
+    <text x="895" y="275" font-size="27" fill="#0f172a"> to </text>
+    <text x="941" y="275" font-size="27" font-weight="800" fill="#0f172a">4.8%</text>
+    <text x="1011" y="275" font-size="27" fill="#0f172a">, a </text>
+    <text x="1062" y="275" font-size="27" font-weight="800" fill="#0f172a">-13.0 pp</text>
+    <text x="1175" y="275" font-size="27" fill="#0f172a"> reduction.</text>
+    <text x="96" y="312" font-size="27" fill="#0f172a">At 300d, ContextForge is </text>
+    <text x="404" y="312" font-size="27" font-weight="800" fill="#0f172a">1.7%</text>
+    <text x="470" y="312" font-size="27" fill="#0f172a"> vs OpenClaw at </text>
+    <text x="666" y="312" font-size="27" font-weight="800" fill="#0f172a">27.1%</text>
+    <text x="750" y="312" font-size="27" fill="#0f172a">.</text>
+
+    <circle cx="64" cy="379" r="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="64" y="386" text-anchor="middle" font-size="24" font-weight="800" fill="#1d4ed8">3</text>
+    <text x="96" y="382" font-size="27" font-weight="800" fill="#0f172a">Much faster query path.</text>
+    <text x="412" y="382" font-size="27" fill="#0f172a">Matching-row query time is </text>
+    <text x="728" y="382" font-size="27" font-weight="800" fill="#0f172a">2h 53m</text>
+    <text x="822" y="382" font-size="27" fill="#0f172a"> vs </text>
+    <text x="868" y="382" font-size="27" font-weight="800" fill="#0f172a">10h 31m</text>
+    <text x="982" y="382" font-size="27" fill="#0f172a">, and per-question latency is </text>
+    <text x="96" y="419" font-size="27" font-weight="800" fill="#0f172a">3.88s/q vs 14.14s/q</text>
+    <text x="379" y="419" font-size="27" fill="#0f172a">, making ContextForge </text>
+    <text x="640" y="419" font-size="27" font-weight="800" fill="#0f172a">3.64x faster</text>
+    <text x="810" y="419" font-size="27" fill="#0f172a">.</text>
+
+    <circle cx="64" cy="486" r="18" fill="#fae8ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="64" y="493" text-anchor="middle" font-size="24" font-weight="800" fill="#7e22ce">4</text>
+    <text x="96" y="489" font-size="27" font-weight="800" fill="#0f172a">Much faster ingest.</text>
+    <text x="347" y="489" font-size="27" fill="#0f172a">ContextForge ingests the matching workload in </text>
+    <text x="850" y="489" font-size="27" font-weight="800" fill="#0f172a">20m 14s</text>
+    <text x="954" y="489" font-size="27" fill="#0f172a"> vs OpenClaw at </text>
+    <text x="1165" y="489" font-size="27" font-weight="800" fill="#0f172a">7h 33m</text>
+    <text x="96" y="526" font-size="27" fill="#0f172a">for a </text>
+    <text x="166" y="526" font-size="27" font-weight="800" fill="#0f172a">22.41x faster</text>
+    <text x="350" y="526" font-size="27" fill="#0f172a"> ingest path.</text>
+
+    <circle cx="64" cy="593" r="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="64" y="600" text-anchor="middle" font-size="24" font-weight="800" fill="#0369a1">5</text>
+    <text x="96" y="596" font-size="27" font-weight="800" fill="#0f172a">Extra rows hold up.</text>
+    <text x="348" y="596" font-size="27" fill="#0f172a">The heatmap has </text>
+    <text x="550" y="596" font-size="27" font-weight="800" fill="#0f172a">3,164</text>
+    <text x="626" y="596" font-size="27" fill="#0f172a"> evals at </text>
+    <text x="734" y="596" font-size="27" font-weight="800" fill="#0f172a">5.209/6</text>
+    <text x="842" y="596" font-size="27" fill="#0f172a">; adding </text>
+    <text x="946" y="596" font-size="27" font-weight="800" fill="#0f172a">39</text>
+    <text x="989" y="596" font-size="27" fill="#0f172a"> captured scored rows gives </text>
+    <text x="1284" y="596" font-size="27" font-weight="800" fill="#0f172a">5.212/6</text>
+    <text x="1392" y="596" font-size="27" fill="#0f172a">.</text>
+  </g>
+
+  <rect x="1040" y="28" width="398" height="58" rx="8" fill="#ffffff" stroke="#dbeafe"/>
+  <text x="1060" y="52" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#475569">Honest caveat</text>
+  <text x="1060" y="75" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#0f172a">OpenClaw wins contradiction resolution and decision tracking.</text>
+</svg>
