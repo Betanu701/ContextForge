@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">Why ContextForge wins the 500d apples-to-apples comparison</title>
+  <desc id="desc">A concise comparison card showing ContextForge versus OpenClaw on 500d benchmark accuracy, hallucination, query speed, ingest speed, extra rows, and caveats.</desc>
+
+  <rect width="1500" height="900" fill="#f7fbff"/>
+  <rect x="2" y="2" width="1496" height="896" rx="12" fill="#eef6ff" stroke="#d7e8ff" stroke-width="2"/>
+  <rect x="2" y="2" width="9" height="896" rx="4" fill="#2563eb"/>
+
+  <text x="46" y="72" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" fill="#0f172a">Why ContextForge wins the 500d apples-to-apples</text>
+  <text x="48" y="108" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#475569">Same-row comparison against OpenClaw on 41 matching checkpoints, plus the extra scored rows captured in the combined run.</text>
+
+  <!-- Row 1 -->
+  <g transform="translate(46 145)">
+    <rect x="0" y="0" width="1408" height="118" rx="12" fill="#ffffff" stroke="#bbf7d0"/>
+    <circle cx="30" cy="36" r="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="30" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" fill="#15803d">1</text>
+    <text x="64" y="43" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#0f172a">Better same-row accuracy</text>
+    <text x="64" y="80" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#0f172a">ContextForge beats OpenClaw on weighted score and wins most matching rows.</text>
+    <rect x="760" y="25" width="150" height="38" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="835" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#14532d">5.106/6</text>
+    <rect x="922" y="25" width="150" height="38" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="997" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#7c2d12">4.999/6</text>
+    <rect x="1084" y="25" width="136" height="38" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="1152" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#1e3a8a">+1.8 pp</text>
+    <rect x="1232" y="25" width="135" height="38" rx="8" fill="#eef2ff" stroke="#c7d2fe"/>
+    <text x="1300" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#312e81">25 / 41</text>
+    <text x="760" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">ContextForge</text>
+    <text x="922" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">OpenClaw</text>
+    <text x="1084" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">score lift</text>
+    <text x="1232" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">row wins</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(46 280)">
+    <rect x="0" y="0" width="1408" height="118" rx="12" fill="#ffffff" stroke="#fde68a"/>
+    <circle cx="30" cy="36" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="30" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" fill="#b45309">2</text>
+    <text x="64" y="43" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#0f172a">Far fewer hallucinations</text>
+    <text x="64" y="80" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#0f172a">ContextForge sharply reduces weighted hallucination on the same checkpoint rows.</text>
+    <rect x="792" y="25" width="145" height="38" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="865" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#14532d">4.8%</text>
+    <rect x="950" y="25" width="145" height="38" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="1023" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#7c2d12">17.8%</text>
+    <rect x="1108" y="25" width="145" height="38" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="1181" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#1e3a8a">-13.0 pp</text>
+    <rect x="1266" y="25" width="105" height="38" rx="8" fill="#eef2ff" stroke="#c7d2fe"/>
+    <text x="1319" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#312e81">300d</text>
+    <text x="792" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">ContextForge</text>
+    <text x="950" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">OpenClaw</text>
+    <text x="1108" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">reduction</text>
+    <text x="1266" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">best row</text>
+  </g>
+
+  <!-- Row 3 -->
+  <g transform="translate(46 415)">
+    <rect x="0" y="0" width="1408" height="118" rx="12" fill="#ffffff" stroke="#bfdbfe"/>
+    <circle cx="30" cy="36" r="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="30" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" fill="#1d4ed8">3</text>
+    <text x="64" y="43" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#0f172a">Much faster query path</text>
+    <text x="64" y="80" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#0f172a">The same matching-row workload runs much faster through ContextForge.</text>
+    <rect x="792" y="25" width="145" height="38" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="865" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#14532d">2h 53m</text>
+    <rect x="950" y="25" width="145" height="38" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="1023" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#7c2d12">10h 31m</text>
+    <rect x="1108" y="25" width="145" height="38" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="1181" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#1e3a8a">3.64x</text>
+    <rect x="1266" y="25" width="105" height="38" rx="8" fill="#eef2ff" stroke="#c7d2fe"/>
+    <text x="1319" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#312e81">3.88s/q</text>
+    <text x="792" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">ContextForge</text>
+    <text x="950" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">OpenClaw</text>
+    <text x="1108" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">speedup</text>
+    <text x="1266" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">CF latency</text>
+  </g>
+
+  <!-- Row 4 -->
+  <g transform="translate(46 550)">
+    <rect x="0" y="0" width="1408" height="118" rx="12" fill="#ffffff" stroke="#e9d5ff"/>
+    <circle cx="30" cy="36" r="18" fill="#fae8ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="30" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" fill="#7e22ce">4</text>
+    <text x="64" y="43" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#0f172a">Much faster ingest</text>
+    <text x="64" y="80" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#0f172a">ContextForge builds the matching benchmark rows with far less ingest time.</text>
+    <rect x="792" y="25" width="145" height="38" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="865" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#14532d">20m 14s</text>
+    <rect x="950" y="25" width="145" height="38" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="1023" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#7c2d12">7h 33m</text>
+    <rect x="1108" y="25" width="145" height="38" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="1181" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#1e3a8a">22.41x</text>
+    <rect x="1266" y="25" width="105" height="38" rx="8" fill="#eef2ff" stroke="#c7d2fe"/>
+    <text x="1319" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#312e81">29.6s</text>
+    <text x="792" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">ContextForge</text>
+    <text x="950" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">OpenClaw</text>
+    <text x="1108" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">speedup</text>
+    <text x="1266" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">CF/row</text>
+  </g>
+
+  <!-- Row 5 -->
+  <g transform="translate(46 685)">
+    <rect x="0" y="0" width="1408" height="118" rx="12" fill="#ffffff" stroke="#bae6fd"/>
+    <circle cx="30" cy="36" r="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="30" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" fill="#0369a1">5</text>
+    <text x="64" y="43" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#0f172a">Extra rows hold up</text>
+    <text x="64" y="80" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#0f172a">Including the extra scored rows captured in the logs does not weaken the result.</text>
+    <rect x="792" y="25" width="145" height="38" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="865" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#14532d">3,164</text>
+    <rect x="950" y="25" width="145" height="38" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="1023" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#14532d">5.209/6</text>
+    <rect x="1108" y="25" width="145" height="38" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="1181" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#1e3a8a">+39</text>
+    <rect x="1266" y="25" width="105" height="38" rx="8" fill="#eef2ff" stroke="#c7d2fe"/>
+    <text x="1319" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#312e81">5.212/6</text>
+    <text x="792" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">heatmap evals</text>
+    <text x="950" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">heatmap score</text>
+    <text x="1108" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">extra rows</text>
+    <text x="1266" y="93" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">with extras</text>
+  </g>
+
+  <g transform="translate(46 825)">
+    <rect x="0" y="0" width="1408" height="48" rx="10" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="18" y="30" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#334155">Honest caveat:</text>
+    <text x="162" y="30" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#0f172a">OpenClaw is stronger on contradiction resolution and modestly stronger on decision tracking in this artifact.</text>
+  </g>
+</svg>

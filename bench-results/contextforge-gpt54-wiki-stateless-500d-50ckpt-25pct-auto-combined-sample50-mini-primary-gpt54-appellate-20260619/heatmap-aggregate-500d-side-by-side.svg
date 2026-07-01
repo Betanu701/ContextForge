@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="640.0" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#111827">500d Heatmap Aggregate and OpenClaw Side-by-Side</text>
+<text x="640.0" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">Weighted by evaluated questions per category; score scale is 0-6</text>
+<text x="70" y="104" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">ContextForge 500d Aggregate</text>
+<text x="70" y="124" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Heatmap: 3,164 evals; raw captured: 3,203 evals (+39)</text>
+<line x1="230.0" y1="140" x2="230.0" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="230.0" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">0</text>
+<line x1="292.5" y1="140" x2="292.5" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="292.5" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">1</text>
+<line x1="355.0" y1="140" x2="355.0" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="355.0" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">2</text>
+<line x1="417.5" y1="140" x2="417.5" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="417.5" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">3</text>
+<line x1="480.0" y1="140" x2="480.0" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="480.0" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4</text>
+<line x1="542.5" y1="140" x2="542.5" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="542.5" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5</text>
+<line x1="605.0" y1="140" x2="605.0" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="605.0" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">6</text>
+<text x="70" y="164.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Negative recall</text>
+<rect x="230" y="148" width="359.1" height="13" rx="2" fill="#2563eb"/>
+<text x="594.1" y="159" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.75 (487)</text>
+<rect x="230" y="164" width="359.3" height="13" rx="2" fill="#0891b2"/>
+<text x="594.3" y="175" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.75 (494)</text>
+<text x="70" y="210.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Factual recall</text>
+<rect x="230" y="194" width="341.1" height="13" rx="2" fill="#2563eb"/>
+<text x="576.1" y="205" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.46 (989)</text>
+<rect x="230" y="210" width="341.3" height="13" rx="2" fill="#0891b2"/>
+<text x="576.3" y="221" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.46 (1000)</text>
+<text x="70" y="256.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Synthesis</text>
+<rect x="230" y="240" width="319.3" height="13" rx="2" fill="#2563eb"/>
+<text x="554.3" y="251" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.11 (472)</text>
+<rect x="230" y="256" width="320.1" height="13" rx="2" fill="#0891b2"/>
+<text x="555.1" y="267" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.12 (479)</text>
+<text x="70" y="302.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Temporal reasoning</text>
+<rect x="230" y="286" width="309.4" height="13" rx="2" fill="#2563eb"/>
+<text x="544.4" y="297" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.95 (122)</text>
+<rect x="230" y="302" width="310.5" height="13" rx="2" fill="#0891b2"/>
+<text x="545.5" y="313" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.97 (124)</text>
+<text x="70" y="348.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Cross-reference</text>
+<rect x="230" y="332" width="311.1" height="13" rx="2" fill="#2563eb"/>
+<text x="546.1" y="343" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.98 (173)</text>
+<rect x="230" y="348" width="310.4" height="13" rx="2" fill="#0891b2"/>
+<text x="545.4" y="359" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.97 (177)</text>
+<text x="70" y="394.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Recency bias</text>
+<rect x="230" y="378" width="306.3" height="13" rx="2" fill="#2563eb"/>
+<text x="541.2" y="389" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.90 (240)</text>
+<rect x="230" y="394" width="307.1" height="13" rx="2" fill="#0891b2"/>
+<text x="542.1" y="405" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.91 (243)</text>
+<text x="70" y="440.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Decision tracking</text>
+<rect x="230" y="424" width="300.2" height="13" rx="2" fill="#2563eb"/>
+<text x="535.2" y="435" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.80 (461)</text>
+<rect x="230" y="440" width="299.7" height="13" rx="2" fill="#0891b2"/>
+<text x="534.7" y="451" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.80 (464)</text>
+<text x="70" y="486.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Contradiction resolution</text>
+<rect x="230" y="470" width="289.5" height="13" rx="2" fill="#2563eb"/>
+<text x="524.5" y="481" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.63 (220)</text>
+<rect x="230" y="486" width="288.9" height="13" rx="2" fill="#0891b2"/>
+<text x="523.9" y="497" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.62 (222)</text>
+<rect x="70" y="530" width="12" height="12" fill="#2563eb"/>
+<text x="88" y="540" font-family="Arial, sans-serif" font-size="12" fill="#111827">Heatmap</text>
+<rect x="240" y="530" width="12" height="12" fill="#0891b2"/>
+<text x="258" y="540" font-family="Arial, sans-serif" font-size="12" fill="#111827">Raw + extra rows</text>
+<text x="675.0" y="104" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">ContextForge vs OpenClaw</text>
+<text x="675.0" y="124" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Matching checkpoints: 41 rows (100d-500d)</text>
+<line x1="835.0" y1="140" x2="835.0" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="835.0" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">0</text>
+<line x1="897.5" y1="140" x2="897.5" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="897.5" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">1</text>
+<line x1="960.0" y1="140" x2="960.0" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="960.0" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">2</text>
+<line x1="1022.5" y1="140" x2="1022.5" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="1022.5" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">3</text>
+<line x1="1085.0" y1="140" x2="1085.0" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="1085.0" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4</text>
+<line x1="1147.5" y1="140" x2="1147.5" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="1147.5" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5</text>
+<line x1="1210.0" y1="140" x2="1210.0" y2="496" stroke="#d1d5db" stroke-width="1"/>
+<text x="1210.0" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">6</text>
+<text x="675.0" y="164.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Negative recall</text>
+<rect x="835.0" y="148" width="357.2" height="13" rx="2" fill="#2563eb"/>
+<text x="1197.2" y="159" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.72 (436)</text>
+<rect x="835.0" y="164" width="323.8" height="13" rx="2" fill="#f97316"/>
+<text x="1163.8" y="175" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.18 (426)</text>
+<text x="675.0" y="210.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Factual recall</text>
+<rect x="835.0" y="194" width="332.6" height="13" rx="2" fill="#2563eb"/>
+<text x="1172.6" y="205" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.32 (757)</text>
+<rect x="835.0" y="210" width="320.5" height="13" rx="2" fill="#f97316"/>
+<text x="1160.5" y="221" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.13 (749)</text>
+<text x="675.0" y="256.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Synthesis</text>
+<rect x="835.0" y="240" width="312.0" height="13" rx="2" fill="#2563eb"/>
+<text x="1152.0" y="251" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.99 (412)</text>
+<rect x="835.0" y="256" width="308.5" height="13" rx="2" fill="#f97316"/>
+<text x="1148.5" y="267" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.94 (420)</text>
+<text x="675.0" y="302.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Temporal reasoning</text>
+<rect x="835.0" y="286" width="305.4" height="13" rx="2" fill="#2563eb"/>
+<text x="1145.4" y="297" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.89 (105)</text>
+<rect x="835.0" y="302" width="234.5" height="13" rx="2" fill="#f97316"/>
+<text x="1074.5" y="313" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">3.75 (105)</text>
+<text x="675.0" y="348.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Cross-reference</text>
+<rect x="835.0" y="332" width="308.6" height="13" rx="2" fill="#2563eb"/>
+<text x="1148.6" y="343" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.94 (159)</text>
+<rect x="835.0" y="348" width="301.0" height="13" rx="2" fill="#f97316"/>
+<text x="1141.0" y="359" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.82 (158)</text>
+<text x="675.0" y="394.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Recency bias</text>
+<rect x="835.0" y="378" width="301.6" height="13" rx="2" fill="#2563eb"/>
+<text x="1141.6" y="389" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.82 (217)</text>
+<rect x="835.0" y="394" width="300.0" height="13" rx="2" fill="#f97316"/>
+<text x="1140.0" y="405" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.80 (220)</text>
+<text x="675.0" y="440.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Decision tracking</text>
+<rect x="835.0" y="424" width="295.6" height="13" rx="2" fill="#2563eb"/>
+<text x="1135.6" y="435" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.73 (391)</text>
+<rect x="835.0" y="440" width="306.8" height="13" rx="2" fill="#f97316"/>
+<text x="1146.8" y="451" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.91 (386)</text>
+<text x="675.0" y="486.0" font-family="Arial, sans-serif" font-size="12" fill="#111827">Contradiction resolution</text>
+<rect x="835.0" y="470" width="280.5" height="13" rx="2" fill="#2563eb"/>
+<text x="1120.5" y="481" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">4.49 (199)</text>
+<rect x="835.0" y="486" width="338.8" height="13" rx="2" fill="#f97316"/>
+<text x="1178.8" y="497" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">5.42 (216)</text>
+<rect x="675.0" y="530" width="12" height="12" fill="#2563eb"/>
+<text x="693.0" y="540" font-family="Arial, sans-serif" font-size="12" fill="#111827">ContextForge</text>
+<rect x="845.0" y="530" width="12" height="12" fill="#f97316"/>
+<text x="863.0" y="540" font-family="Arial, sans-serif" font-size="12" fill="#111827">OpenClaw</text>
+<rect x="70.0" y="675" width="277.5" height="58" rx="8" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="82.0" y="697" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">CF heatmap weighted score</text>
+<text x="82.0" y="722" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">5.209/6 <tspan font-size="12" fill="#6b7280">86.8%</tspan></text>
+<rect x="357.5" y="675" width="277.5" height="58" rx="8" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="369.5" y="697" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">CF raw+extra weighted score</text>
+<text x="369.5" y="722" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">5.212/6 <tspan font-size="12" fill="#6b7280">86.9%</tspan></text>
+<rect x="645.0" y="675" width="277.5" height="58" rx="8" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="657.0" y="697" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Matching-row CF score</text>
+<text x="657.0" y="722" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">5.106/6 <tspan font-size="12" fill="#6b7280">85.1%</tspan></text>
+<rect x="932.5" y="675" width="277.5" height="58" rx="8" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="944.5" y="697" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Matching-row OpenClaw score</text>
+<text x="944.5" y="722" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">4.999/6 <tspan font-size="12" fill="#6b7280">83.3%</tspan></text>
+</svg>
