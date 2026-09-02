@@ -172,3 +172,41 @@ class TestSessions:
         layer.new_session(session_id="s1")
         sid = layer.save_session()
         assert sid == "s1"
+
+
+class TestGroundedDefaultPrompt:
+    """The default system prompt must instruct the model to answer ONLY from the
+    provided knowledge and abstain when the answer is absent. Empirically, the
+    previous bare default ("You are a helpful assistant with access to a knowledge
+    base.") let smaller models substitute a well-known training-data fact when
+    retrieval missed the relevant document (e.g. answering "90 minutes" for a
+    door-to-balloon question whose answer was never retrieved). The grounding
+    clause removes that failure mode by default while remaining fully overridable.
+    """
+
+    @pytest.mark.asyncio
+    async def test_default_prompt_is_grounded(self, mock_provider: MockProvider):
+        cf = ContextForge(db_path=":memory:", llm_provider=mock_provider)
+        try:
+            await cf.chat("anything")
+        finally:
+            cf.close()
+        system = next(m["content"] for m in mock_provider.last_messages if m["role"] == "system")
+        lowered = system.lower()
+        assert "only" in lowered
+        # must steer toward abstaining rather than guessing / using outside knowledge
+        assert "guess" in lowered or "do not have" in lowered
+
+    @pytest.mark.asyncio
+    async def test_custom_prompt_still_overrides_default(self, mock_provider: MockProvider):
+        cf = ContextForge(
+            db_path=":memory:",
+            llm_provider=mock_provider,
+            system_prompt="You are a test assistant.",
+        )
+        try:
+            await cf.chat("anything")
+        finally:
+            cf.close()
+        system = next(m["content"] for m in mock_provider.last_messages if m["role"] == "system")
+        assert system == "You are a test assistant."

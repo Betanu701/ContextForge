@@ -297,7 +297,11 @@ class InfiniteContext:
 
         messages.append({
             "role": "system",
-            "content": "\n\n".join(system_parts) if system_parts else "You are a helpful assistant.",
+            "content": "\n\n".join(system_parts) if system_parts else (
+                "You are a helpful assistant. Answer using ONLY the information "
+                "provided to you. If the answer is not available, say you do not "
+                "have that information rather than guessing."
+            ),
         })
         messages.append({"role": "user", "content": user_message})
 
