@@ -36,7 +36,8 @@ class LocalProvider(LLMProvider):
         except ImportError as exc:
             raise ImportError(
                 "httpx is required for LocalProvider. "
-                "Install it with: pip install contextforge"
+                "Install this repository with dependencies from the repo checkout, "
+                "or install httpx directly with: pip install httpx"
             ) from exc
 
         self._base_url = base_url.rstrip("/")

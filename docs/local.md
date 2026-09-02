@@ -5,7 +5,9 @@ ContextForge can run against any local or self-hosted OpenAI-compatible chat com
 ## Install
 
 ```bash
-pip install contextforge
+git clone https://github.com/Betanu701/contextforge.git
+cd contextforge
+pip install -e .
 ```
 
 For development from a checkout:

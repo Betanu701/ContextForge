@@ -12,7 +12,7 @@ class OpenAIProvider(LLMProvider):
 
     Requires the ``openai`` package::
 
-        pip install contextforge[openai]
+        pip install -e ".[openai]"
     """
 
     def __init__(
@@ -27,7 +27,8 @@ class OpenAIProvider(LLMProvider):
         except ImportError as exc:
             raise ImportError(
                 "The openai package is required for OpenAIProvider. "
-                "Install it with: pip install contextforge[openai]"
+                "Install the optional dependency from the repo checkout with: "
+                "pip install -e \".[openai]\""
             ) from exc
 
         kwargs: dict[str, Any] = {"api_key": api_key}

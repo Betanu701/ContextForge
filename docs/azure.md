@@ -7,7 +7,9 @@ For fully local inference with llama-server, vLLM, Ollama, LM Studio, or another
 ## Install
 
 ```bash
-pip install contextforge[openai]
+git clone https://github.com/Betanu701/contextforge.git
+cd contextforge
+pip install -e ".[openai]"
 ```
 
 For development from a checkout:

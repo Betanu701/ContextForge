@@ -12,7 +12,7 @@ class AnthropicProvider(LLMProvider):
 
     Requires the ``anthropic`` package::
 
-        pip install contextforge[anthropic]
+        pip install -e ".[anthropic]"
     """
 
     def __init__(
@@ -27,7 +27,8 @@ class AnthropicProvider(LLMProvider):
         except ImportError as exc:
             raise ImportError(
                 "The anthropic package is required for AnthropicProvider. "
-                "Install it with: pip install contextforge[anthropic]"
+                "Install the optional dependency from the repo checkout with: "
+                "pip install -e \".[anthropic]\""
             ) from exc
 
         self._client = anthropic.AsyncAnthropic(api_key=api_key, **client_kwargs)

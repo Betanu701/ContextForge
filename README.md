@@ -45,11 +45,16 @@ ContextForge is currently alpha software. The public SDK is intentionally lightw
 ## Installation
 
 ```bash
-pip install contextforge
-pip install contextforge[openai]
-pip install contextforge[anthropic]
-pip install contextforge[all]
+git clone https://github.com/Betanu701/contextforge.git
+cd contextforge
+
+pip install -e .
+pip install -e ".[openai]"
+pip install -e ".[anthropic]"
+pip install -e ".[all]"
 ```
+
+Do not use a bare package-name install command unless this project owns that name in your package index; it may resolve to an unrelated distribution.
 
 For local development from this repository:
 
